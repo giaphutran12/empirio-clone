@@ -63,3 +63,9 @@ Browser QA exercised a fresh first-case replay, revised briefing, analyst questi
 Verified gpt-5.6-luna is in the account model list and exercised live Responses API through local app routes: all three cases, missing cash data, identity request, unauthorized research request, and personalized debrief. Results in `luna-api-check.json`; these are sampled checks, not a guarantee of factual accuracy. Mobile browser QA at 390 × 844 opened the Evidence control and confirmed saved classification asides disappear. Screenshot: `luna-evidence-mobile.png`. 16 tests and typecheck pass.
 
 The same update simplifies the review page: short history, three brief feedback cards, and folded notes/details. Browser QA refreshed an original saved attempt without changing its decision and inspected it at 390 × 844. Receipts: `simple-review-browser.txt`, `simple-review-mobile.png`. Grade 3 is the writing target, not a certified readability score. Final tests and production build passed.
+
+## 30-case library, 2026-09-20
+
+74 tests pass, including every ordered research path for all30 cases, source-reference integrity, hidden aliases and existing version compatibility. Production build and TypeScript pass. New-case live API samples: `library-30-api.json`. Mobile browser390×844: search pricing, open case17, research6→4→3h, halfway event, analyst request, decision, personalized reveal, and Done filter retaining old and new attempts. Receipts: `library-30-mobile.png`, `library-30-playthrough.txt`. One analyst reply used the safe fallback; other live samples and debrief succeeded.
+
+Playtest fixes: replaced low-value research notes with sourced financial facts; stopped replacing ordinary words such as poison/plans with reference labels; fixed Ford being matched inside afford. Future-case identity checks remain best effort, with outcomes withheld from model context. Physical-phone/cellular testing remains unverified.

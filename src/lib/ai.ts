@@ -72,13 +72,11 @@ export function containsIdentity(
   text: string,
   definition: CaseDefinition,
 ): boolean {
-  const canonical = text.toLowerCase().replace(/[^a-z0-9]/g, "");
-  const company = definition.reveal.company
-    .toLowerCase()
-    .replace(/[^a-z0-9]/g, "");
   return (
-    (company.length > 3 && canonical.includes(company)) ||
-    (definition.reveal.identityAliases ?? []).some((alias) => {
+    [
+      definition.reveal.company,
+      ...(definition.reveal.identityAliases ?? []),
+    ].some((alias) => {
       const escaped = alias.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       return new RegExp(`(?:^|\\W)${escaped}(?=$|\\W)`, "i").test(text);
     }) ||
@@ -153,7 +151,10 @@ export function validateAnalystReply(
     ...state.evidence.map((item) => ({ id: item.id, label: item.label })),
     ...state.research.map((item) => ({ id: item.id, label: item.title })),
   ]) {
-    parsed.answer = parsed.answer.replaceAll(item.id, item.label);
+    // Short IDs can be normal words ("poison", "plans"). Never rewrite those
+    // inside prose; the evidence disclosure already shows their human labels.
+    if (/[-_0-9]/.test(item.id))
+      parsed.answer = parsed.answer.replaceAll(item.id, item.label);
   }
   parsed.answer = cleanAnalystCopy(parsed.answer, [
     ...state.evidence.map((item) => item.label),

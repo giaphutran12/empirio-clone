@@ -27,7 +27,7 @@ npm run build
 
 - Each attempt starts with six simulated hours. Clarifications and reading are free.
 - Research cards show their time cost before confirmation. There is more research than time available.
-- A clearly labeled fictional development appears after three hours are spent.
+- An authored development appears after three hours are spent.
 - The server replays the research ledger, rejects duplicates/overbudget choices, and releases only unlocked evidence.
 - Analyst context excludes the historical reveal, source URLs, and locked evidence. Output references and known identity leaks are checked. These checks reduce leakage; they do not prove a language model cannot infer or fabricate something.
 - Debriefs distinguish documented history, hypothetical consequences, and AI reflection. A written debrief remains available when the model is unavailable.
@@ -46,3 +46,7 @@ The in-process API concurrency/request guards are supplementary and are not a di
 ## Evidence and verification
 
 See [case source notes](docs/case-sources.md), [project decisions](PROJECT.md), and [QA receipts](docs/qa/README.md). Claims that the game is enjoyable or improves real-world judgment require player feedback; passing tests does not establish either.
+
+## Case library
+
+30 historical decisions. Cases04–30 add product launches, pricing, funding, recalls, company splits, pay, and market exits. Source/timeline audits: [04–12](docs/cases-04-sources.md), [13–21](docs/cases-13-sources.md), [22–30](docs/cases-22-sources.md). The library defaults to unfinished cases and supports search and progress filters.

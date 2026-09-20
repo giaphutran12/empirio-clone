@@ -2,7 +2,7 @@
 
 ## Product decisions
 
-Active, 2026-09-20. A private, phone-first game for practicing strategic judgment under pressure. First release: three historical crises, one decision per 5–10-minute sitting. Identities are hidden until commitment. Evidence is concise; players may question an AI analyst and commission research that consumes simulated time.
+Active, 2026-09-20. A private, phone-first game for practicing strategic judgment under pressure. Current library: 30 historical decisions, one decision per 5–10-minute sitting. Identities are hidden until commitment. Evidence is concise; players may question an AI analyst and commission research that consumes simulated time.
 
 ## Implementation boundaries
 
@@ -29,3 +29,7 @@ Use plain, in-world language. Remove repeated fictional/simulation disclaimers a
 Use GPT-5.6 Luna for analyst answers and debriefs, configurable through OPENAI_MODEL. Account model availability and live structured responses verified. Keep citations in a touch-friendly Evidence disclosure; remove citation-only parenthetical asides from new and saved answers without deleting substantive qualifications.
 
 Reviews should aim for grade 3 reading: short words, two brief sentences per note, and at most 25 words per feedback field. Put personal notes, trade-offs, and sources behind disclosures. Refresh old saved reviews once when opened; preserve the original decision and conversation.
+
+## Library expansion, 2026-09-20
+
+27 new researched cases bring the total to30. Keep original IDs/versions and saved attempts. Default to unfinished cases with New to you, Started, Done, All filters and text search. Feature the next unfinished case. Case-specific aliases remain reveal-only; source audit documents identify predecision cutoffs and authored events.

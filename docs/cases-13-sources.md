@@ -198,3 +198,7 @@ Fact support map:
 Authored event: **An offer with strings**. You could reach shops sooner, but buyers would know the partner’s name and depend on its repairs.
 
 Other research notes are explicitly typed interpretation or unknown. All source URLs and identity aliases sit within the server-only reveal.
+
+## Playtest improvements
+
+Paid research now adds these specific source-backed facts: case17 e9/e10 use the income statement quarter columns (operating income844/856, interest income and other -4/16, US$millions); case13 e11 uses Note23 Group2003 cash116 and short-term bank debt736 DKKmillions; case16 e11 uses printed p16 cash617.1bn yen; case15 e11 uses the original article admission that some products do not yet meet stated durability goals. These replace earlier unknown/planning notes and remain predecision inputs.

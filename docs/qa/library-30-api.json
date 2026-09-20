@@ -1,0 +1,45 @@
+[
+  {
+    "caseId": "case-004",
+    "status": 200,
+    "reply": {
+      "answer": "The biggest risk is losing time before learning how real buyers handle the touch keyboard, calls, music, email, and web use. Waiting also delays sales, but the available evidence does not show how costly that delay would be.",
+      "evidenceIds": [
+        "screen",
+        "bundle"
+      ],
+      "researchIds": [
+        "software"
+      ],
+      "kind": "interpretation"
+    }
+  },
+  {
+    "caseId": "case-022",
+    "status": 200,
+    "reply": {
+      "answer": "The biggest risk is more people take poisoned capsules before we know how far the danger reaches. Seven people have already died, and the capsules were laced with cyanide. Waiting could leave old bottles in homes and stores.",
+      "evidenceIds": [
+        "deaths",
+        "poison"
+      ],
+      "researchIds": [],
+      "kind": "interpretation"
+    }
+  },
+  {
+    "caseId": "case-030",
+    "status": 200,
+    "reply": {
+      "answer": "The biggest risk is adding more member trouble after the price change. Members who use both services already pay more, so a second name and website could make choosing and managing movies harder. The available evidence does not show how many members would leave or struggle.",
+      "evidenceIds": [
+        "combined",
+        "plans"
+      ],
+      "researchIds": [
+        "journey"
+      ],
+      "kind": "interpretation"
+    }
+  }
+]

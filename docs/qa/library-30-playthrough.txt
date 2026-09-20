@@ -1,0 +1,33 @@
+- alert
+- banner:
+  - button "Back to case library":
+  - generic: ↗
+  - text: THE CALL
+  - generic: .
+  - strong: 3h
+- main:
+  - text: THE REAL STORY
+  - heading "Costco" [level=1]
+  - paragraph: A rise in both tiers
+  - text: YOU CHOSE
+  - heading "Keep fees unchanged" [level=2]
+  - generic "Your notes"
+  - generic: medium confidence · First attempt
+  - text: WHAT HAPPENED
+  - paragraph: Costco announced fees of $60 and $120 from June 1, 2017. It also raised the top tier’s reward cap to $1,000. The announcement did not prove future renewal behavior.
+  - heading "Your call." [level=2]
+  - article:
+    - heading "Good call" [level=3]
+    - paragraph: You noted, “learn how many members would leave” before raising fees. That directly addresses renewal risk.
+  - article:
+    - heading "What you missed" [level=3]
+    - paragraph: You did not separate sales growth from the profit drop. Fee income may not fix store cost problems.
+  - article:
+    - heading "Next time" [level=3]
+    - paragraph: Test who might leave before deciding. Also check how many members pay each tier.
+  - generic "More about this choice"
+  - generic "Sources"
+  - button "Next case":
+    - text: Next case
+  - button "Play again":
+    - text: Play again

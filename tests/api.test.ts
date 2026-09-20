@@ -217,3 +217,20 @@ test("case aliases stay out of analyst context at every research stage", async (
     }
   }
 });
+
+test("ordinary words are not rewritten as evidence titles in new cases", async () => {
+  const { getCase } = await import("../src/lib/catalog");
+  const answer =
+    "Poisoned capsules may still be in homes. The poison was in the capsules.";
+  const reply = validateAnalystReply(
+    {
+      answer,
+      evidenceIds: ["poison"],
+      researchIds: [],
+      kind: "interpretation",
+    },
+    getCase("case-022"),
+    [],
+  );
+  assert.equal(reply?.answer, answer);
+});

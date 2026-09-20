@@ -119,10 +119,10 @@ export const cases13to21: CaseDefinition[] = [
         evidence: [
           {
             id: "c13-e11",
-            label: "Sale terms missing",
-            text: "We have no firm park bid, debt terms or cash forecast for this decision.",
-            kind: "unknown",
-            sourceIds: [],
+            label: "Cash and short-term debt",
+            text: "At the end of 2003, cash at banks was 116 million kroner. Short-term bank debt was 736 million kroner.",
+            kind: "fact",
+            sourceIds: ["c13-s1"],
           },
           {
             id: "c13-e12",
@@ -389,7 +389,7 @@ export const cases13to21: CaseDefinition[] = [
       identityAliases: ["Starbucks", "Howard Schultz"],
       title: "An evening for espresso",
       history:
-        "Starbucks closed nearly 7,100 US company-run stores on the evening of February 26, 2008. Staff practiced espresso skills. The pause alone does not prove better service.",
+        "Starbucks closed nearly 7,100 US company-run stores on the evening of February 26, 2008. Staff practiced espresso skills.",
       lesson: "A bold gesture needs a daily habit behind it.",
       sources: [
         {
@@ -539,10 +539,10 @@ export const cases13to21: CaseDefinition[] = [
         evidence: [
           {
             id: "c15-e11",
-            label: "No sales forecast",
-            text: "We do not have the lost sales, repair load or repeat purchases this ad may cause.",
-            kind: "unknown",
-            sourceIds: [],
+            label: "The promise has gaps",
+            text: "The firm says some of its gear still falls short of its goals for long life and lasting use.",
+            kind: "fact",
+            sourceIds: ["c15-s1"],
           },
           {
             id: "c15-e12",
@@ -750,10 +750,10 @@ export const cases13to21: CaseDefinition[] = [
         evidence: [
           {
             id: "c16-e11",
-            label: "Missing launch costs",
-            text: "We have no full launch budget or cost for each game plan.",
-            kind: "unknown",
-            sourceIds: [],
+            label: "Cash to fund the launch",
+            text: "The firm held 617.1 billion yen in cash and cash equivalents at March 31, 2006.",
+            kind: "fact",
+            sourceIds: ["c16-s1"],
           },
           {
             id: "c16-e12",
@@ -939,17 +939,17 @@ export const cases13to21: CaseDefinition[] = [
         evidence: [
           {
             id: "c17-e9",
-            label: "No cause shown here",
-            text: "The sales and net income totals alone do not explain the profit drop.",
-            kind: "unknown",
-            sourceIds: [],
+            label: "Business profit slipped",
+            text: "Profit from running the business fell to US$844 million from US$856 million in the same quarter last year.",
+            kind: "fact",
+            sourceIds: ["c17-s1"],
           },
           {
             id: "c17-e10",
-            label: "Separate the jobs",
-            text: "A fee rise can add income. It cannot by itself fix weak store costs or a poor shopping trip.",
-            kind: "interpretation",
-            sourceIds: [],
+            label: "Other income fell too",
+            text: "Interest income and other items fell from a US$16 million gain to a US$4 million loss in the quarter.",
+            kind: "fact",
+            sourceIds: ["c17-s1"],
           },
         ],
       },
@@ -1029,7 +1029,7 @@ export const cases13to21: CaseDefinition[] = [
       ],
       title: "A rise in both tiers",
       history:
-        "Costco announced fees of $60 and $120 from June 1, 2017. It also raised the top tier’s reward cap to $1,000. The announcement did not prove future renewal behavior.",
+        "Costco announced fees of $60 and $120 from June 1, 2017. It also raised the top tier’s reward cap to $1,000.",
       lesson: "Judge a fee through the value each kind of member gets.",
       sources: [
         {
