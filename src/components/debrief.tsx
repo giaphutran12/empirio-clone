@@ -44,15 +44,15 @@ export function DebriefView({
         <p>{reveal.history}</p>
       </section>
       <section className="consequence">
-        <span className="eyebrow">YOUR OPTION · HYPOTHETICAL CONSEQUENCES</span>
+        <span className="eyebrow">YOUR TRADE-OFF</span>
         <p>{reveal.consequences[session.decision.optionId]}</p>
       </section>
       <div className="section-heading">
         <h2>Your decision, examined.</h2>
         <span className="tiny-label">
           {personalized
-            ? "AI reflection · grounded in your attempt"
-            : "Written case guidance · AI reflection unavailable"}
+            ? "Feedback on your reasoning"
+            : "Live feedback unavailable"}
         </span>
       </div>
       <div className="feedback-grid">
@@ -77,22 +77,13 @@ export function DebriefView({
         <p>{reveal.lesson}</p>
       </div>
       <details className="source-list">
-        <summary>Sources & how this case was reconstructed</summary>
-        <p>
-          The evidence comes from the sources below. The deadline, research
-          costs, board prompt, and unchosen outcomes are teaching simulations.
-          Missing records do not establish what executives did or did not know.
-        </p>
+        <summary>Sources</summary>
         {reveal.sources.map((source) => (
           <a key={source.id} href={source.url} target="_blank" rel="noreferrer">
             {source.title}
             <ExternalLink size={15} />
           </a>
         ))}
-        <p>
-          This exercise examines reasoning, not a scientifically validated
-          measure of business ability.
-        </p>
       </details>
       <div className="debrief-actions">
         <button className="button dark" onClick={onExit}>
@@ -101,7 +92,7 @@ export function DebriefView({
         </button>
         <button className="button outline" onClick={onReplay}>
           <RotateCcw size={16} />
-          Replay with hindsight
+          Replay this case
         </button>
       </div>
     </div>

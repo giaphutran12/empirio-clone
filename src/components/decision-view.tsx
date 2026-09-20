@@ -114,8 +114,7 @@ export function DecisionView({
         )}
       </button>
       <p className="simulation-note">
-        Your call is final for this attempt. You can replay afterward, with
-        hindsight.
+        Your call is final for this attempt. You can replay after the reveal.
       </p>
     </div>
   );

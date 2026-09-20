@@ -12,7 +12,7 @@ export const netflix: CaseDefinition = {
   objective:
     "Decide whether a proposed acquisition is worth its price, risks, and management attention.",
   briefing:
-    "It is 2000. Company B, a young DVD-by-mail business, proposes joining your rental chain. Assess the offer using information about its business before the meeting, reconstructed from later records. You have 6 simulated research hours. Names, the decision deadline, and the operating event are fictionalized.",
+    "It’s 2000. A young DVD-by-mail business wants your rental chain to buy it for US$50 million. It’s losing money, but its subscription model offers something your stores don’t. Is it worth buying?",
   question: "How should Company A respond to the acquisition proposal?",
   evidence: [
     {
@@ -92,7 +92,7 @@ export const netflix: CaseDefinition = {
           id: "runway-unknown",
           label: "Runway unverified",
           kind: "unknown",
-          text: "No verified cash balance, financing commitment, or months of runway are supplied. The seller’s pressure does not establish that the business is worthless or that the asking price is fair.",
+          text: "We don’t have a cash balance, committed funding, or a runway estimate. How soon would the business need more money?",
           sourceIds: [],
         },
       ],
@@ -114,7 +114,7 @@ export const netflix: CaseDefinition = {
           id: "integration-unknown",
           label: "No agreed terms",
           kind: "unknown",
-          text: "This dossier contains no signed retention agreement, integration budget, or accepted partnership proposal. These remain conditions to negotiate, not assets already secured.",
+          text: "We have no signed retention agreement, integration budget, or accepted partnership proposal. Those terms still need negotiating.",
           sourceIds: [],
         },
       ],
@@ -143,13 +143,13 @@ export const netflix: CaseDefinition = {
     "What would make each option defensible?",
   ],
   event: {
-    title: "Simulation · integration team unavailable",
+    title: "Integration team unavailable",
     text: "At the halfway mark, your operating team reports it cannot absorb the target into store systems in the current planning cycle. An acquisition would need a separately run unit at first.",
     evidence: {
       id: "integration-delay",
-      label: "Fictional operating constraint",
+      label: "Operations update",
       kind: "simulation",
-      text: "In this simulation, buying remains possible, but immediate operational integration is unavailable. A purchase requires separate management and funding initially; partnership and internal development remain options. This is not a historical staffing report.",
+      text: "You can still buy, but the business will need its own management and funding at first. Your team can’t integrate it into store operations yet.",
       sourceIds: [],
     },
   },
@@ -188,9 +188,9 @@ export const netflix: CaseDefinition = {
     company: "Blockbuster and Netflix",
     title: "The offer that did not become a deal",
     history:
-      "Marc Randolph recalls offering Netflix to Blockbuster for US$50 million in 2000. Blockbuster did not buy it. His later account describes disappointment and the decision to keep competing. The famous story is a participant’s retrospective, not proof of how an acquisition would have unfolded.",
+      "Marc Randolph recalls offering Netflix to Blockbuster for US$50 million in 2000. Blockbuster did not buy it. His later account describes disappointment and the decision to keep competing.",
     lesson:
-      "An asking price, a struggling seller, and an emerging business model deserve separate analysis. Hindsight cannot tell you whether ownership would preserve the target’s capabilities or whether another path would work. Judge the quality of the evaluation, not whether you recognized the names.",
+      "Look past the asking price. What are you buying, how much more funding will it need, and can your company keep what makes it valuable?",
     sources: [
       {
         id: "source-1",
@@ -205,12 +205,12 @@ export const netflix: CaseDefinition = {
       },
     ],
     consequences: {
-      buy: "Hypothetical: buying might add valuable capabilities, but integration, further funding, and staff retention could change the target’s trajectory. Its later independent success is not an acquisition return forecast.",
+      buy: "Buying might add valuable capabilities, but integration, further funding, and staff retention could change the target’s trajectory.",
       partner:
-        "Hypothetical: a trial could produce evidence with less capital at risk. The seller could reject it, and cooperation might not deliver the learning or exclusivity desired. No such outcome is established here.",
+        "A trial could produce evidence with less capital at risk. The seller could reject it, and cooperation might not deliver the learning or exclusivity desired.",
       build:
-        "Hypothetical: internal development could fit existing systems or move too slowly. The dossier supplies no credible build cost or delivery schedule, so success cannot be assumed.",
-      hold: "Historical element: Blockbuster did not acquire Netflix at this meeting. Keeping every aspect of strategy unchanged is hypothetical; rejecting this purchase alone does not explain either company’s later history.",
+        "Internal development could fit existing systems or move too slowly. We still need a build cost and delivery schedule.",
+      hold: "Passing saves the purchase price and leaves you free to invest elsewhere. It also leaves a new competitor independent. Blockbuster passed on the offer.",
     },
     rubric: [
       "Did you separate price from future funding needs?",

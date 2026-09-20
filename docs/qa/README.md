@@ -53,3 +53,7 @@ Phone dimensions were simulated in a real browser. No physical phone or cellular
 Additional receipts: [production mobile home](production-mobile-home.png), [third case mobile briefing](third-case-mobile.png).
 
 The production debrief completed with personalized feedback quoting the submitted partnership reasoning. Historical reveal, hypothetical outcome, and feedback sections were visibly separate. Receipt: [production debrief](production-mobile-debrief.png). [Mobile preview](production-mobile-preview.png) shows the deployed entry screen. A production reload retained the completed-case count. Desktop layout was also inspected; the rendered document width did not exceed the viewport.
+
+## Plain-language update, 2026-09-20
+
+Browser QA exercised a fresh first-case replay, revised briefing, analyst question, research confirmation and halfway event. Receipt: `plain-copy-browser.txt`. Removed repeated simulation disclaimers throughout all three cases and shortened analyst/debrief instructions. Existing saved conversations remain as originally generated. All 15 tests, typecheck and production build passed.

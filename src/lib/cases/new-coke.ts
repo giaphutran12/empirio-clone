@@ -12,7 +12,7 @@ export const newCoke: CaseDefinition = {
   objective:
     "Defend the flagship’s market position while protecting the value of the existing brand.",
   briefing:
-    "It is April 1985, before a launch decision. Your flagship is under pressure from Rival B. A new formula has tested well. You have 6 simulated research hours to review the evidence and make a recommendation. Names are withheld; the clock and boardroom setup are fictional.",
+    "April 1985. Your biggest rival is gaining ground. A new formula has tested well. Do you replace the drink your customers have bought for generations?",
   question: "What should Company A do with its flagship formula?",
   evidence: [
     {
@@ -63,7 +63,7 @@ export const newCoke: CaseDefinition = {
           id: "test-margin",
           label: "55% versus 45%",
           kind: "fact",
-          text: "A company spokesperson later reported that prelaunch blind testing favored the new taste 55% to 45%. This is a reported preference margin, not a sales forecast or independently audited result.",
+          text: "A company spokesperson later reported that prelaunch blind testing favored the new taste 55% to 45%. That tells you which taste people preferred, not what they would buy.",
           sourceIds: ["source-3"],
         },
         {
@@ -75,9 +75,9 @@ export const newCoke: CaseDefinition = {
         },
         {
           id: "test-limits",
-          label: "Unanswered in this dossier",
+          label: "What we don’t know",
           kind: "unknown",
-          text: "The available prelaunch evidence does not give a withdrawal-specific purchase forecast, subgroup breakdown, or confidence interval. Do not treat those missing details as failed tests.",
+          text: "We don’t have a forecast for purchases if the original disappears, a breakdown by customer group, or a margin of error for the tests.",
           sourceIds: [],
         },
       ],
@@ -100,7 +100,7 @@ export const newCoke: CaseDefinition = {
           id: "portfolio-reading",
           label: "A portfolio tradeoff",
           kind: "interpretation",
-          text: "A second formula could broaden choice but split attention and demand. The dossier does not quantify cannibalization, shelf space, or bottling costs.",
+          text: "A second formula could broaden choice but split attention and demand. We don’t have figures for lost sales between products, shelf space, or bottling costs.",
           sourceIds: ["source-2"],
         },
       ],
@@ -122,7 +122,7 @@ export const newCoke: CaseDefinition = {
           id: "rollout-unknowns",
           label: "No ready-made business case",
           kind: "unknown",
-          text: "No verified pilot results, parallel-production budget, or reversal timetable are supplied. A limited trial is an option to propose, not a successful experiment already completed.",
+          text: "We don’t have pilot results, a budget for producing both formulas, or a timetable for reversing the launch.",
           sourceIds: [],
         },
       ],
@@ -145,7 +145,7 @@ export const newCoke: CaseDefinition = {
           id: "success-thresholds",
           label: "Set a decision rule",
           kind: "interpretation",
-          text: "Before acting, specify what evidence would make you continue, pause, or reverse. This is a proposed management practice, not a documented historical plan; the dossier supplies no validated target or monitoring interval.",
+          text: "Decide what would make you continue, pause, or reverse the launch. Which results would change your mind?",
           sourceIds: [],
         },
       ],
@@ -154,17 +154,17 @@ export const newCoke: CaseDefinition = {
   suggestedQuestions: [
     "What evidence supports each option?",
     "What do we know about the competitive situation?",
-    "What information is missing from the dossier?",
+    "What else do we need to know?",
     "What tradeoffs should I consider?",
   ],
   event: {
-    title: "Simulation · production constraint",
+    title: "Production update",
     text: "At the 3-hour mark, operations reports that a full-scale launch of both formulas cannot fit the current launch window. A regional pilot remains possible. Offering both nationally now requires a delay.",
     evidence: {
       id: "halfway-prompt",
-      label: "Fictional operating constraint",
+      label: "Operations update",
       kind: "simulation",
-      text: "For this simulation, parallel national production is unavailable in the current launch window. You may still recommend both formulas, but must accept a delayed rollout. Replacement, a regional pilot, and holding the current formula remain available. This is not a historical claim.",
+      text: "Operations can’t produce both formulas nationally in time for launch. Offering both means a delay. You can still replace the original, run a regional pilot, or hold off.",
       sourceIds: [],
     },
   },
@@ -204,7 +204,7 @@ export const newCoke: CaseDefinition = {
     history:
       "On April 23, 1985, Coca-Cola changed its flagship formula. Consumer resistance followed. Its company history dates the original formula’s return to July 11, 79 days later, as Coca-Cola classic, sold alongside the new formula.",
     lesson:
-      "The historical result is not proof that innovation was irrational or that every alternative would have worked. Distinguish a better-tested product from a better-tested transition. Judge your reasoning by the evidence you had, the assumptions you exposed, and the way you planned to learn.",
+      "Liking a new product and accepting the loss of an old one are different questions. Test both before betting the brand.",
     sources: [
       {
         id: "source-1",
@@ -225,12 +225,12 @@ export const newCoke: CaseDefinition = {
     ],
     consequences: {
       replace:
-        "Historical path: the company replaced the formula and later restored the original alongside it. That sequence is observed history, not a forecast of what your exact execution would have produced.",
+        "Replacing the formula puts the whole brand behind the new taste. It also leaves loyal customers without their usual drink. Coca-Cola took this route and later brought the original back.",
       alongside:
-        "Hypothetical: offering both might preserve existing customers’ choice, but could split demand and complicate production. The later coexistence of both products does not prove an initial dual launch would have succeeded.",
+        "Offering both might preserve existing customers’ choice, but could split demand and complicate production.",
       pilot:
-        "Hypothetical: a limited trial could reveal purchase behavior and reactions to withdrawal before a broad commitment. Results might not generalize, and delay could carry a competitive cost. No outcome is established here.",
-      hold: "Hypothetical: waiting avoids an immediate formula transition but leaves the observed competitive problem unresolved. The evidence does not establish whether the existing product would recover or keep losing ground.",
+        "A limited trial could reveal purchase behavior and reactions to withdrawal before a broad commitment. Results might not generalize, and delay could carry a competitive cost.",
+      hold: "Waiting avoids an immediate formula transition but leaves the observed competitive problem unresolved.",
     },
     rubric: [
       "Did you connect the competitive problem to your chosen action?",

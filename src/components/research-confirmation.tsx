@@ -58,12 +58,11 @@ export function ResearchConfirmation({
         <p id="research-description">{task.description}</p>
         <div className="cost-preview">
           <Clock3 size={19} />
-          <strong>{task.hours} simulated hours</strong>
+          <strong>{task.hours} hours</strong>
           <span>{remainingHours - task.hours}h will remain</span>
         </div>
         <p className="tiny-label">
-          Results arrive immediately. This advances the fictional clock and may
-          trigger a development.
+          Results arrive immediately. Your remaining time will decrease.
         </p>
         <button className="button dark" disabled={busy} onClick={onConfirm}>
           {reviewing ? "Reviewing…" : "Commission investigation"}

@@ -1,0 +1,97 @@
+- alert
+- banner:
+  - button "Back to case library":
+    - generic: Case files
+  - generic: ↗
+  - text: THE CALL
+  - generic: .
+  - strong: 3h
+  - generic: left
+- generic: CASE 01 · Consumer strategy · INFORMED REPLAY
+- heading "The formula decision" [level=1]
+- generic "3 of 6 hours remaining"
+- navigation "Case views":
+  - button "The briefing":
+    - text: The briefing
+  - button "Your analyst":
+    - text: Your analyst
+  - button "Your call":
+    - text: Your call
+- main:
+  - status:
+    - text: NEW DEVELOPMENT
+    - heading "Production update" [level=3]
+    - paragraph: At the 3-hour mark, operations reports that a full-scale launch of both formulas cannot fit the current launch window. A regional pilot remains possible. Offering both nationally now requires a delay.
+    - button "Dismiss development":
+  - generic: A
+  - heading "Your analyst" [level=2]
+  - generic: What would you like to know?
+  - generic: AI
+  - generic: ANALYST
+  - paragraph: I’ve put the briefing together. What would you like to look into? I can clarify what we have, or propose a deeper investigation. I’ll tell you when the evidence runs out.
+  - generic: YOU
+  - paragraph: What else do we need to know?
+  - generic: ANALYST
+  - paragraph: "We need whether the Nearly 200,000 consumers result predicts real purchasing and which segments, channels, and regions drove it (Nearly 200,000 consumers vs. real market). Also assess brand-equity risk given 99 years of continuity and 15 years of share erosion, plus operational and distribution implications in the US and pricing context. Recommended studies: Audit the taste evidence and Review the rollout choices."
+  - generic: Assessment
+  - generic "Supporting evidence":
+    - text: Supporting evidence
+  - button "Audit the taste evidence 1h":
+    - text: Audit the taste evidence
+    - generic: 1h
+  - generic: ANALYST
+  - paragraph: "Research complete: Review the rollout choices. Introducing a recipe and withdrawing an existing one are separate choices. A test that supports introduction need not settle withdrawal. We don’t have pilot results, a budget for producing both formulas, or a timetable for reversing the launch. Operations can’t produce both formulas nationally in time for launch. Offering both means a delay. You can still replace the original, run a regional pilot, or hold off."
+  - generic: Evidence
+  - generic "Supporting evidence":
+    - text: Supporting evidence
+  - generic: YOU
+  - paragraph: What does the taste test actually tell us?
+  - generic: ANALYST
+  - paragraph: The taste test shows nearly 200,000 consumers preferred the proposed formula in prelaunch sampling (fact). It doesn’t prove they’ll buy it in stores, which segments and regions drove the preference, or whether replacing the legacy recipe would keep loyal customers (interpretation/unknown). I’d run the “Review the taste evidence” audit next to check sampling, methodology, and signal to purchase.
+  - generic: Assessment
+  - generic "Supporting evidence":
+    - text: Supporting evidence
+  - button "Audit the taste evidence 1h":
+    - text: Audit the taste evidence
+    - generic: 1h
+  - button "What evidence supports each option?":
+    - text: What evidence supports each option?
+  - button "What do we know about the competitive situation?":
+    - text: What do we know about the competitive situation?
+  - button "What else do we need to know?":
+    - text: What else do we need to know?
+  - button "What tradeoffs should I consider?":
+    - text: What tradeoffs should I consider?
+  - generic: Ask your analyst
+  - textbox "Ask your analyst":
+    - /placeholder: What do we need to know?
+  - button "Send question" [disabled]:
+  - paragraph: Questions are free. Research costs time.
+  - complementary:
+    - text: GO A LEVEL DEEPER
+    - heading "Research desk" [level=2]
+    - paragraph: You can’t investigate everything. Choose what could change your mind.
+    - button "1H Audit the taste evidence Review the findings and scope of the existing consumer tests. Review investigation":
+      - generic: 1H
+      - heading "Audit the taste evidence" [level=3]
+      - paragraph: Review the findings and scope of the existing consumer tests.
+      - text: Review investigation
+    - button "2H Review the wider business Review the available evidence across the product portfolio. Review investigation":
+      - generic: 2H
+      - heading "Review the wider business" [level=3]
+      - paragraph: Review the available evidence across the product portfolio.
+      - text: Review investigation
+    - button "REVIEWED Review the rollout choices Compare the evidence available for each rollout approach. Added to your evidence" [disabled]:
+      - generic: REVIEWED
+      - heading "Review the rollout choices" [level=3]
+      - paragraph: Compare the evidence available for each rollout approach.
+      - generic: Added to your evidence
+    - button "2H Define what success would mean Consider how to evaluate the commercial result of your decision. Review investigation":
+      - generic: 2H
+      - heading "Define what success would mean" [level=3]
+      - paragraph: Consider how to evaluate the commercial result of your decision.
+      - text: Review investigation
+    - paragraph: More information is useful only if it might change the decision.
+- generic: Ready to decide?
+- button "Make the call":
+  - text: Make the call

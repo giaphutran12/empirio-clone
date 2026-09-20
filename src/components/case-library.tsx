@@ -169,7 +169,7 @@ export function CaseLibrary({
           </div>
         </section>
         <div className="library-note">
-          <span>Six simulated hours. No real-time countdown.</span>
+          <span>The clock moves when you commission research.</span>
           <ArrowRight size={16} />
           <span>Take your time thinking.</span>
         </div>

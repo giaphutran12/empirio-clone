@@ -12,7 +12,7 @@ export const intel: CaseDefinition = {
   objective:
     "Choose where to commit scarce manufacturing and development resources.",
   briefing:
-    "It is mid-1985. Your company makes memory chips and processors. A semiconductor downturn is putting pressure on the next investment decision. You have 6 simulated research hours. The meeting, deadline, and operating event are fictionalized.",
+    "Mid-1985. Your company makes memory chips and processors. A semiconductor downturn is squeezing the business. You need to decide where the next investment goes.",
   question: "What should Company A do with its DRAM business?",
   evidence: [
     {
@@ -106,14 +106,14 @@ export const intel: CaseDefinition = {
           id: "allocation-gap",
           label: "Product economics unavailable",
           kind: "unknown",
-          text: "This dossier contains no verified line-by-line margin forecast, conversion budget, or customer-order backlog. Do not turn aggregate capital spending into a DRAM-specific loss estimate.",
+          text: "We don’t have margins by product, a conversion budget, or an order backlog. Total capital spending doesn’t tell us how much DRAM is losing.",
           sourceIds: [],
         },
         {
           id: "allocation-reading",
           label: "Capacity has an alternative use",
           kind: "interpretation",
-          text: "Resources committed to DRAM cannot simultaneously support another development program. Redeployment may also require training and equipment changes; this dossier does not price them.",
+          text: "Resources committed to DRAM cannot simultaneously support another development program. Redeployment may also require training and equipment changes; we don’t have those costs.",
           sourceIds: [],
         },
       ],
@@ -148,13 +148,13 @@ export const intel: CaseDefinition = {
     "What would each option require operationally?",
   ],
   event: {
-    title: "Simulation · engineering capacity tightens",
+    title: "Engineering capacity tightens",
     text: "At the halfway mark, operations says the next development cycle can support either a major DRAM process upgrade or a major processor ramp, but not both at full scope.",
     evidence: {
       id: "engineering-limit",
-      label: "Fictional staffing constraint",
+      label: "Staffing update",
       kind: "simulation",
-      text: "For this simulation, keeping both major programs requires reducing their scope or delaying one. Existing customer shipments can continue. This constraint is invented for the decision exercise, not a historical staffing report.",
+      text: "Keeping both programs means scaling them back or delaying one. Existing customer shipments can continue.",
       sourceIds: [],
     },
   },
@@ -195,7 +195,7 @@ export const intel: CaseDefinition = {
     history:
       "Intel phased out DRAM in 1985 and shifted resources toward other opportunities, including microprocessors. It continued in EPROM. Its 1986 annual report still described a difficult year with losses and restructuring: strategic redirection was not an instant recovery.",
     lesson:
-      "A founding product can be reconsidered without erasing every capability it helped build. Define the product boundary, compare future uses of scarce resources, and account for transition costs. History does not establish that exit was the only defensible decision from this limited dossier.",
+      "A founding product can be reconsidered without erasing every capability it helped build. Define the product boundary, compare future uses of scarce resources, and account for transition costs.",
     sources: [
       {
         id: "source-1",
@@ -220,12 +220,12 @@ export const intel: CaseDefinition = {
       },
     ],
     consequences: {
-      exit: "Historical direction: Intel left DRAM while retaining EPROM and developing other businesses. This does not guarantee that your specific timing or customer transition would produce the same results.",
+      exit: "Leaving DRAM frees resources for other products, but customers still need a transition plan. Intel left DRAM while keeping EPROM and developing other businesses.",
       reinvest:
-        "Hypothetical: an upgrade could improve competitiveness or consume resources without restoring attractive economics. The dossier cannot resolve that counterfactual.",
+        "An upgrade could improve competitiveness or consume resources without restoring attractive economics.",
       balance:
-        "Hypothetical: supporting both preserves opportunities but divides engineering attention. Under the fictional constraint, at least one program must be reduced or delayed; no financial outcome is established.",
-      hold: "Hypothetical: waiting could reveal whether market conditions improve, while delaying either a recovery investment or redeployment. The evidence does not determine the value of that delay.",
+        "Supporting both preserves opportunities but divides engineering attention. With the staffing shortage, at least one program must be reduced or delayed.",
+      hold: "Waiting could reveal whether market conditions improve, while delaying either a recovery investment or redeployment.",
     },
     rubric: [
       "Did you distinguish DRAM from other memory products?",

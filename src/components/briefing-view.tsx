@@ -22,13 +22,12 @@ export function BriefingView({
           <p>{gameCase.objective}</p>
           <div className="small-divider" />
           <span className="tiny-label">
-            <Clock3 size={15} /> Six simulated hours. Read at your own pace.
+            <Clock3 size={15} /> Six hours to make your call.
           </span>
         </aside>
       </div>
       <div className="section-heading">
         <h2>What you know.</h2>
-        <span className="tiny-label">Evidence, not the ending.</span>
       </div>
       <div className="evidence-grid">
         {gameCase.evidence.map((evidence, index) => (
@@ -43,10 +42,6 @@ export function BriefingView({
           <ArrowRight size={18} />
         </button>
       </div>
-      <p className="simulation-note">
-        Historical evidence. Reconstructed meeting. The deadline, research
-        costs, and board developments are simulation mechanics.
-      </p>
     </div>
   );
 }

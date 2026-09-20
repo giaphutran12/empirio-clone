@@ -109,9 +109,7 @@ export function DecisionDock({
   return (
     <div className="decision-dock">
       <span>
-        {remainingHours === 0
-          ? "Time to commit."
-          : "You don’t need certainty to act."}
+        {remainingHours === 0 ? "Time to commit." : "Ready to decide?"}
       </span>
       <button className="button dark" onClick={onDecide}>
         Make the call

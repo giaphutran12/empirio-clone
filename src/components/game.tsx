@@ -375,7 +375,7 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
             {eventNotice && gameCase.event && (
               <div className="event-notice" role="status">
                 <div>
-                  <span className="eyebrow">NEW DEVELOPMENT · SIMULATED</span>
+                  <span className="eyebrow">NEW DEVELOPMENT</span>
                   <h3>{gameCase.event.title}</h3>
                   <p>{gameCase.event.text}</p>
                 </div>

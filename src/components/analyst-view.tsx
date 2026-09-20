@@ -44,7 +44,7 @@ export function AnalystView({
           </span>
           <div>
             <h2>Your analyst</h2>
-            <span>Evidence first. No crystal ball.</span>
+            <span>What would you like to know?</span>
           </div>
           <span className="tiny-label">AI</span>
         </div>
@@ -76,10 +76,10 @@ export function AnalystView({
                 <>
                   <span className="answer-kind">
                     {message.reply.kind === "evidence"
-                      ? "Grounded in the case evidence"
+                      ? "Evidence"
                       : message.reply.kind === "unknown"
-                        ? "Evidence unavailable"
-                        : "Interpretation, not an established fact"}
+                        ? "Unknown"
+                        : "Assessment"}
                   </span>
                   {message.reply.evidenceIds.length > 0 && (
                     <details className="message-evidence">
@@ -174,7 +174,7 @@ export function AnalystView({
               </button>
             </form>
             <p className="chat-note">
-              Questions are free. New investigations use simulated time.
+              Questions are free. Research costs time.
             </p>
           </>
         )}

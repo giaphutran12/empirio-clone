@@ -11,8 +11,12 @@ export function EvidenceCard({
       <div className="evidence-top">
         <span className="eyebrow">
           {evidence.kind === "fact"
-            ? "DOCUMENTED FACT"
-            : evidence.kind.toUpperCase()}
+            ? "FACT"
+            : evidence.kind === "simulation"
+              ? "UPDATE"
+              : evidence.kind === "interpretation"
+                ? "ASSESSMENT"
+                : "UNKNOWN"}
         </span>
         {index !== undefined && (
           <span className="evidence-number">
