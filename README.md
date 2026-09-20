@@ -15,7 +15,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Open http://localhost:3000. `OPENAI_MODEL` optionally overrides the default `gpt-5-mini`. API use is separately billed by the provider. Never put a key in a `NEXT_PUBLIC_` variable or commit an environment file.
+Open http://localhost:3000. `OPENAI_MODEL` optionally overrides the default `gpt-5.6-luna`. API use is separately billed by the provider. Never put a key in a `NEXT_PUBLIC_` variable or commit an environment file.
 
 ```sh
 npm test

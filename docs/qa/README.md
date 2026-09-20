@@ -57,3 +57,9 @@ The production debrief completed with personalized feedback quoting the submitte
 ## Plain-language update, 2026-09-20
 
 Browser QA exercised a fresh first-case replay, revised briefing, analyst question, research confirmation and halfway event. Receipt: `plain-copy-browser.txt`. Removed repeated simulation disclaimers throughout all three cases and shortened analyst/debrief instructions. Existing saved conversations remain as originally generated. All 15 tests, typecheck and production build passed.
+
+## Luna and evidence display, 2026-09-20
+
+Verified gpt-5.6-luna is in the account model list and exercised live Responses API through local app routes: all three cases, missing cash data, identity request, unauthorized research request, and personalized debrief. Results in `luna-api-check.json`; these are sampled checks, not a guarantee of factual accuracy. Mobile browser QA at 390 × 844 opened the Evidence control and confirmed saved classification asides disappear. Screenshot: `luna-evidence-mobile.png`. 16 tests and typecheck pass.
+
+The same update simplifies the review page: short history, three brief feedback cards, and folded notes/details. Browser QA refreshed an original saved attempt without changing its decision and inspected it at 390 × 844. Receipts: `simple-review-browser.txt`, `simple-review-mobile.png`. Grade 3 is the writing target, not a certified readability score. Final tests and production build passed.

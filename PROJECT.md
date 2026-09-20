@@ -23,3 +23,9 @@ Add Supabase only when multiple users or cross-device persistence become a requi
 ## Copy direction, 2026-09-20
 
 Use plain, in-world language. Remove repeated fictional/simulation disclaimers and academic meta-commentary from briefings, research, and feedback. Keep sources available and evidence controls internal.
+
+## Analyst presentation and model, 2026-09-20
+
+Use GPT-5.6 Luna for analyst answers and debriefs, configurable through OPENAI_MODEL. Account model availability and live structured responses verified. Keep citations in a touch-friendly Evidence disclosure; remove citation-only parenthetical asides from new and saved answers without deleting substantive qualifications.
+
+Reviews should aim for grade 3 reading: short words, two brief sentences per note, and at most 25 words per feedback field. Put personal notes, trade-offs, and sources behind disclosures. Refresh old saved reviews once when opened; preserve the original decision and conversation.

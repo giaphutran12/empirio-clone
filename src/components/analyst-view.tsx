@@ -8,6 +8,7 @@ import {
   LoaderCircle,
   Search,
 } from "lucide-react";
+import { cleanAnalystCopy } from "@/lib/analyst-copy";
 import type { PlayableCase, Session } from "@/lib/types";
 
 type AnalystViewProps = {
@@ -71,7 +72,14 @@ export function AnalystView({
                     ? "ANALYST · LIMITED ANSWER"
                     : "ANALYST"}
               </span>
-              <p>{message.text}</p>
+              <p>
+                {message.role === "user"
+                  ? message.text
+                  : cleanAnalystCopy(message.text, [
+                      ...gameCase.evidence.map((item) => item.label),
+                      ...gameCase.research.map((item) => item.title),
+                    ])}
+              </p>
               {message.reply && (
                 <>
                   <span className="answer-kind">
@@ -84,7 +92,7 @@ export function AnalystView({
                   {message.reply.evidenceIds.length > 0 && (
                     <details className="message-evidence">
                       <summary>
-                        Supporting evidence
+                        Evidence · {message.reply.evidenceIds.length}
                         <ChevronDown size={14} />
                       </summary>
                       {message.reply.evidenceIds.map((id) => {

@@ -174,6 +174,8 @@ test("debrief requires a valid committed decision; written fallback quotes actua
   );
   const fallback = fallbackDebrief(newCoke, decision);
   assert.equal(fallback.personalized, false);
-  assert.ok(fallback.feedback.strength.includes(decision.reasoning));
+  assert.ok(
+    fallback.feedback.strength.includes("I favor a reversible test because"),
+  );
   assert.deepEqual(fallback.reveal, newCoke.reveal);
 });

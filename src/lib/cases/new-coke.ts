@@ -26,7 +26,7 @@ export const newCoke: CaseDefinition = {
       id: "taste-sample",
       label: "Nearly 200,000 consumers",
       kind: "fact",
-      text: "Prelaunch taste testing involved nearly 200,000 consumers and favored the proposed formula.",
+      text: "Taste tests with nearly 200,000 participants favored the proposed formula overall.",
       sourceIds: ["source-1"],
     },
     {
@@ -202,9 +202,9 @@ export const newCoke: CaseDefinition = {
     company: "The Coca-Cola Company",
     title: "The New Coke decision",
     history:
-      "On April 23, 1985, Coca-Cola changed its flagship formula. Consumer resistance followed. Its company history dates the original formula’s return to July 11, 79 days later, as Coca-Cola classic, sold alongside the new formula.",
+      "Coca-Cola changed its drink in April 1985. Many fans were upset. Just 79 days later, the old drink came back. Both were then sold.",
     lesson:
-      "Liking a new product and accepting the loss of an old one are different questions. Test both before betting the brand.",
+      "Liking a new drink does not mean wanting the old one gone. Test both questions.",
     sources: [
       {
         id: "source-1",
@@ -225,12 +225,12 @@ export const newCoke: CaseDefinition = {
     ],
     consequences: {
       replace:
-        "Replacing the formula puts the whole brand behind the new taste. It also leaves loyal customers without their usual drink. Coca-Cola took this route and later brought the original back.",
+        "You back the new taste with the whole brand. Fans of the old drink may leave.",
       alongside:
-        "Offering both might preserve existing customers’ choice, but could split demand and complicate production.",
+        "Fans can keep their old drink. But making and selling two drinks costs more work.",
       pilot:
-        "A limited trial could reveal purchase behavior and reactions to withdrawal before a broad commitment. Results might not generalize, and delay could carry a competitive cost.",
-      hold: "Waiting avoids an immediate formula transition but leaves the observed competitive problem unresolved.",
+        "A small test lets you watch real sales. But one town may not act like the whole country.",
+      hold: "You avoid a big change now. Your rival can still gain ground.",
     },
     rubric: [
       "Did you connect the competitive problem to your chosen action?",

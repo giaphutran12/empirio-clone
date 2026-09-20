@@ -78,6 +78,7 @@ export type Decision = {
   confidence: Confidence;
 };
 export type Debrief = {
+  copyVersion?: number;
   reveal: CaseDefinition["reveal"];
   feedback: { strength: string; missed: string; takeaway: string };
   personalized: boolean;

@@ -1,0 +1,38 @@
+- alert: The Call — Decisions worth making
+- banner:
+  - button "Back to case library":
+  - generic: ↗
+  - text: THE CALL
+  - generic: .
+  - strong: 3h
+- main:
+  - text: Your saved calls
+  - combobox "View saved attempt":
+    - option "Original call · 9/20/2026" [selected]
+    - option "Informed replay 1 · 9/20/2026"
+    - option "Informed replay 2 · 9/20/2026"
+  - text: THE REAL STORY
+  - heading "The Coca-Cola Company" [level=1]
+  - paragraph: The New Coke decision
+  - text: YOU CHOSE
+  - heading "Run a limited trial" [level=2]
+  - generic "Your notes"
+  - generic: medium confidence · First attempt
+  - text: WHAT HAPPENED
+  - paragraph: Coca-Cola changed its drink in April 1985. Many fans were upset. Just 79 days later, the old drink came back. Both were then sold.
+  - heading "Your call." [level=2]
+  - article:
+    - heading "Good call" [level=3]
+    - paragraph: You correctly noted that “taste preference does not establish repeat purchases.” You chose a test that checks real buying before wider change.
+  - article:
+    - heading "What you missed" [level=3]
+    - paragraph: You accepted slower action without weighing fifteen years of rival gains. The test may also delay a needed brand response.
+  - article:
+    - heading "Next time" [level=3]
+    - paragraph: Suggest setting clear sales checks before the test begins. Stop or expand based on repeat buying and customer response.
+  - generic "More about this choice"
+  - generic "Sources"
+  - button "Next case":
+    - text: Next case
+  - button "Play again":
+    - text: Play again

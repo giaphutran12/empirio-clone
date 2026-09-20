@@ -188,9 +188,9 @@ export const netflix: CaseDefinition = {
     company: "Blockbuster and Netflix",
     title: "The offer that did not become a deal",
     history:
-      "Marc Randolph recalls offering Netflix to Blockbuster for US$50 million in 2000. Blockbuster did not buy it. His later account describes disappointment and the decision to keep competing.",
+      "Netflix asked Blockbuster to buy it for US$50 million in 2000. Blockbuster said no. Netflix kept going on its own, cofounder Marc Randolph recalls.",
     lesson:
-      "Look past the asking price. What are you buying, how much more funding will it need, and can your company keep what makes it valuable?",
+      "The price is just the start. Ask what you would gain, what it would cost to run, and who needs to stay.",
     sources: [
       {
         id: "source-1",
@@ -205,12 +205,12 @@ export const netflix: CaseDefinition = {
       },
     ],
     consequences: {
-      buy: "Buying might add valuable capabilities, but integration, further funding, and staff retention could change the target’s trajectory.",
+      buy: "You get a new way to rent films. You may need more cash and the team that built it.",
       partner:
-        "A trial could produce evidence with less capital at risk. The seller could reject it, and cooperation might not deliver the learning or exclusivity desired.",
+        "A small deal lets you try working together. The seller may say no.",
       build:
-        "Internal development could fit existing systems or move too slowly. We still need a build cost and delivery schedule.",
-      hold: "Passing saves the purchase price and leaves you free to invest elsewhere. It also leaves a new competitor independent. Blockbuster passed on the offer.",
+        "You keep control. But building your own service may take more time and cash.",
+      hold: "You keep your cash. You also leave a new rival free to grow.",
     },
     rubric: [
       "Did you separate price from future funding needs?",

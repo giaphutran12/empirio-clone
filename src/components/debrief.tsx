@@ -26,56 +26,54 @@ export function DebriefView({
   return (
     <div className="debrief-view">
       <div className="reveal-heading">
-        <span className="eyebrow">THE HISTORY BEHIND YOUR CALL</span>
+        <span className="eyebrow">THE REAL STORY</span>
         <h1>{reveal.company}</h1>
         <p>{reveal.title}</p>
       </div>
       <section className="your-call">
         <span className="eyebrow">YOU CHOSE</span>
         <h2>{choice?.title}</h2>
-        <blockquote>“{session.decision.reasoning}”</blockquote>
+        <details className="review-details">
+          <summary>Your notes</summary>
+          <blockquote>“{session.decision.reasoning}”</blockquote>
+        </details>
         <span className="tiny-label">
           {session.decision.confidence} confidence ·{" "}
           {session.informedReplay ? "Informed replay" : "First attempt"}
         </span>
       </section>
       <section className="history-section">
-        <span className="eyebrow">WHAT ACTUALLY HAPPENED</span>
+        <span className="eyebrow">WHAT HAPPENED</span>
         <p>{reveal.history}</p>
       </section>
-      <section className="consequence">
-        <span className="eyebrow">YOUR TRADE-OFF</span>
-        <p>{reveal.consequences[session.decision.optionId]}</p>
-      </section>
       <div className="section-heading">
-        <h2>Your decision, examined.</h2>
-        <span className="tiny-label">
-          {personalized
-            ? "Feedback on your reasoning"
-            : "Live feedback unavailable"}
-        </span>
+        <h2>Your call.</h2>
+        {!personalized && (
+          <span className="tiny-label">Live feedback unavailable</span>
+        )}
       </div>
       <div className="feedback-grid">
         <article>
           <CheckCircle2 size={22} />
-          <h3>A strong move</h3>
+          <h3>Good call</h3>
           <p>{feedback.strength}</p>
         </article>
         <article>
           <ScanEye size={22} />
-          <h3>Look again</h3>
+          <h3>What you missed</h3>
           <p>{feedback.missed}</p>
         </article>
         <article>
           <Lightbulb size={22} />
-          <h3>Take it with you</h3>
+          <h3>Next time</h3>
           <p>{feedback.takeaway}</p>
         </article>
       </div>
-      <div className="lesson">
-        <span className="eyebrow">THE PRINCIPLE</span>
+      <details className="review-details">
+        <summary>More about this choice</summary>
+        <p>{reveal.consequences[session.decision.optionId]}</p>
         <p>{reveal.lesson}</p>
-      </div>
+      </details>
       <details className="source-list">
         <summary>Sources</summary>
         {reveal.sources.map((source) => (
@@ -87,12 +85,12 @@ export function DebriefView({
       </details>
       <div className="debrief-actions">
         <button className="button dark" onClick={onExit}>
-          Explore another case
+          Next case
           <ArrowRight size={18} />
         </button>
         <button className="button outline" onClick={onReplay}>
           <RotateCcw size={16} />
-          Replay this case
+          Play again
         </button>
       </div>
     </div>

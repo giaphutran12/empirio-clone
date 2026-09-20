@@ -113,6 +113,29 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
     );
   }
 
+  async function refreshSavedReview(attempt: Session) {
+    if (
+      !attempt.decision ||
+      !attempt.debrief ||
+      attempt.debrief.copyVersion === 2
+    )
+      return attempt;
+    try {
+      const debrief = await request<Debrief>("/api/debrief", {
+        ...context(attempt),
+        decision: attempt.decision,
+      });
+      const updated = { ...attempt, debrief };
+      setSessions((previous) =>
+        previous.map((item) => (item.id === attempt.id ? updated : item)),
+      );
+      return updated;
+    } catch {
+      // Keep the original review available if the refresh fails.
+      return attempt;
+    }
+  }
+
   async function openCase(summary: CaseSummary, replay = false) {
     if (busy || !loaded) return;
     setBusy("opening");
@@ -152,6 +175,7 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
       };
     try {
       const nextCase = await request<PlayableCase>(caseUrl(attempt));
+      await refreshSavedReview(attempt);
       if (!existing && !completed)
         setSessions((previous) => [...previous, attempt]);
       setActiveId(attempt.id);
@@ -174,6 +198,7 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
     setError("");
     try {
       setGameCase(await request<PlayableCase>(caseUrl(attempt)));
+      await refreshSavedReview(attempt);
       setActiveId(id);
       window.scrollTo(0, 0);
     } catch (cause) {

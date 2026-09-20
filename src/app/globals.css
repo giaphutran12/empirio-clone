@@ -2082,3 +2082,46 @@ svg {
 .research-confirm::backdrop {
   background: transparent;
 }
+
+/* Preserve short option-by-option replies without a wall of text. */
+.analyst-message > p {
+  white-space: pre-line;
+}
+.message-evidence summary {
+  width: fit-content;
+  min-height: 44px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #edf1e3;
+}
+.message-evidence summary:hover,
+.message-evidence summary:focus-visible {
+  background: #e1e8d1;
+}
+
+.review-details {
+  border-top: 1px solid var(--line);
+  padding: 12px 0;
+}
+.review-details summary {
+  cursor: pointer;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+.review-details p {
+  margin: 12px 0;
+  line-height: 1.6;
+}
+.debrief-view .feedback-grid article {
+  padding: 20px;
+}
+.debrief-view .feedback-grid p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.debrief-view .history-section p {
+  font-size: 18px;
+  line-height: 1.5;
+}

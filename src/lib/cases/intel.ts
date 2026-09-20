@@ -193,9 +193,9 @@ export const intel: CaseDefinition = {
     company: "Intel",
     title: "Leaving DRAM, not all memory",
     history:
-      "Intel phased out DRAM in 1985 and shifted resources toward other opportunities, including microprocessors. It continued in EPROM. Its 1986 annual report still described a difficult year with losses and restructuring: strategic redirection was not an instant recovery.",
+      "Intel left the DRAM memory chip business in 1985. It put more work into other chips. It kept making another kind of memory, called EPROM. The change took time.",
     lesson:
-      "A founding product can be reconsidered without erasing every capability it helped build. Define the product boundary, compare future uses of scarce resources, and account for transition costs.",
+      "Money already spent is gone. Ask where your next dollar and hour can do the most good.",
     sources: [
       {
         id: "source-1",
@@ -220,12 +220,12 @@ export const intel: CaseDefinition = {
       },
     ],
     consequences: {
-      exit: "Leaving DRAM frees resources for other products, but customers still need a transition plan. Intel left DRAM while keeping EPROM and developing other businesses.",
+      exit: "You free up people and cash for other chips. You still need to help buyers switch.",
       reinvest:
-        "An upgrade could improve competitiveness or consume resources without restoring attractive economics.",
+        "Better chips might win buyers back. They might also use cash you need elsewhere.",
       balance:
-        "Supporting both preserves opportunities but divides engineering attention. With the staffing shortage, at least one program must be reduced or delayed.",
-      hold: "Waiting could reveal whether market conditions improve, while delaying either a recovery investment or redeployment.",
+        "You keep both paths open. But your team must slow down or do less on each.",
+      hold: "You wait for the market to change. You also put off work that could help.",
     },
     rubric: [
       "Did you distinguish DRAM from other memory products?",
