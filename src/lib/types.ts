@@ -38,6 +38,7 @@ export type CaseDefinition = {
   options: DecisionOption[];
   reveal: {
     company: string;
+    identityAliases?: string[];
     title: string;
     history: string;
     lesson: string;

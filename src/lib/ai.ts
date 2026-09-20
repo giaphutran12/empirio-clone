@@ -78,6 +78,10 @@ export function containsIdentity(
     .replace(/[^a-z0-9]/g, "");
   return (
     (company.length > 3 && canonical.includes(company)) ||
+    (definition.reveal.identityAliases ?? []).some((alias) => {
+      const escaped = alias.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      return new RegExp(`(?:^|\\W)${escaped}(?=$|\\W)`, "i").test(text);
+    }) ||
     /\b(coca[\s-]?cola|coke|pepsi|goizueta|roberto|keough|netflix|blockbuster|kodak|intel|grove|moore)\b/i.test(
       text,
     )

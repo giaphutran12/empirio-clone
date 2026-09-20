@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { newCoke } from "../src/lib/cases/new-coke";
 import {
   asksForSpoilers,
+  containsIdentity,
   buildAnalystContext,
   validateAnalystReply,
   fallbackDebrief,
@@ -178,4 +179,41 @@ test("debrief requires a valid committed decision; written fallback quotes actua
     fallback.feedback.strength.includes("I favor a reversible test because"),
   );
   assert.deepEqual(fallback.reveal, newCoke.reveal);
+});
+
+test("case-specific identity aliases block standalone company and product guesses", () => {
+  const definition = {
+    ...newCoke,
+    reveal: { ...newCoke.reveal, identityAliases: ["Acme Tools", "Widget+"] },
+  };
+  const base = {
+    answer: "This is Acme Tools.",
+    evidenceIds: [newCoke.evidence[0].id],
+    researchIds: [],
+    kind: "interpretation",
+  };
+  assert.equal(validateAnalystReply(base, definition, []), null);
+  assert.equal(
+    JSON.stringify(buildAnalystContext(definition, [])).includes("Acme Tools"),
+    false,
+  );
+});
+
+test("case aliases stay out of analyst context at every research stage", async () => {
+  const { cases } = await import("../src/lib/catalog");
+  for (const definition of cases) {
+    for (const researchIds of [
+      [],
+      ...definition.research.map((task) => [task.id]),
+    ]) {
+      const context = JSON.stringify(
+        buildAnalystContext(definition, researchIds),
+      ).toLowerCase();
+      assert.equal(
+        containsIdentity(context, definition),
+        false,
+        `${definition.id} exposes an identity`,
+      );
+    }
+  }
 });

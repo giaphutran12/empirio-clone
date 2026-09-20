@@ -2125,3 +2125,61 @@ svg {
   font-size: 18px;
   line-height: 1.5;
 }
+
+.library-tools {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.case-filters {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.case-filters button {
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  font-size: 14px;
+}
+.case-filters button[aria-pressed="true"] {
+  color: #faf9f3;
+  background: #19362e;
+  border-color: #19362e;
+}
+.case-search {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  min-width: 260px;
+}
+.case-search input {
+  min-height: 44px;
+  border: 1px solid var(--line);
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #fffdf7;
+  width: 100%;
+}
+.case-count,
+.empty-cases {
+  font-size: 14px;
+  margin: 12px 0 20px;
+  color: #56665b;
+}
+@media (max-width: 600px) {
+  .library-tools {
+    display: grid;
+    gap: 16px;
+  }
+  .case-search {
+    min-width: 0;
+  }
+  .case-filters button {
+    padding: 10px 13px;
+  }
+}

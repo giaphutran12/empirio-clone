@@ -134,3 +134,32 @@ for (const definition of cases) {
     check([], 0);
   });
 }
+
+test("case catalog has unique stable IDs and complete research packs", () => {
+  assert.equal(new Set(cases.map((item) => item.id)).size, cases.length);
+  assert.equal(new Set(cases.map((item) => item.number)).size, cases.length);
+  for (const definition of cases) {
+    assert.ok(
+      definition.evidence.length >= 4 && definition.evidence.length <= 6,
+      definition.id,
+    );
+    assert.ok(definition.research.length >= 3, definition.id);
+    assert.ok(
+      definition.options.length >= 3 && definition.options.length <= 4,
+      definition.id,
+    );
+    assert.ok(definition.reveal.sources.length > 0, definition.id);
+    for (const evidence of [
+      ...definition.evidence,
+      ...definition.research.flatMap((task) => task.evidence),
+    ]) {
+      if (evidence.kind === "fact")
+        assert.ok(
+          evidence.sourceIds.length > 0,
+          `${definition.id}: ${evidence.id} needs a source`,
+        );
+    }
+    for (const source of definition.reveal.sources)
+      assert.equal(new URL(source.url).protocol, "https:");
+  }
+});

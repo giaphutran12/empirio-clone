@@ -1,5 +1,6 @@
 import { ArrowUpRight, ArrowRight, Clock3, Check, Layers3 } from "lucide-react";
 import type { CaseSummary, Session } from "@/lib/types";
+import { useState } from "react";
 
 export function Brand() {
   return (
@@ -19,12 +20,36 @@ export function CaseLibrary({
   sessions: Session[];
   onOpen: (item: CaseSummary) => void;
 }) {
-  const completed = new Set(
+  const [filter, setFilter] = useState("new");
+  const [search, setSearch] = useState("");
+  const completedIds = new Set(
     sessions
       .filter((session) => session.debrief)
       .map((session) => session.caseId),
-  ).size;
-  const featured = cases[0];
+  );
+  const completed = completedIds.size;
+  const activeIds = new Set(
+    sessions.filter((item) => !item.debrief).map((item) => item.caseId),
+  );
+  const featured =
+    cases.find(
+      (item) => activeIds.has(item.id) && !completedIds.has(item.id),
+    ) ??
+    cases.find((item) => !completedIds.has(item.id)) ??
+    cases[0];
+  const visibleCases = cases.filter((item) => {
+    const matchesStatus =
+      filter === "all" ||
+      (filter === "new" && !completedIds.has(item.id)) ||
+      (filter === "started" && activeIds.has(item.id)) ||
+      (filter === "done" && completedIds.has(item.id));
+    return (
+      matchesStatus &&
+      `${item.title} ${item.subtitle} ${item.category} ${item.year}`
+        .toLowerCase()
+        .includes(search.toLowerCase().trim())
+    );
+  });
   return (
     <div className="library">
       <header className="site-header">
@@ -52,7 +77,7 @@ export function CaseLibrary({
         <section className="featured" aria-label="Featured case">
           <div className="featured-copy">
             <div className="feature-meta">
-              <span className="pill">YOUR FIRST CALL</span>
+              <span className="pill">YOUR NEXT CALL</span>
               <span>
                 CASE {featured.number} / {featured.year}
               </span>
@@ -95,14 +120,48 @@ export function CaseLibrary({
           <div className="section-heading">
             <div>
               <span className="eyebrow">THE CASE FILES</span>
-              <h2>History has a few questions.</h2>
+              <h2>Pick your next case.</h2>
             </div>
             <span className="progress-label">
               {completed} / {cases.length} explored
             </span>
           </div>
+          <div className="library-tools">
+            <div
+              className="case-filters"
+              role="group"
+              aria-label="Filter cases"
+            >
+              {[
+                ["new", "New to you"],
+                ["started", "Started"],
+                ["done", "Done"],
+                ["all", "All"],
+              ].map(([value, label]) => (
+                <button
+                  key={value}
+                  aria-pressed={filter === value}
+                  onClick={() => setFilter(value)}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+            <label className="case-search">
+              <span>Find a case</span>
+              <input
+                type="search"
+                value={search}
+                onChange={(event) => setSearch(event.target.value)}
+                placeholder="Try pricing, growth, or a year"
+              />
+            </label>
+          </div>
+          <p className="case-count" role="status">
+            {visibleCases.length} cases
+          </p>
           <div className="case-grid">
-            {cases.map((item) => {
+            {visibleCases.map((item) => {
               const done = sessions.some(
                 (session) => session.caseId === item.id && session.debrief,
               );
@@ -142,6 +201,11 @@ export function CaseLibrary({
               );
             })}
           </div>
+          {visibleCases.length === 0 && (
+            <p className="empty-cases">
+              No cases here. Try another filter or search.
+            </p>
+          )}
         </section>
         <section className="how-it-works">
           <div className="how-label">
