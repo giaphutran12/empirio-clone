@@ -21,3 +21,13 @@ All 30 teaching packs include source audits in docs/teaching-sources-{01,11,21}.
 ## Limits
 
 Phone-size browser verification is not a physical-phone or cellular-network test. Enjoyment and learning gains still need player feedback. The optional language-model coach is constrained by its supplied pack but cannot be proven immune to hallucination. Choice scoring and the core lesson do not depend on model output.
+
+## Production verification
+
+Commit 3e764a6 deployed Ready as dpl_FjQkQvPMzgHrdxRANAKYukvHGTpi, verified through https://empirio-clone.vercel.app/.
+
+- The existing Apple attempt refreshes to the authored 80/100, with its original choice and optional note retained.
+- The production coach answers the score question using the fixed mark and tradeoff.
+- Next case opens Microsoft directly. Blank-note submission completes there too.
+- Signed-out app and coach endpoint return 302 to Vercel authentication.
+- Production receipts: production-result.txt, production-mobile.png, production-tap-only.txt.
