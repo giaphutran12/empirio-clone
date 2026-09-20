@@ -232,7 +232,7 @@ export const lessons11: Record<string, CaseLesson> = {
         verdict: "Strong move",
         why: "Losses and a wide cost base call for focus. Seeking park buyers can free resources for the toy business.",
         tradeoff:
-          "A sale gives up future income. Compare bids with the cost of keeping the parks before agreeing.",
+          "A sale may give up future income. Compare bids with the cost of keeping the parks before agreeing.",
       },
       toys: {
         score: 80,
@@ -359,7 +359,7 @@ export const lessons11: Record<string, CaseLesson> = {
       hold: {
         score: 65,
         verdict: "Reasonable move",
-        why: "Normal training avoids a large disruption when current skill gaps have not yet been measured.",
+        why: "Normal training avoids a large disruption while you check which stores need more help.",
         tradeoff:
           "Fast growth may have left uneven skills. Review the current program rather than simply waiting.",
       },
@@ -556,7 +556,7 @@ export const lessons11: Record<string, CaseLesson> = {
       family: {
         score: 85,
         verdict: "Strong move",
-        why: "Shared games fit the easy remote and the firm's aim to welcome people who do not usually play.",
+        why: "Shared games fit the new remote and the firm's aim to welcome people who do not usually play.",
         tradeoff:
           "Skilled fans may want more depth. Show a path from an easy first turn to games worth returning to.",
       },
@@ -671,7 +671,7 @@ export const lessons11: Record<string, CaseLesson> = {
       top: {
         score: 80,
         verdict: "Strong move",
-        why: "Keeping the entry fee protects access. A higher reward cap can support the higher top-tier price for frequent buyers.",
+        why: "Keeping the entry fee protects access. The higher top-tier price comes with a higher reward cap.",
         tradeoff:
           "Top members who gain little from the cap may downgrade. Check income as well as member count.",
       },
@@ -769,7 +769,7 @@ export const lessons11: Record<string, CaseLesson> = {
       expand: {
         score: 85,
         verdict: "Strong move",
-        why: "Existing kits give a starting point for lower shipping bulk. Proven fittings limit the risk of asking buyers to assemble more.",
+        why: "Existing kits give a starting point for smaller boxes. A wider range still needs home tests.",
         tradeoff:
           "More home assembly shifts work to buyers. Check the guide, missing parts and help costs as the range grows.",
       },
@@ -861,11 +861,11 @@ export const lessons11: Record<string, CaseLesson> = {
     },
     eventChange: {
       optionId: "expand",
-      title: "Expand with the older, tested fitting",
+      title: "Expand with the older fitting",
       description:
-        "Use the proven fitting for the next table. Keep the smaller new fitting out until it passes a home test.",
+        "Keep the older fitting for the next table while the smaller new fitting awaits a home test.",
       tradeoff:
-        "You give up the new fitting's space saving to keep a tested way to build the table.",
+        "You give up the new fitting's space saving while avoiding an untested change.",
       why: "The smaller fitting has not passed a home test. The older fitting lets expansion continue without that new unknown.",
       score: 80,
     },
@@ -901,7 +901,7 @@ export const lessons11: Record<string, CaseLesson> = {
         verdict: "Risky move",
         why: "Waiting avoids a large wage promise, but you already know people leave and struggle with the line's pace.",
         tradeoff:
-          "More data has a cost when the same work problems continue. Address immediate gaps while learning.",
+          "More data has a cost while the same work problems continue. Make small improvements while learning.",
       },
     },
     history: {
@@ -994,7 +994,7 @@ export const lessons11: Record<string, CaseLesson> = {
         verdict: "Strong move",
         why: "A shared US plant offers local production while export limits remain. Sharing ownership also shares the new plant's burden.",
         tradeoff:
-          "The partner learns your methods. Set clear training, use and exit terms before spending.",
+          "The partner could learn your methods. Set clear training, use and exit terms before spending.",
       },
       own: {
         score: 75,
