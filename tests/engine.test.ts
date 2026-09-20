@@ -59,7 +59,7 @@ test("unknown tasks, duplicate tasks, overbudget ledgers and versions are reject
       costlyTasks.research.slice(0, 2).map((task) => task.id),
     ),
   );
-  assert.throws(() => getCase(newCoke.id, newCoke.version + 1));
+  assert.throws(() => getCase(newCoke.id, 999));
   assert.throws(() => getCase("missing"));
 });
 
@@ -68,11 +68,11 @@ import { cases } from "../src/lib/catalog";
 for (const definition of cases) {
   test(`${definition.id}: authored content has a meaningful budget, valid sources, and complete consequences`, () => {
     assert.ok(
-      definition.research.reduce((total, task) => total + task.hours, 0) > 6,
+      definition.research.reduce((total, task) => total + task.hours, 0) >= 3,
     );
     for (const task of definition.research)
       assert.ok(
-        Number.isInteger(task.hours) && task.hours >= 1 && task.hours <= 3,
+        Number.isInteger(task.hours) && task.hours >= 0 && task.hours <= 3,
       );
     const sources = new Set(
       definition.reveal.sources.map((source) => source.id),
@@ -97,10 +97,21 @@ for (const definition of cases) {
     const initial = toPlayableCase(definition);
     const serialized = JSON.stringify(initial);
     assert.equal("reveal" in initial, false);
+    assert.equal("teaching" in initial, false);
+    assert.equal(
+      serialized.includes(definition.teaching!.history.result),
+      false,
+    );
+    assert.equal(
+      serialized.includes(definition.teaching!.check.question),
+      false,
+    );
     assert.equal(initial.event, null);
     assert.equal(initial.company, definition.reveal.company);
     assert.equal(serialized.includes(definition.reveal.history), false);
-    for (const evidence of definition.research.flatMap((task) => task.evidence))
+    for (const evidence of definition.research
+      .filter((task) => task.hours > 0)
+      .flatMap((task) => task.evidence))
       assert.equal(serialized.includes(evidence.text), false);
   });
   test(`${definition.id}: all ordered research paths enforce budget and exactly one halfway event`, () => {
@@ -121,7 +132,7 @@ for (const definition of cases) {
         for (const evidence of task.evidence)
           assert.equal(
             state.evidence.some((item) => item.id === evidence.id),
-            ids.includes(task.id),
+            task.hours === 0 || ids.includes(task.id),
           );
         if (!ids.includes(task.id))
           check([...ids, task.id], hours + task.hours);

@@ -23,7 +23,7 @@ import {
   DecisionDock,
   type CaseTab,
 } from "./case-navigation";
-type Busy = "opening" | "research" | "analyst" | "debrief" | null;
+type Busy = "opening" | "research" | "analyst" | "debrief" | "coach" | null;
 
 async function request<T>(url: string, body?: unknown): Promise<T> {
   const response = await fetch(url, {
@@ -117,7 +117,7 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
     if (
       !attempt.decision ||
       !attempt.debrief ||
-      (attempt.debrief.copyVersion === 3 && attempt.debrief.score)
+      (attempt.debrief.copyVersion === 4 && attempt.debrief.lesson)
     )
       return attempt;
     try {
@@ -144,22 +144,12 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
       !replay &&
       [...sessions]
         .reverse()
-        .find(
-          (item) =>
-            item.caseId === summary.id &&
-            item.version === summary.version &&
-            !item.debrief,
-        );
+        .find((item) => item.caseId === summary.id && !item.debrief);
     const completed =
       !replay &&
       [...sessions]
         .reverse()
-        .find(
-          (item) =>
-            item.caseId === summary.id &&
-            item.version === summary.version &&
-            item.debrief,
-        );
+        .find((item) => item.caseId === summary.id && item.debrief);
     const attempt: Session = existing ||
       completed || {
         id: crypto.randomUUID(),
@@ -226,7 +216,12 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
           {
             id: crypto.randomUUID(),
             role: "assistant",
-            text: `Research complete: ${gameCase.research.find((task) => task.id === researchId)?.title}. ${newlyAvailable.map((evidence) => evidence.text).join(" ")}`,
+            text: `What we found: ${newlyAvailable
+              .filter((evidence) => evidence.id !== updated.event?.evidence.id)
+              .map((evidence) => evidence.text)
+              .join(
+                " ",
+              )}\n\nWhy it matters: ${updated.research.find((task) => task.id === researchId)?.helpsWith ?? "Use this to compare your choices."}`,
             reply: {
               answer: "",
               evidenceIds: newlyAvailable.map((evidence) => evidence.id),
@@ -284,7 +279,7 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
   async function submitDecision() {
     if (!session || busy) return;
     const decision = session.decision || session.decisionDraft;
-    if (!decision?.optionId || !decision.reasoning.trim()) return;
+    if (!decision?.optionId) return;
     setBusy("debrief");
     setError("");
     updateSession({ decision });
@@ -295,6 +290,45 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
       });
       updateSession({ debrief });
       window.scrollTo(0, 0);
+    } catch (cause) {
+      setError(errorMessage(cause));
+    } finally {
+      setBusy(null);
+    }
+  }
+
+  async function askCoach(question = session?.coachDraft || "") {
+    if (!session?.decision || !online || busy || !question.trim()) return;
+    setBusy("coach");
+    setError("");
+    updateSession({ coachDraft: question });
+    const messages = [
+      ...(session.coachMessages ?? []),
+      { role: "user" as const, text: question.trim() },
+    ];
+    try {
+      const reply = await request<{ answer: string; fallback?: boolean }>(
+        "/api/coach",
+        {
+          caseId: session.caseId,
+          version: session.version,
+          researchIds: session.researchIds,
+          decision: session.decision,
+          messages: messages.slice(-8),
+        },
+      );
+      if (reply.fallback) {
+        setError(
+          "Live coaching is unavailable. Your lesson and score are still here. Try again shortly.",
+        );
+      } else
+        updateSession({
+          coachDraft: "",
+          coachMessages: [
+            ...messages,
+            { role: "assistant", text: reply.answer },
+          ],
+        });
     } catch (cause) {
       setError(errorMessage(cause));
     } finally {
@@ -351,6 +385,21 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
   const savedAttempts = sessions.filter(
     (item) => item.caseId === session.caseId && item.debrief,
   );
+  const completedIds = new Set(
+    sessions.filter((item) => item.debrief).map((item) => item.caseId),
+  );
+  const currentIndex = cases.findIndex((item) => item.id === session.caseId);
+  const orderedNext = [
+    ...cases.slice(currentIndex + 1),
+    ...cases.slice(0, currentIndex),
+  ];
+  const nextCase =
+    orderedNext.find(
+      (item) =>
+        !completedIds.has(item.id) && item.category === gameCase.category,
+    ) ??
+    orderedNext.find((item) => !completedIds.has(item.id)) ??
+    orderedNext[0];
   const task = gameCase.research.find((item) => item.id === researchId);
   return (
     <div className="game-shell">
@@ -380,6 +429,18 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
             session={session}
             gameCase={gameCase}
             onExit={leaveCase}
+            online={online}
+            nextCase={nextCase}
+            onNext={() =>
+              nextCase
+                ? openCase(nextCase, completedIds.has(nextCase.id))
+                : leaveCase()
+            }
+            onPractice={(practiceAnswerId) =>
+              updateSession({ practiceAnswerId })
+            }
+            onCoach={askCoach}
+            onCoachDraft={(coachDraft) => updateSession({ coachDraft })}
             onRetry={() => submitDecision()}
             busy={!!busy}
             onReplay={() =>
@@ -392,6 +453,23 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
         </main>
       ) : (
         <>
+          {session.version < 2 && (
+            <div className="global-notice">
+              Your saved research time is kept.{" "}
+              <button
+                className="text-button"
+                disabled={!!busy}
+                onClick={() =>
+                  openCase(
+                    cases.find((item) => item.id === session.caseId)!,
+                    true,
+                  )
+                }
+              >
+                Start the updated case
+              </button>
+            </div>
+          )}
           <CaseNavigation
             gameCase={gameCase}
             informedReplay={session.informedReplay}

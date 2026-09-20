@@ -56,13 +56,20 @@ export function ResearchConfirmation({
         <span className="eyebrow">COMMISSION RESEARCH</span>
         <h2 id="research-title">{task.title}</h2>
         <p id="research-description">{task.description}</p>
+        {task.helpsWith && (
+          <p>
+            <strong>Helps you decide:</strong> {task.helpsWith}
+          </p>
+        )}
         <div className="cost-preview">
           <Clock3 size={19} />
-          <strong>{task.hours} hours</strong>
+          <strong>
+            {task.hours} {task.hours === 1 ? "hour" : "hours"}
+          </strong>
           <span>{remainingHours - task.hours}h will remain</span>
         </div>
         <p className="tiny-label">
-          Results arrive immediately. Your remaining time will decrease.
+          Results arrive now. Research uses the hours shown.
         </p>
         <button className="button dark" disabled={busy} onClick={onConfirm}>
           {reviewing ? "Reviewing…" : "Commission investigation"}

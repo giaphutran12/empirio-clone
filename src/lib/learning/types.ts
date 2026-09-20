@@ -8,9 +8,25 @@ export type CaseLesson = {
   skill: string;
   takeaway: string;
   choices: Record<string, ChoiceLesson>;
-  history: { decision: string; result: string; connection: string; sources: { title: string; url: string }[] };
-  check: { question: string; options: { id: string; text: string; explanation: string }[]; answerId: string };
+  history: {
+    decision: string;
+    result: string;
+    connection: string;
+    sources: { title: string; url: string }[];
+  };
+  check: {
+    question: string;
+    options: { id: string; text: string; explanation: string }[];
+    answerId: string;
+  };
   terms: { term: string; meaning: string }[];
   researchNotes: Record<string, string>;
-  eventChange: { optionId: string; title: string; description: string; tradeoff: string; why: string; score: number };
+  eventChange: {
+    optionId: string;
+    title: string;
+    description: string;
+    tradeoff: string;
+    why: string;
+    score: number;
+  };
 };

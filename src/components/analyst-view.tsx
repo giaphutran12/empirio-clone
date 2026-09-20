@@ -34,7 +34,12 @@ export function AnalystView({
 }: AnalystViewProps) {
   const chatEnd = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    chatEnd.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+    chatEnd.current?.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
+      block: "end",
+    });
   }, [session.messages.length]);
   return (
     <div className="analyst-view">
@@ -53,9 +58,8 @@ export function AnalystView({
           <div className="analyst-message intro-message">
             <span className="message-label">ANALYST</span>
             <p>
-              I’ve put the briefing together. What would you like to look into?
-              I can clarify what we have, or propose a deeper investigation.
-              I’ll tell you when the evidence runs out.
+              Ask me to explain a fact or compare the tradeoffs. New research
+              costs time; questions are free.
             </p>
           </div>
           {session.messages.map((message) => (
@@ -202,8 +206,16 @@ export function AnalystView({
         <span className="eyebrow">GO A LEVEL DEEPER</span>
         <h2>Research desk</h2>
         <p className="research-intro">
-          You can’t investigate everything. Choose what could change your mind.
+          Research takes time. Choose what could change your mind.
         </p>
+        {gameCase.knownLimits.length > 0 && (
+          <details className="review-details known-gaps">
+            <summary>Known gaps & free checks</summary>
+            {gameCase.knownLimits.map((item) => (
+              <p key={item.id}>{item.text}</p>
+            ))}
+          </details>
+        )}
         {gameCase.research.map((research) => {
           const done = session.researchIds.includes(research.id);
           return (
@@ -229,6 +241,11 @@ export function AnalystView({
               </div>
               <h3>{research.title}</h3>
               <p>{research.description}</p>
+              {research.helpsWith && (
+                <p className="research-value">
+                  <strong>Helps you decide:</strong> {research.helpsWith}
+                </p>
+              )}
               <span className="research-action">
                 {done
                   ? "Added to your evidence"

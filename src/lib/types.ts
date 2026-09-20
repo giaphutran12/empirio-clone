@@ -1,3 +1,4 @@
+import type { CaseLesson } from "./learning/types";
 export type Evidence = {
   id: string;
   label: string;
@@ -11,6 +12,7 @@ export type Research = {
   description: string;
   hours: number;
   evidence: Evidence[];
+  helpsWith?: string;
 };
 export type DecisionOption = {
   id: string;
@@ -20,6 +22,7 @@ export type DecisionOption = {
 };
 export type Source = { id: string; title: string; url: string };
 export type CaseDefinition = {
+  teaching?: CaseLesson;
   id: string;
   version: number;
   number: string;
@@ -50,13 +53,15 @@ export type CaseDefinition = {
 export type CaseSummary = Pick<
   CaseDefinition,
   "id" | "version" | "number" | "title" | "subtitle" | "category" | "year"
-> & { company: string };
+> & { company: string; skill: string };
 export type PlayableCase = Omit<
   CaseDefinition,
-  "research" | "reveal" | "event"
+  "research" | "reveal" | "event" | "teaching"
 > & {
   research: Omit<Research, "evidence">[];
   company: string;
+  learning: { skill: string; terms: { term: string; meaning: string }[] };
+  knownLimits: Evidence[];
   remainingHours: number;
   event: CaseDefinition["event"] | null;
 };
@@ -90,6 +95,7 @@ export type Debrief = {
     example: string;
     optionId: string;
   };
+  lesson?: CaseLesson;
   personalized: boolean;
 };
 export type Session = {
@@ -104,4 +110,7 @@ export type Session = {
   decision?: Decision;
   debrief?: Debrief;
   informedReplay: boolean;
+  practiceAnswerId?: string;
+  coachMessages?: { role: "user" | "assistant"; text: string }[];
+  coachDraft?: string;
 };

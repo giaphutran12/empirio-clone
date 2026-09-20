@@ -1,7 +1,6 @@
-import { ArrowRight, Clock3 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import type { PlayableCase } from "@/lib/types";
 import { EvidenceCard } from "./evidence-card";
-
 export function BriefingView({
   gameCase,
   onTalkToAnalyst,
@@ -9,38 +8,57 @@ export function BriefingView({
   gameCase: PlayableCase;
   onTalkToAnalyst: () => void;
 }) {
+  const freeIds = new Set(gameCase.knownLimits.map((item) => item.id));
   return (
-    <div className="briefing-view">
+    <div className="briefing-view compact-briefing">
       <div className="briefing-lead">
         <div>
           <span className="eyebrow">
             {gameCase.company} · {gameCase.year}
           </span>
-          <h2>{gameCase.role}</h2>
+          <h2>{gameCase.question}</h2>
           <p>{gameCase.briefing}</p>
         </div>
-        <aside>
-          <span className="eyebrow">THE MANDATE</span>
-          <p>{gameCase.objective}</p>
-          <div className="small-divider" />
-          <span className="tiny-label">
-            <Clock3 size={15} /> Six hours to make your call.
-          </span>
-        </aside>
       </div>
       <div className="section-heading">
-        <h2>What you know.</h2>
+        <h2>The key facts</h2>
       </div>
       <div className="evidence-grid">
-        {gameCase.evidence.map((evidence, index) => (
-          <EvidenceCard key={evidence.id} evidence={evidence} index={index} />
-        ))}
+        {gameCase.evidence
+          .filter((item) => !freeIds.has(item.id))
+          .map((evidence, index) => (
+            <EvidenceCard key={evidence.id} evidence={evidence} index={index} />
+          ))}
       </div>
-      <div className="decision-prompt">
-        <span className="eyebrow">THE QUESTION ON THE TABLE</span>
-        <h2>{gameCase.question}</h2>
-        <button className="button dark" onClick={onTalkToAnalyst}>
-          Talk to your analyst
+      {gameCase.learning.terms.length > 0 && (
+        <section className="case-terms">
+          <h3>Words to know</h3>
+          <div>
+            {gameCase.learning.terms.map((item) => (
+              <details key={item.term}>
+                <summary>{item.term}</summary>
+                <p>{item.meaning}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+      )}
+      {gameCase.knownLimits.length > 0 && (
+        <details className="review-details known-gaps">
+          <summary>Known gaps & free checks · no time cost</summary>
+          {gameCase.knownLimits.map((item) => (
+            <p key={item.id}>
+              <strong>{item.label}.</strong> {item.text}
+            </p>
+          ))}
+        </details>
+      )}
+      <div className="briefing-actions">
+        <p>
+          <strong>You’ll practice:</strong> {gameCase.learning.skill}
+        </p>
+        <button className="button outline" onClick={onTalkToAnalyst}>
+          Ask a question or research
           <ArrowRight size={18} />
         </button>
       </div>

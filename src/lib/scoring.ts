@@ -1,50 +1,34 @@
-import { z } from "zod";
 import type { CaseDefinition, Debrief } from "./types";
+import { InputError, toPlayableCase } from "./engine";
 
-const mark = z.object({
-  level: z.number().int().min(0).max(5),
-  reason: z.string().min(1).max(180),
-});
-export const scoreSchema = z.object({
-  choice: mark,
-  facts: mark,
-  risk: mark,
-  nextStep: mark,
-  optionId: z.string(),
-  example: z.string().min(1).max(450),
-});
-
-export function scoreDecision(
-  value: unknown,
+/** Choice marks are authored with the case, never inferred from writing length. */
+export function scoreChoice(
   definition: CaseDefinition,
-): Debrief["score"] | null {
-  const result = scoreSchema.safeParse(value);
-  if (
-    !result.success ||
-    !definition.options.some((option) => option.id === result.data.optionId)
-  )
-    return null;
-  const marks = result.data;
-  const parts = [
-    { label: "Your choice", ...marks.choice },
-    { label: "Use of facts", ...marks.facts },
-    { label: "Spotting risk", ...marks.risk },
-    { label: "Next step", ...marks.nextStep },
-  ].map(({ label, level, reason }) => ({ label, points: level * 5, reason }));
-  const total = parts.reduce((sum, part) => sum + part.points, 0);
-  const verdict =
-    total >= 80
-      ? "Strong call"
-      : total >= 60
-        ? "Good start"
-        : total >= 40
-          ? "Needs more thought"
-          : "Try a stronger reason";
+  optionId: string,
+  researchIds: string[] = [],
+): NonNullable<Debrief["score"]> {
+  const state = toPlayableCase(definition, researchIds);
+  const lesson = definition.teaching;
+  const mark = lesson?.choices[optionId];
+  if (!mark || !definition.options.some((option) => option.id === optionId))
+    throw new InputError("This choice has no reviewed lesson.");
+  const change = lesson?.eventChange;
+  const changed =
+    definition.version >= 2 && !!state.event && change?.optionId === optionId;
+  const total = changed ? change.score : mark.score;
+  const why = changed ? change.why : mark.why;
+  if (!Number.isInteger(total) || total < 0 || total > 100)
+    throw new InputError("This choice needs a valid case score.");
   return {
     total,
-    verdict,
-    parts,
-    example: marks.example,
-    optionId: marks.optionId,
+    verdict:
+      total >= 80
+        ? "Strong move"
+        : total >= 60
+          ? "Reasonable move"
+          : "Risky move",
+    parts: [{ label: "Your choice", points: total, reason: why }],
+    example: why,
+    optionId,
   };
 }

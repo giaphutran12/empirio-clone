@@ -1,0 +1,50 @@
+- alert
+- banner:
+  - button "Back to case library":
+  - generic: ↗
+  - text: THE CALL
+  - generic: .
+  - strong: 3h
+- generic: CASE 04 · Product · INFORMED REPLAY
+- heading "The phone without keys" [level=1]
+- generic "3 of 6 hours remaining"
+- navigation "Case views":
+  - button "The briefing":
+    - text: The briefing
+  - button "Your analyst":
+    - text: Your analyst
+  - button "Your call" [active]:
+    - text: Your call
+- main:
+  - status:
+    - text: NEW DEVELOPMENT
+    - heading "Carrier asks for a firm date" [level=3]
+    - paragraph: Three hours in, your partner asks for a firm launch date before it trains store staff. Any wider carrier talks would delay that training.
+    - button "Dismiss development":
+  - text: YOUR MOVE
+  - heading "How should you bring the phone to market?" [level=2]
+  - paragraph: Tap your choice. Then see the tradeoff and the lesson. No typing needed.
+  - button "A Launch with one carrier Keep the US plan and stage other markets. A clear launch path trades off against limited network choice.":
+    - generic: A
+    - strong: Launch with one carrier
+    - generic: Keep the US plan and stage other markets.
+    - generic: A clear launch path trades off against limited network choice.
+  - button "B Delay training for wider carrier talks Reopen the deal for more networks and accept that partner store training starts later. More buyers may gain access, but the current partner cannot train staff until the launch date is firm.":
+    - generic: B
+    - strong: Delay training for wider carrier talks
+    - generic: Reopen the deal for more networks and accept that partner store training starts later.
+    - generic: More buyers may gain access, but the current partner cannot train staff until the launch date is firm.
+  - button "C Run a small paid pilot Test typing, service and support with invited buyers first. You learn from real use but give up a broad launch now.":
+    - generic: C
+    - strong: Run a small paid pilot
+    - generic: Test typing, service and support with invited buyers first.
+    - generic: You learn from real use but give up a broad launch now.
+  - button "D Hold the launch Keep selling current products while the phone team tests. You avoid a rushed promise but delay learning from buyers.":
+    - generic: D
+    - strong: Hold the launch
+    - generic: Keep selling current products while the phone team tests.
+    - generic: You avoid a rushed promise but delay learning from buyers.
+  - generic "Add a note (optional)"
+  - button "Make my call" [disabled]:
+    - text: Make my call
+  - paragraph: Your first choice is saved. You can practice again after the lesson.

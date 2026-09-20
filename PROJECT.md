@@ -26,7 +26,7 @@ Use plain, in-world language. Remove repeated fictional/simulation disclaimers a
 
 ## Analyst presentation and model, 2026-09-20
 
-Use GPT-5.6 Luna for analyst answers and debriefs, configurable through OPENAI_MODEL. Account model availability and live structured responses verified. Keep citations in a touch-friendly Evidence disclosure; remove citation-only parenthetical asides from new and saved answers without deleting substantive qualifications.
+Use GPT-5.6 Luna for analyst answers and optional lesson coaching, configurable through OPENAI_MODEL. Account model availability and live structured responses verified. Keep citations in a touch-friendly Evidence disclosure; remove citation-only parenthetical asides from new and saved answers without deleting substantive qualifications.
 
 Reviews should aim for grade 3 reading: short words, two brief sentences per note, and at most 25 words per feedback field. Put personal notes, trade-offs, and sources behind disclosures. Refresh old saved reviews once when opened; preserve the original decision and conversation.
 
@@ -38,7 +38,15 @@ Reviews should aim for grade 3 reading: short words, two brief sentences per not
 
 Edward requested real company names up front and numeric decision feedback. All 30 case summaries and briefings name the business; the analyst can discuss it by name while still withholding future outcomes and locked evidence. Existing attempts remain valid.
 
-Score the actual choice and reasoning out of 100 using four equal parts: choice fit, facts, risk, and next step. Luna supplies anchored 0–5 levels and short explanations; the server checks bounds, validates the example option, and computes points and verdict. Show a strong sample answer behind a tap. Historical agreement earns no automatic full marks. Missing AI feedback has no invented score and offers retry. Old reviews refresh on opening. These are coaching judgments, not an objective prediction of business results.
+Choice scores are authored per case and option. Notes, confidence, verbosity, and historical agreement do not add points. Show the reason and catch beside the score. Multiple choices may be strong. An authored halfway event changes a visible option and its score. AI explains fixed marks in an optional post-result coach; it cannot set them.
+
+## Teaching first, 2026-09-20
+
+Edward asked to fix the full user-experience audit and emphasized learning without phone typing. All 30 cases now include a skill, simple terms, choice comparisons, sourced historical follow-through, and a one-tap practice question with feedback. The next-case button opens an unfinished related case directly. Compact mobile briefings show facts sooner.
+
+Version 2 makes source gaps and research with no new factual evidence free and visible up front. Paid research conclusions remain locked until commissioned. Existing version 1 research ledgers retain their original costs and events; upgrading starts a separate replay. Original choices and conversations remain saved. Reviews refresh to copy version 4 without grading the player's note.
+
+See docs/qa/teaching/README.md for current receipts. Source follow-through audits: docs/teaching-sources-01.md, docs/teaching-sources-11.md, docs/teaching-sources-21.md.
 
 ## Chat keyboard, 2026-09-20
 

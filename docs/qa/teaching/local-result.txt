@@ -1,0 +1,62 @@
+- alert
+- banner:
+  - button "Back to case library":
+  - generic: ↗
+  - text: THE CALL
+  - generic: .
+  - strong: 6h
+- main:
+  - generic: Apple · 2007
+  - 'heading "Your call: Seek more carrier deals" [level=1]'
+  - region "Your choice score":
+    - strong: 80/100
+    - text: CHOICE SCORE
+    - heading "Strong move" [level=2]
+    - paragraph: More carrier deals could reach buyers who will not switch networks. That is a sound business aim.
+    - paragraph:
+      - strong: "The catch:"
+      - text: New talks may delay launch or reduce control. Wider reach is useful if those costs stay worthwhile.
+    - generic "How this score works"
+  - text: THE IDEA TO KEEP
+  - heading "More partners can reach more buyers. Fewer partners can make a launch easier to run." [level=2]
+  - heading "What happened next" [level=2]
+  - paragraph:
+    - strong: The move.
+    - text: Apple chose Cingular as its exclusive US carrier and launched the first iPhone in June 2007.
+  - paragraph:
+    - strong: The result.
+    - text: Apple reported selling its millionth iPhone in September 2007, 74 days after sales began.
+  - paragraph:
+    - strong: Why it matters.
+    - text: The narrow launch reached many buyers. Sales alone do not prove one carrier beat every possible wider deal, or tell us its profit.
+  - generic "Compare all choices"
+  - region "Quick practice":
+    - text: TRY THE IDEA · ONE TAP
+    - heading "A second carrier now offers the same launch date and product control, with no added setup cost. What changes?" [level=2]
+    - button "Wider reach becomes more attractive" [pressed]
+    - button "Ignore it because one carrier was the plan"
+    - button "The phone is now certain to make money"
+    - status:
+      - strong: That’s it.
+      - paragraph: The main added costs have fallen. Recheck the deal using the new facts instead of defending the old plan.
+  - region "Ask about your result":
+    - heading "Want to understand it better?" [level=2]
+    - button "Why is my choice stronger or weaker?"
+    - button "When would another choice work better?"
+    - generic: YOU
+    - paragraph: When would another choice work better?
+    - generic: COACH
+    - paragraph: Another choice works better when its tradeoff fits the main problem. Choose one carrier when a clear, controlled launch matters most. Seek more deals when wider buyer reach matters and talks will not add harmful delay or reduce control. Choose a paid pilot when typing, service, or support still needs testing. Hold the launch when key daily-use questions remain uncertain.
+    - generic: Ask about your result
+    - textbox "Ask about your result":
+      - /placeholder: Why would that work?
+    - button "Send follow-up" [disabled]:
+  - generic "Sources"
+  - text: KEEP PRACTICING
+  - 'heading "Microsoft: Open the engine" [level=2]'
+  - paragraph: Match an open offer with a support promise · 5–10 min
+  - button "Next case":
+    - text: Next case
+  - button "Browse all cases"
+  - button "Play this case again":
+    - text: Play this case again

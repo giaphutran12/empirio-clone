@@ -27,11 +27,10 @@ export function DecisionView({
   const locked = !!session.decision;
   return (
     <div className="decision-view">
-      <span className="eyebrow">THE MOMENT OF JUDGMENT</span>
+      <span className="eyebrow">YOUR MOVE</span>
       <h2>{gameCase.question}</h2>
       <p className="decision-description">
-        There’s a case for more than one answer. Choose your move and tell us
-        what you’re betting on.
+        Tap your choice. Then see the tradeoff and the lesson. No typing needed.
       </p>
       <div className="options">
         {gameCase.options.map((option, index) => (
@@ -56,50 +55,34 @@ export function DecisionView({
           </button>
         ))}
       </div>
-      <label className="field-label" htmlFor="reasoning">
-        What’s your reasoning?
-        <span>
-          A sentence or two. What matters most, and what risk are you accepting?
-        </span>
-      </label>
-      <textarea
-        className="reasoning-input"
-        id="reasoning"
-        placeholder="I would choose this because…"
-        rows={3}
-        maxLength={1500}
-        value={decision.reasoning}
-        disabled={locked || busy}
-        onChange={(event) =>
-          onChange({ ...decision, reasoning: event.target.value })
-        }
-      />
-      <fieldset className="confidence">
-        <legend>How confident are you?</legend>
-        {(["low", "medium", "high"] as const).map((level) => (
-          <button
-            type="button"
-            key={level}
-            disabled={locked || busy}
-            aria-pressed={decision.confidence === level}
-            className={decision.confidence === level ? "selected" : ""}
-            onClick={() => onChange({ ...decision, confidence: level })}
-          >
-            {level}
-          </button>
-        ))}
-      </fieldset>
+      <details className="optional-note">
+        <summary>Add a note (optional)</summary>
+        <label className="field-label" htmlFor="reasoning">
+          What are you thinking?
+          <span>This does not change your choice score.</span>
+        </label>
+        <textarea
+          className="reasoning-input"
+          id="reasoning"
+          placeholder="My thought is…"
+          rows={2}
+          maxLength={1500}
+          value={decision.reasoning}
+          disabled={locked || busy}
+          onChange={(event) =>
+            onChange({ ...decision, reasoning: event.target.value })
+          }
+        />
+      </details>
       <button
         className="button dark submit-call"
         onClick={onSubmit}
-        disabled={
-          busy || !online || !decision.optionId || !decision.reasoning.trim()
-        }
+        disabled={busy || !online || !decision.optionId}
       >
         {preparingDebrief ? (
           <>
             <LoaderCircle size={18} className="spin" />
-            Preparing your debrief…
+            Opening your lesson…
           </>
         ) : locked ? (
           <>
@@ -108,13 +91,13 @@ export function DecisionView({
           </>
         ) : (
           <>
-            Commit & reveal the history
+            Make my call
             <ArrowRight size={18} />
           </>
         )}
       </button>
       <p className="simulation-note">
-        Your call is final for this attempt. You can replay after the reveal.
+        Your first choice is saved. You can practice again after the lesson.
       </p>
     </div>
   );

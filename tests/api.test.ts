@@ -156,7 +156,7 @@ test("analyst denies hindsight without requiring a provider and rejects invalid 
     400,
   );
 });
-test("debrief requires a valid committed decision; written fallback quotes actual reasoning", async () => {
+test("debrief requires a valid choice; written notes are not graded", async () => {
   assert.equal((await debrief(request(payload))).status, 400);
   const decision = {
     optionId: newCoke.options[0].id,
@@ -174,9 +174,7 @@ test("debrief requires a valid committed decision; written fallback quotes actua
   );
   const fallback = fallbackDebrief(newCoke, decision);
   assert.equal(fallback.personalized, false);
-  assert.ok(
-    fallback.feedback.strength.includes("I favor a reversible test because"),
-  );
+  assert.equal(fallback.feedback.strength.includes(decision.reasoning), false);
   assert.deepEqual(fallback.reveal, newCoke.reveal);
 });
 

@@ -26,14 +26,14 @@ npm run build
 ## How the game works
 
 - Each attempt starts with six simulated hours. Clarifications and reading are free.
-- Research cards show their time cost before confirmation. There is more research than time available.
-- An authored development appears after three hours are spent.
+- Research cards show their time cost before confirmation. Known source gaps are free. Paid research unlocks new facts.
+- An authored development appears after three hours are spent and changes one visible choice.
 - The server replays the research ledger, rejects duplicates/overbudget choices, and releases only unlocked evidence.
 - Analyst context excludes the historical reveal, source URLs, and locked evidence. Real company names are available from the start. Output references and overt requests for future outcomes are checked. These checks reduce leakage; they do not prove a language model cannot infer or fabricate something.
-- Debriefs distinguish documented history, hypothetical consequences, and AI reflection. A written debrief remains available when the model is unavailable.
+- Pick a choice without writing. Each choice has an authored score, a reason and a tradeoff. The lesson includes sourced historical results, a one-tap practice question, and optional AI coaching. Notes never affect scores; core feedback works without AI.
 - All attempts stay on this browser. Clearing site data erases progress. There is no cross-device sync or offline AI.
 
-The source repository includes the full evidence packs and historical reveals. Reading the source can spoil the cases; withholding names is an educational device, not DRM.
+The source repository includes the full evidence packs and historical reveals. Reading the source can spoil the cases; the app hides endings until a decision, not company names.
 
 ## Hosting
 

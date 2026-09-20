@@ -45,7 +45,7 @@ export function CaseLibrary({
       (filter === "done" && completedIds.has(item.id));
     return (
       matchesStatus &&
-      `${item.company} ${item.title} ${item.subtitle} ${item.category} ${item.year}`
+      `${item.company} ${item.title} ${item.subtitle} ${item.category} ${item.skill} ${item.year}`
         .toLowerCase()
         .includes(search.toLowerCase().trim())
     );
@@ -59,20 +59,9 @@ export function CaseLibrary({
         </span>
       </header>
       <main>
-        <div className="intro">
-          <div className="eyebrow">
-            A LITTLE PRESSURE. A BETTER PERSPECTIVE.
-          </div>
-          <h1>
-            The room is
-            <br />
-            waiting on <em>you.</em>
-          </h1>
-          <p>
-            Real business crossroads. Incomplete information.
-            <br className="desktop-break" /> Step into the chair and make the
-            call.
-          </p>
+        <div className="intro returning-intro">
+          <h1>One choice. One useful lesson.</h1>
+          <p>Real companies. Short cases. No writing needed.</p>
         </div>
         <section className="featured" aria-label="Featured case">
           <div className="featured-copy">
@@ -84,7 +73,7 @@ export function CaseLibrary({
             </div>
             <span className="eyebrow">{featured.company}</span>
             <h2>{featured.title}</h2>
-            <p>{featured.subtitle}</p>
+            <p>{featured.skill}</p>
             <div className="feature-bottom">
               <button className="button lime" onClick={() => onOpen(featured)}>
                 {sessions.some(
@@ -92,7 +81,7 @@ export function CaseLibrary({
                     session.caseId === featured.id && !session.debrief,
                 )
                   ? "Continue the case"
-                  : "Enter the boardroom"}
+                  : "Start this case"}
                 <ArrowUpRight size={19} />
               </button>
               <span className="duration">
@@ -181,7 +170,7 @@ export function CaseLibrary({
                     <ArrowUpRight size={21} />
                   </div>
                   <h3>{item.title}</h3>
-                  <p>{item.subtitle}</p>
+                  <p>{item.skill}</p>
                   <div className="case-card-bottom">
                     <span>
                       {done ? (

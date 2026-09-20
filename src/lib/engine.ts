@@ -22,7 +22,17 @@ export function replayResearch(
     throw new InputError("Invalid research ledger.");
   const selected = new Set<string>();
   let usedHours = 0;
-  const evidence = [...definition.evidence];
+  const evidence = [
+    ...definition.evidence,
+    ...definition.research
+      .filter(
+        (task) =>
+          task.hours === 0 ||
+          (!!definition.teaching &&
+            !task.evidence.some((item) => item.kind === "fact")),
+      )
+      .flatMap((task) => task.evidence),
+  ];
   let event: CaseDefinition["event"] | null = null;
   for (const id of researchIds) {
     const research = definition.research.find((item) => item.id === id);
@@ -32,7 +42,8 @@ export function replayResearch(
       throw new InputError("Not enough research hours.");
     selected.add(id);
     usedHours += research.hours;
-    evidence.push(...research.evidence);
+    if (!evidence.some((item) => item.id === research.evidence[0]?.id))
+      evidence.push(...research.evidence);
     if (!event && usedHours >= RESEARCH_HOURS / 2) {
       event = definition.event;
       evidence.push(event.evidence);
@@ -52,6 +63,7 @@ export function toPlayableCase(
 ): PlayableCase {
   const {
     reveal: _reveal,
+    teaching,
     event: _event,
     research,
     ...publicFields
@@ -63,7 +75,40 @@ export function toPlayableCase(
   return {
     ...publicFields,
     company: definition.reveal.company,
-    research: research.map(({ evidence: _evidence, ...task }) => task),
+    learning: {
+      skill: teaching?.skill ?? definition.category,
+      terms: teaching?.terms ?? [],
+    },
+    knownLimits: definition.research
+      .filter(
+        (task) =>
+          task.hours === 0 ||
+          (!!definition.teaching &&
+            !task.evidence.some((item) => item.kind === "fact")),
+      )
+      .flatMap((task) => task.evidence),
+    options: definition.options.map((option) => {
+      const change = teaching?.eventChange;
+      return definition.version >= 2 && event && change?.optionId === option.id
+        ? {
+            ...option,
+            title: change.title,
+            description: change.description,
+            tradeoff: change.tradeoff,
+          }
+        : option;
+    }),
+    research: research
+      .filter(
+        (task) =>
+          task.hours > 0 &&
+          (!definition.teaching ||
+            task.evidence.some((item) => item.kind === "fact")),
+      )
+      .map(({ evidence: _evidence, helpsWith, ...task }) => ({
+        ...task,
+        ...(researchIds.includes(task.id) ? { helpsWith } : {}),
+      })),
     remainingHours,
     evidence,
     event,
