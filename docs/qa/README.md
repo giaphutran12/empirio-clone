@@ -32,3 +32,24 @@ These are bounded observations, not proof that an LLM can never leak or hallucin
 ## Limits
 
 Phone dimensions were simulated in a real browser. No physical phone or cellular connection was available to the agent. Real-world learning impact, exact median playtime, and enjoyment remain unverified until player feedback. Production checks are recorded below after deployment.
+
+## Production release
+
+- Public source repository: https://github.com/giaphutran12/empirio-clone
+- Application: https://empirio-clone.vercel.app
+- Vercel scope: edwards-projects-7fd27381 (edward's projects)
+- Verified application commit: 0473fd1
+- Production deployment: dpl_DwTm2hKLEmyU1aBecjCr1ZbdJbbA (Ready)
+- All 15 tests passed; production build and TypeScript passed.
+- Project protection is `ssoProtection.deploymentType = all`.
+- Fresh unauthenticated HTTP requests to `/` and `/api/case` returned 302 authentication redirects.
+- Authenticated production case API returned six hours, five initial evidence cards, four research choices, and no reveal object.
+- Browser production playthrough at 390 × 844: opened case 002, asked the live analyst about profitability, commissioned accounts research (six hours became four), and committed a limited-partnership decision.
+- Original and replay sessions remained independently selectable after reload in the local browser test.
+- Native research dialog supported Escape, restored focus to its trigger, and spent no time on cancellation.
+- All three case briefings rendered in the phone-sized browser; live analyst requests for all three cases succeeded across local and production checks.
+- No browser console errors were observed in the production analyst flow.
+
+Additional receipts: [production mobile home](production-mobile-home.png), [third case mobile briefing](third-case-mobile.png).
+
+The production debrief completed with personalized feedback quoting the submitted partnership reasoning. Historical reveal, hypothetical outcome, and feedback sections were visibly separate. Receipt: [production debrief](production-mobile-debrief.png). [Mobile preview](production-mobile-preview.png) shows the deployed entry screen. A production reload retained the completed-case count. Desktop layout was also inspected; the rendered document width did not exceed the viewport.
