@@ -9,7 +9,7 @@ const choice = (
   verdict:
     score >= 80
       ? "Strong move"
-      : score >= 55
+      : score >= 60
         ? "Reasonable move"
         : "Risky move",
   why,
@@ -29,7 +29,7 @@ export const lessons21: Record<string, CaseLesson> = {
       ),
       license: choice(
         70,
-        "A maker without bag sales to protect may be a better fit. The earlier refusals do not rule that out.",
+        "A different maker may offer a workable license. Earlier refusals do not prove that every maker or British buyer will reject the cleaner.",
         "You avoid some factory cost but give up control. Set a date to end talks if no suitable maker commits.",
       ),
       partner: choice(
@@ -217,7 +217,7 @@ export const lessons21: Record<string, CaseLesson> = {
     choices: {
       switch: choice(
         85,
-        "A frank launch gives lapsed buyers a reason to try again. Years of recipe work support a change, though repeat orders remain unproven.",
+        "A frank launch gives doubtful buyers a reason to try again. The new recipe must then earn their next order.",
         "A bold claim puts every kitchen under pressure. Check store training and use one refund rule before a wide launch.",
       ),
       quiet: choice(
@@ -334,7 +334,7 @@ export const lessons21: Record<string, CaseLesson> = {
       hold: choice(
         30,
         "Waiting avoids rushed changes but the threat has spread. Current controls do not yet explain or contain the wider pattern.",
-        "You preserve normal work today while diners remain at risk. Clean food samples alone do not justify doing nothing new.",
+        "You preserve normal work today while the food source is still unknown. Waiting does not itself make the next meal safe.",
       ),
     },
     history: {
@@ -433,7 +433,7 @@ export const lessons21: Record<string, CaseLesson> = {
       ),
       hold: choice(
         45,
-        "The forecast gives a starting plan, but several days may beat last year's peak. No spare-room map is shown.",
+        "The forecast gives a starting plan, but demand is rising in a shorter season. A forecast cannot promise that every hub has room.",
         "You save reserve costs if demand fits the plan. A surge at one full hub could still delay many routes.",
       ),
     },
@@ -716,7 +716,7 @@ export const lessons21: Record<string, CaseLesson> = {
     choices: {
       buy: choice(
         80,
-        "Ownership secures access and the terms protect studio operations. Giving creative leaders real authority helps preserve what Disney wants to buy.",
+        "Ownership secures access to the studio. Giving its creative leaders clear authority could help protect the work that Disney wants to buy.",
         "Shares still cost owners part of future profits. Price and staff retention matter even when no large cash payment leaves today.",
       ),
       partner: choice(
@@ -823,8 +823,8 @@ export const lessons21: Record<string, CaseLesson> = {
       ),
       negotiate: choice(
         80,
-        "A supported counter can seek part of the buyer's expected gains. It works best with a credible plan if talks fail.",
-        "The buyer can walk away. A higher ask needs more than pride or a savings figure supplied by the buyer.",
+        "A supported counter can seek a better price. It works best when the board has a credible plan if talks fail.",
+        "The buyer can walk away. Support a higher ask with a clear value case and a limit you are ready to accept.",
       ),
       reject: choice(
         55,
