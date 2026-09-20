@@ -9,7 +9,7 @@ export const cases04to12: CaseDefinition[] = [
     subtitle: "A new screen. A narrow path to market.",
     category: "Product",
     year: "2007",
-    role: "You lead a maker of computers and music players.",
+    role: "You lead Apple, a maker of computers and music players.",
     objective: "Choose how to enter the phone market.",
     briefing:
       "It is January 2007. Your team has built a touch phone that also plays music and browses the web. You must choose a launch plan before the public reveal.",
@@ -218,7 +218,7 @@ export const cases04to12: CaseDefinition[] = [
     subtitle: "Can ease of use earn a high price?",
     category: "Pricing",
     year: "2001",
-    role: "You lead a computer maker entering portable music.",
+    role: "You lead Apple, a computer maker entering portable music.",
     objective: "Set a price and scope that fit the first buyers.",
     briefing:
       "It is October 2001. Your team has a small music player ready for a launch review. The proposed price is $399. Decide whether its ease of use can earn that price.",
@@ -433,7 +433,7 @@ export const cases04to12: CaseDefinition[] = [
     subtitle: "Steady fees may unsettle loyal buyers.",
     category: "Pricing",
     year: "2013",
-    role: "You lead a firm that makes design software.",
+    role: "You lead Adobe, a firm that makes design software.",
     objective: "Choose how to sell the next major tools.",
     briefing:
       "It is spring 2013. Buyers can own a software version or pay for a plan with ongoing updates. The paid plan is growing. You must decide where the next new features will go.",
@@ -653,7 +653,7 @@ export const cases04to12: CaseDefinition[] = [
     subtitle: "Let outsiders help build your core software.",
     category: "Product",
     year: "2014",
-    role: "You lead a large software platform team.",
+    role: "You lead Microsoft, a large software platform team.",
     objective: "Choose how much control to share with developers.",
     briefing:
       "It is autumn 2014. You have started to open parts of your developer tools. The next choice is bigger: let outsiders help build the engine that runs server apps, and bring it to rival systems.",
@@ -871,7 +871,7 @@ export const cases04to12: CaseDefinition[] = [
     subtitle: "Sell a device to change how books arrive.",
     category: "Product",
     year: "2007",
-    role: "You lead an online bookseller.",
+    role: "You lead Amazon, an online bookseller.",
     objective: "Choose whether to sell a dedicated reading device.",
     briefing:
       "It is November 2007. After years of work, your team has a wireless reader ready for a launch review. It would cost $399. You need a plan for both the device and the books.",
@@ -1090,7 +1090,7 @@ export const cases04to12: CaseDefinition[] = [
     subtitle: "Make fast shipping feel free.",
     category: "Growth",
     year: "2005",
-    role: "You lead a large online store.",
+    role: "You lead Amazon, a large online store.",
     objective: "Choose a shipping offer that can earn repeat orders.",
     briefing:
       "It is February 2005. Your team proposes a yearly fee for unlimited fast shipping. Buyers could place small orders without waiting to fill a basket. You must weigh that ease against delivery costs.",
@@ -1302,7 +1302,7 @@ export const cases04to12: CaseDefinition[] = [
     subtitle: "Save the business without losing its core.",
     category: "Crisis",
     year: "2020",
-    role: "You lead a home-stay booking company.",
+    role: "You lead Airbnb, a home-stay booking company.",
     objective: "Choose where to cut and how to treat people.",
     briefing:
       "It is early May 2020. Travel has stalled. You have raised cash and cut spending, but the year still looks grim. You must decide what work the firm can keep and what that means for staff.",
@@ -1511,7 +1511,7 @@ export const cases04to12: CaseDefinition[] = [
     subtitle: "A side sale could fund the real idea.",
     category: "Funding",
     year: "2008",
-    role: "You help run a young home-stay website.",
+    role: "You help run Airbnb, a young home-stay website.",
     objective: "Find a short bridge without losing sight of the main business.",
     briefing:
       "It is fall 2008. Your home-stay site has had bursts of use but no steady growth. Cash is tight. A cofounder suggests selling election-themed cereal boxes to keep the team going.",
@@ -1729,7 +1729,7 @@ export const cases04to12: CaseDefinition[] = [
     subtitle: "A failed game leaves a useful chat tool.",
     category: "Product",
     year: "2013",
-    role: "You lead a small software team after a game closes.",
+    role: "You lead Tiny Speck, the team behind Slack. Your game has closed.",
     objective: "Decide whether the remaining team and cash deserve a new bet.",
     briefing:
       "It is early 2013. Your online game has closed. A small team remains with cash and an internal chat tool. You must decide whether to turn that tool into a business or stop.",

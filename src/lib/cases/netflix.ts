@@ -8,12 +8,12 @@ export const netflix: CaseDefinition = {
   subtitle: "A small rival. A US$50 million question.",
   category: "Acquisition strategy",
   year: "2000",
-  role: "You lead Company A, an established video-rental chain.",
+  role: "You lead Blockbuster, an established video-rental chain.",
   objective:
     "Decide whether a proposed acquisition is worth its price, risks, and management attention.",
   briefing:
-    "It’s 2000. A young DVD-by-mail business wants your rental chain to buy it for US$50 million. It’s losing money, but its subscription model offers something your stores don’t. Is it worth buying?",
-  question: "How should Company A respond to the acquisition proposal?",
+    "It’s 2000. Netflix wants Blockbuster to buy it for US$50 million. It’s losing money, but its subscription model offers something your stores don’t. Is it worth buying?",
+  question: "How should Blockbuster respond to the acquisition proposal?",
   evidence: [
     {
       id: "asking-price",

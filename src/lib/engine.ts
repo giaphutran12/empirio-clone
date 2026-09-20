@@ -62,6 +62,7 @@ export function toPlayableCase(
   );
   return {
     ...publicFields,
+    company: definition.reveal.company,
     research: research.map(({ evidence: _evidence, ...task }) => task),
     remainingHours,
     evidence,

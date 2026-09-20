@@ -13,7 +13,9 @@ export function BriefingView({
     <div className="briefing-view">
       <div className="briefing-lead">
         <div>
-          <span className="eyebrow">YOUR SEAT AT THE TABLE</span>
+          <span className="eyebrow">
+            {gameCase.company} · {gameCase.year}
+          </span>
           <h2>{gameCase.role}</h2>
           <p>{gameCase.briefing}</p>
         </div>

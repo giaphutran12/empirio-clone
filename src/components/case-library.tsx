@@ -45,7 +45,7 @@ export function CaseLibrary({
       (filter === "done" && completedIds.has(item.id));
     return (
       matchesStatus &&
-      `${item.title} ${item.subtitle} ${item.category} ${item.year}`
+      `${item.company} ${item.title} ${item.subtitle} ${item.category} ${item.year}`
         .toLowerCase()
         .includes(search.toLowerCase().trim())
     );
@@ -82,6 +82,7 @@ export function CaseLibrary({
                 CASE {featured.number} / {featured.year}
               </span>
             </div>
+            <span className="eyebrow">{featured.company}</span>
             <h2>{featured.title}</h2>
             <p>{featured.subtitle}</p>
             <div className="feature-bottom">
@@ -176,7 +177,7 @@ export function CaseLibrary({
                 >
                   <div className="case-card-top">
                     <span className="case-number">{item.number}</span>
-                    <span className="eyebrow">{item.category}</span>
+                    <span className="eyebrow">{item.company}</span>
                     <ArrowUpRight size={21} />
                   </div>
                   <h3>{item.title}</h3>

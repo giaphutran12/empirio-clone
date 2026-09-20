@@ -9,7 +9,7 @@ export const cases13to21: CaseDefinition[] = [
     subtitle: "Too many bets. Too little cash.",
     category: "Turnaround",
     year: "2004",
-    role: "You lead a toy maker.",
+    role: "You lead LEGO, a toy maker.",
     objective: "Choose what to fund after a loss.",
     briefing:
       "Early 2004. Your toy firm lost money last year. It owns more than toys, including parks. You need a smaller bill without losing what kids love.",
@@ -216,7 +216,7 @@ export const cases13to21: CaseDefinition[] = [
     subtitle: "One evening of sales or one shared reset.",
     category: "Service quality",
     year: "2008",
-    role: "You run a large coffee chain.",
+    role: "You run Starbucks, a large coffee chain.",
     objective: "Choose how to teach better drink skills.",
     briefing:
       "Early February 2008. The chain has grown fast. You want staff to focus on coffee and care. A nationwide lesson would stop sales for an evening.",
@@ -429,7 +429,7 @@ export const cases13to21: CaseDefinition[] = [
     subtitle: "A sales day meets a promise.",
     category: "Brand trust",
     year: "2011",
-    role: "You lead an outdoor clothing firm.",
+    role: "You lead Patagonia, an outdoor clothing firm.",
     objective: "Choose a holiday ad that fits your promise.",
     briefing:
       "November 2011. Your firm sells clothes and wants to cut harm to nature. The big holiday shopping day is near. A blunt ad could ask people to skip a purchase.",
@@ -640,7 +640,7 @@ export const cases13to21: CaseDefinition[] = [
     subtitle: "Win old players or invite new ones.",
     category: "Market choice",
     year: "2006",
-    role: "You lead a game console launch.",
+    role: "You lead Nintendo’s game console launch.",
     objective: "Choose whom the launch should serve first.",
     briefing:
       "Mid-2006. Your new home console has a new kind of remote control. Your handheld games have reached new players. You must pick the main audience for the home launch.",
@@ -851,7 +851,7 @@ export const cases13to21: CaseDefinition[] = [
     subtitle: "A small fee change for millions.",
     category: "Pricing",
     year: "2017",
-    role: "You lead a members-only warehouse chain.",
+    role: "You lead Costco, a members-only warehouse chain.",
     objective: "Choose a fair fee plan without losing members.",
     briefing:
       "March 2017, before the fee announcement. Sales are up, but quarterly profit is down. Members pay each year to shop. You are weighing a rise in that fee.",
@@ -1062,7 +1062,7 @@ export const cases13to21: CaseDefinition[] = [
     subtitle: "Save on shipping. Ask buyers to build.",
     category: "Operations",
     year: "1956",
-    role: "You lead a mail-order furniture firm.",
+    role: "You lead IKEA, a mail-order furniture firm.",
     objective: "Choose how far to take home assembly.",
     briefing:
       "You are planning the 1956 range. Tables can be costly to ship and can arrive damaged. Some of your tables already come apart. Should more of the range follow?",
@@ -1283,7 +1283,7 @@ export const cases13to21: CaseDefinition[] = [
     subtitle: "A fast line needs a steady team.",
     category: "Workforce",
     year: "1914",
-    role: "You lead a car factory.",
+    role: "You lead Ford, a car factory.",
     objective: "Keep a trained team while controlling cost.",
     briefing:
       "Early January 1914. A moving line speeds up car work. But workers leave, and the pace causes mistakes. A large pay rise is on the table.",
@@ -1489,7 +1489,7 @@ export const cases13to21: CaseDefinition[] = [
     subtitle: "A local foothold has a price.",
     category: "Partnership",
     year: "1984",
-    role: "You lead a Japanese car maker.",
+    role: "You lead Toyota, a Japanese car maker.",
     objective: "Choose a way to learn US production.",
     briefing:
       "January 1984. An American rival wants to share a closed plant. A deal has early approval. You could learn to build cars in the US, but your partner could learn your methods too.",
@@ -1702,7 +1702,7 @@ export const cases13to21: CaseDefinition[] = [
     subtitle: "A new cleaner needs a route to homes.",
     category: "Go to market",
     year: "1993",
-    role: "You are a vacuum inventor.",
+    role: "You are James Dyson, a vacuum inventor.",
     objective: "Choose how to bring a bagless cleaner to Britain.",
     briefing:
       "Early 1993. Your design can collect dust without a throwaway bag. A version has sold in Japan. European makers have turned down a license. You could make it yourself.",

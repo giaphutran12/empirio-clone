@@ -69,3 +69,11 @@ The same update simplifies the review page: short history, three brief feedback 
 74 tests pass, including every ordered research path for all30 cases, source-reference integrity, hidden aliases and existing version compatibility. Production build and TypeScript pass. New-case live API samples: `library-30-api.json`. Mobile browser390×844: search pricing, open case17, research6→4→3h, halfway event, analyst request, decision, personalized reveal, and Done filter retaining old and new attempts. Receipts: `library-30-mobile.png`, `library-30-playthrough.txt`. One analyst reply used the safe fallback; other live samples and debrief succeeded.
 
 Playtest fixes: replaced low-value research notes with sourced financial facts; stopped replacing ordinary words such as poison/plans with reference labels; fixed Ford being matched inside afford. Future-case identity checks remain best effort, with outcomes withheld from model context. Physical-phone/cellular testing remains unverified.
+
+## Company names and decision scores, 2026-09-20
+
+- 76 tests passed; typecheck and production build passed. Tests now require public company names while preserving outcome and locked-evidence exclusion. Score validation rejects invalid marks/options; server computes the total.
+- Actual mobile browser (390x844): Airbnb choice A with weak reason scored 15/100; same choice with forecast, cash, risk and next steps scored 80/100. Both attempts retained. Reload and reopening retained 80/100; no horizontal overflow. This pair is a focused coaching check, not broad grading calibration.
+- Receipts: `decision-scores-run.txt`, `score-weak-mobile.png`, `score-strong-mobile.png`.
+- Live local analyst answered a question naming Airbnb and blocked a request for the ending: `named-analyst.json`.
+- Physical-phone and cellular checks remain unverified.

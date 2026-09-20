@@ -117,7 +117,7 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
     if (
       !attempt.decision ||
       !attempt.debrief ||
-      attempt.debrief.copyVersion === 2
+      (attempt.debrief.copyVersion === 3 && attempt.debrief.score)
     )
       return attempt;
     try {
@@ -380,6 +380,8 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
             session={session}
             gameCase={gameCase}
             onExit={leaveCase}
+            onRetry={() => submitDecision()}
+            busy={!!busy}
             onReplay={() =>
               openCase(
                 cases.find((item) => item.id === session.caseId)!,

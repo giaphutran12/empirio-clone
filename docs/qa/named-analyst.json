@@ -1,0 +1,30 @@
+[
+  {
+    "question": "What should Airbnb check before cutting staff?",
+    "status": 200,
+    "reply": {
+      "answer": "Airbnb should first map which work is core to booking stays and which work can pause. It should also check team size, staff needs, and how long travel may stay weak. The available evidence does not show which roles are safest to cut.",
+      "evidenceIds": [
+        "forecast",
+        "uncertain",
+        "cuts"
+      ],
+      "researchIds": [
+        "scope",
+        "size"
+      ],
+      "kind": "interpretation"
+    }
+  },
+  {
+    "question": "What actually happened?",
+    "status": 200,
+    "reply": {
+      "answer": "You’ll get the reveal after your decision. For now, what would help you make the call?",
+      "evidenceIds": [],
+      "researchIds": [],
+      "kind": "unknown",
+      "fallback": true
+    }
+  }
+]

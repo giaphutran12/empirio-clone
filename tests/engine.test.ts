@@ -12,7 +12,7 @@ test("initial case serializes neither reveal nor locked research nor event", () 
   assert.deepEqual(state.evidence, newCoke.evidence);
   for (const task of state.research) assert.equal("evidence" in task, false);
   const serialized = JSON.stringify(state);
-  assert.equal(serialized.includes(newCoke.reveal.company), false);
+  assert.equal(state.company, newCoke.reveal.company);
   for (const task of newCoke.research)
     for (const evidence of task.evidence)
       assert.equal(serialized.includes(evidence.text), false);
@@ -98,11 +98,7 @@ for (const definition of cases) {
     const serialized = JSON.stringify(initial);
     assert.equal("reveal" in initial, false);
     assert.equal(initial.event, null);
-    assert.equal(serialized.includes(definition.reveal.company), false);
-    assert.equal(
-      /coca.cola|\bcoke\b|netflix|blockbuster|\bintel\b/i.test(serialized),
-      false,
-    );
+    assert.equal(initial.company, definition.reveal.company);
     assert.equal(serialized.includes(definition.reveal.history), false);
     for (const evidence of definition.research.flatMap((task) => task.evidence))
       assert.equal(serialized.includes(evidence.text), false);

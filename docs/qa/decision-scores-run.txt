@@ -1,0 +1,116 @@
+Local mobile browser 390x844, 2026-09-20
+Same case and choice; no research in either run.
+
+WEAK REASON
+- alert
+- banner:
+  - button "Back to case library":
+  - generic: ↗
+  - text: THE CALL
+  - generic: .
+  - strong: 6h
+- main:
+  - text: THE REAL STORY
+  - heading "Airbnb" [level=1]
+  - paragraph: When travel stops
+  - text: YOU CHOSE
+  - heading "Cut around a smaller core" [level=2]
+  - generic "Your notes"
+  - generic: medium confidence · First attempt
+  - region "Your score":
+    - text: YOUR SCORE
+    - strong: 15/100
+    - heading "Try a stronger reason" [level=2]
+    - paragraph: Based on your choice and your reason.
+    - generic "How you scored"
+    - strong: Your choice
+    - generic: 15/25
+    - paragraph: Choosing a smaller core fits sharply lower revenue and uncertain travel demand.
+    - strong: Use of facts
+    - generic: 0/25
+    - paragraph: The reason gives no evidence from the forecast, funding, or earlier cuts.
+    - strong: Spotting risk
+    - generic: 0/25
+    - paragraph: It does not name lost skills, staff harm, or the risk of weak teams.
+    - strong: Next step
+    - generic: 0/25
+    - paragraph: It gives no check, plan, or clear goals for making cuts.
+    - generic "A strong answer" [active]
+    - strong: Cut around a smaller core
+    - paragraph: I would cut around a smaller core because revenue may stay low. I would map core work first and plan clear support for staff leaving or staying.
+  - text: WHAT HAPPENED
+  - paragraph: Airbnb announced nearly 1,900 job cuts in May 2020 and narrowed its focus. Chesky’s staff note explained the plan and support for people leaving.
+  - heading "Your call." [level=2]
+  - article:
+    - heading "What worked" [level=3]
+    - paragraph: You chose a smaller core, and “I would do what LEGO did” gives a clear choice.
+  - article:
+    - heading "What you missed" [level=3]
+    - paragraph: You did not explain the evidence or risks, including lost skills and staff support.
+  - article:
+    - heading "Next time" [level=3]
+    - paragraph: Consider mapping core work before cutting roles, then plan clear support for staff who leave or stay.
+  - generic "More about this choice"
+  - generic "Sources"
+  - button "Next case":
+    - text: Next case
+  - button "Play again":
+    - text: Play again
+
+STRONG REASON
+- alert
+- banner:
+  - button "Back to case library":
+  - generic: ↗
+  - text: THE CALL
+  - generic: .
+  - strong: 6h
+- main:
+  - text: Your saved calls
+  - combobox "View saved attempt":
+    - option "Original call · 9/20/2026"
+    - option "Informed replay 1 · 9/20/2026" [selected]
+  - text: THE REAL STORY
+  - heading "Airbnb" [level=1]
+  - paragraph: When travel stops
+  - text: YOU CHOSE
+  - heading "Cut around a smaller core" [level=2]
+  - generic "Your notes"
+  - generic: medium confidence · Informed replay
+  - region "Your score":
+    - text: YOUR SCORE
+    - strong: 80/100
+    - heading "Strong call" [level=2]
+    - paragraph: Based on your choice and your reason.
+    - generic "How you scored" [active]
+    - strong: Your choice
+    - generic: 20/25
+    - paragraph: Focus fits falling revenue and uncertain travel, while accepting the cost of losing restart options.
+    - strong: Use of facts
+    - generic: 20/25
+    - paragraph: You used the forecast, existing cuts, raised cash, and uncertain travel return appropriately.
+    - strong: Spotting risk
+    - generic: 20/25
+    - paragraph: You spotted staff loss, cash use, and recovery uncertainty, but missed local staff rules.
+    - strong: Next step
+    - generic: 20/25
+    - paragraph: Mapping skills, planning support, and tracking cash give useful next steps.
+    - generic "A strong answer"
+  - text: WHAT HAPPENED
+  - paragraph: Airbnb announced nearly 1,900 job cuts in May 2020 and narrowed its focus. Chesky’s staff note explained the plan and support for people leaving.
+  - heading "Your call." [level=2]
+  - article:
+    - heading "What worked" [level=3]
+    - paragraph: “map needed skills before cutting side teams” puts important work before headcount cuts.
+  - article:
+    - heading "What you missed" [level=3]
+    - paragraph: You did not address local staff rules, which may shape support and exit plans.
+  - article:
+    - heading "Next time" [level=3]
+    - paragraph: Set clear goals for bookings and cash use; suggest slowing cuts when results improve.
+  - generic "More about this choice"
+  - generic "Sources"
+  - button "Next case":
+    - text: Next case
+  - button "Play again":
+    - text: Play again

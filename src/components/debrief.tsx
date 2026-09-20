@@ -12,14 +12,18 @@ export function DebriefView({
   gameCase,
   onReplay,
   onExit,
+  onRetry,
+  busy,
 }: {
   session: Session;
   gameCase: PlayableCase;
   onReplay: () => void;
   onExit: () => void;
+  onRetry: () => void;
+  busy: boolean;
 }) {
   if (!session.debrief || !session.decision) return null;
-  const { reveal, feedback, personalized } = session.debrief;
+  const { reveal, feedback, personalized, score } = session.debrief;
   const choice = gameCase.options.find(
     (option) => option.id === session.decision?.optionId,
   );
@@ -42,6 +46,55 @@ export function DebriefView({
           {session.informedReplay ? "Informed replay" : "First attempt"}
         </span>
       </section>
+      <section className="decision-score" aria-label="Your score">
+        {score ? (
+          <>
+            <span className="eyebrow">YOUR SCORE</span>
+            <div className="score-head">
+              <strong>
+                {score.total}
+                <small>/100</small>
+              </strong>
+              <h2>{score.verdict}</h2>
+            </div>
+            <p>Based on your choice and your reason.</p>
+            <details className="review-details">
+              <summary>How you scored</summary>
+              {score.parts.map((part) => (
+                <div className="score-part" key={part.label}>
+                  <div>
+                    <strong>{part.label}</strong>
+                    <span>{part.points}/25</span>
+                  </div>
+                  <p>{part.reason}</p>
+                </div>
+              ))}
+            </details>
+            <details className="review-details">
+              <summary>A strong answer</summary>
+              <strong>
+                {
+                  gameCase.options.find(
+                    (option) => option.id === score.optionId,
+                  )?.title
+                }
+              </strong>
+              <p>{score.example}</p>
+            </details>
+          </>
+        ) : (
+          <>
+            <h2>Your score isn’t ready.</h2>
+            <button
+              className="button outline"
+              disabled={busy}
+              onClick={onRetry}
+            >
+              {busy ? "Scoring…" : "Try again"}
+            </button>
+          </>
+        )}
+      </section>
       <section className="history-section">
         <span className="eyebrow">WHAT HAPPENED</span>
         <p>{reveal.history}</p>
@@ -55,7 +108,7 @@ export function DebriefView({
       <div className="feedback-grid">
         <article>
           <CheckCircle2 size={22} />
-          <h3>Good call</h3>
+          <h3>What worked</h3>
           <p>{feedback.strength}</p>
         </article>
         <article>

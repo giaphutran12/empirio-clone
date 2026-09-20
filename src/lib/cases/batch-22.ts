@@ -68,7 +68,7 @@ const authoredCases: AuthoredCase[] = [
     subtitle: "How far should a recall go?",
     category: "Public trust",
     year: "1982",
-    role: "You lead a large health products firm.",
+    role: "You lead Johnson & Johnson, a large health products firm.",
     objective:
       "Keep people safe and set a clear scope for pulling a pain drug off shelves.",
     briefing:
@@ -270,7 +270,7 @@ const authoredCases: AuthoredCase[] = [
     subtitle: "Change the taste, change the promise.",
     category: "Brand renewal",
     year: "2009",
-    role: "You lead a large pizza delivery chain.",
+    role: "You lead Domino’s Pizza, a large pizza delivery chain.",
     objective:
       "Win back people who doubt the taste without losing steady buyers.",
     briefing:
@@ -457,7 +457,7 @@ const authoredCases: AuthoredCase[] = [
     subtitle: "Open doors, unanswered questions.",
     category: "Food safety",
     year: "2015",
-    role: "You lead a restaurant chain facing a food illness probe.",
+    role: "You lead Chipotle, a restaurant chain facing a food illness probe.",
     objective: "Protect diners while finding and fixing the source of illness.",
     briefing:
       "November 20, 2015. Your chain has reopened stores after a shutdown in the Northwest. Illnesses now span more states. The food at fault is still unknown.",
@@ -643,7 +643,7 @@ const authoredCases: AuthoredCase[] = [
     subtitle: "More boxes. Fewer days.",
     category: "Capacity planning",
     year: "2013",
-    role: "You run planning for a large parcel carrier.",
+    role: "You run planning at UPS, a large parcel carrier.",
     objective:
       "Meet holiday promises without buying more capacity than you need.",
     briefing:
@@ -829,7 +829,7 @@ const authoredCases: AuthoredCase[] = [
     subtitle: "Stay, shrink, or leave?",
     category: "Market exit",
     year: "2015",
-    role: "You lead a US retailer with a struggling Canadian arm.",
+    role: "You lead Target, a US retailer with a struggling Canadian arm.",
     objective:
       "Choose where future cash can do the most good while treating staff and creditors fairly.",
     briefing:
@@ -1014,7 +1014,7 @@ const authoredCases: AuthoredCase[] = [
     subtitle: "One owner, two paths.",
     category: "Company structure",
     year: "2014",
-    role: "You lead an online market that also owns a payments firm.",
+    role: "You lead eBay, an online market that also owns PayPal.",
     objective: "Help both businesses grow while keeping checkout reliable.",
     briefing:
       "September 2014. Your payments arm is large and growing fast. The board is reviewing whether shared ownership still helps both sides. A split would need new agreements.",
@@ -1195,7 +1195,7 @@ const authoredCases: AuthoredCase[] = [
     subtitle: "The films are valuable. So are the people.",
     category: "Acquisition",
     year: "2006",
-    role: "You lead a large family entertainment business.",
+    role: "You lead Disney and are weighing a deal to buy Pixar.",
     objective:
       "Build a strong film future without breaking the creative team you need.",
     briefing:
@@ -1392,11 +1392,11 @@ const authoredCases: AuthoredCase[] = [
     subtitle: "Take the premium or keep the upside?",
     category: "Takeover bid",
     year: "2008",
-    role: "You chair the board of a large web business.",
+    role: "You chair the board at Yahoo, a large web business.",
     objective:
       "Choose the best path for owners without confusing a high price with a certain deal.",
     briefing:
-      "February 1, 2008. A large software firm has offered to buy your company. It offers far more than yesterday's share price. Decide how the board should respond.",
+      "February 1, 2008. Microsoft has offered to buy Yahoo. It offers far more than yesterday's share price. Decide how the board should respond.",
     question: "How should you respond to the bid?",
     evidence: [
       fact(
@@ -1574,7 +1574,7 @@ const authoredCases: AuthoredCase[] = [
     subtitle: "A neat split may be a messy customer trip.",
     category: "Product structure",
     year: "2011",
-    role: "You lead a movie service with streaming and discs by mail.",
+    role: "You lead Netflix, a movie service with streaming and discs by mail.",
     objective:
       "Give each service room to grow without making life harder for members.",
     briefing:

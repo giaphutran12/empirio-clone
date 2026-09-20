@@ -50,12 +50,13 @@ export type CaseDefinition = {
 export type CaseSummary = Pick<
   CaseDefinition,
   "id" | "version" | "number" | "title" | "subtitle" | "category" | "year"
->;
+> & { company: string };
 export type PlayableCase = Omit<
   CaseDefinition,
   "research" | "reveal" | "event"
 > & {
   research: Omit<Research, "evidence">[];
+  company: string;
   remainingHours: number;
   event: CaseDefinition["event"] | null;
 };
@@ -82,6 +83,13 @@ export type Debrief = {
   copyVersion?: number;
   reveal: CaseDefinition["reveal"];
   feedback: { strength: string; missed: string; takeaway: string };
+  score?: {
+    total: number;
+    verdict: string;
+    parts: { label: string; points: number; reason: string }[];
+    example: string;
+    optionId: string;
+  };
   personalized: boolean;
 };
 export type Session = {

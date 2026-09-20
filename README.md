@@ -29,7 +29,7 @@ npm run build
 - Research cards show their time cost before confirmation. There is more research than time available.
 - An authored development appears after three hours are spent.
 - The server replays the research ledger, rejects duplicates/overbudget choices, and releases only unlocked evidence.
-- Analyst context excludes the historical reveal, source URLs, and locked evidence. Output references and known identity leaks are checked. These checks reduce leakage; they do not prove a language model cannot infer or fabricate something.
+- Analyst context excludes the historical reveal, source URLs, and locked evidence. Real company names are available from the start. Output references and overt requests for future outcomes are checked. These checks reduce leakage; they do not prove a language model cannot infer or fabricate something.
 - Debriefs distinguish documented history, hypothetical consequences, and AI reflection. A written debrief remains available when the model is unavailable.
 - All attempts stay on this browser. Clearing site data erases progress. There is no cross-device sync or offline AI.
 

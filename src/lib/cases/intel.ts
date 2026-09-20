@@ -8,12 +8,12 @@ export const intel: CaseDefinition = {
   subtitle: "A founding product. A contested future.",
   category: "Resource allocation",
   year: "1985",
-  role: "You lead Company A, a semiconductor manufacturer.",
+  role: "You lead Intel, a semiconductor manufacturer.",
   objective:
     "Choose where to commit scarce manufacturing and development resources.",
   briefing:
     "Mid-1985. Your company makes memory chips and processors. A semiconductor downturn is squeezing the business. You need to decide where the next investment goes.",
-  question: "What should Company A do with its DRAM business?",
+  question: "What should Intel do with its DRAM business?",
   evidence: [
     {
       id: "memory-roots",
@@ -33,7 +33,7 @@ export const intel: CaseDefinition = {
       id: "processor-position",
       label: "A 1981 computer design win",
       kind: "fact",
-      text: "A major computer maker selected the company’s processor for its personal computer, launched in August 1981.",
+      text: "IBM selected Intel’s processor for its personal computer, launched in August 1981.",
       sourceIds: ["source-2"],
     },
     {

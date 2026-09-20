@@ -8,12 +8,12 @@ export const newCoke: CaseDefinition = {
   subtitle: "A better taste. A bigger bet.",
   category: "Consumer strategy",
   year: "1985",
-  role: "You lead Company A, a major soft-drink business.",
+  role: "You lead Coca-Cola, a major soft-drink business.",
   objective:
     "Defend the flagship’s market position while protecting the value of the existing brand.",
   briefing:
-    "April 1985. Your biggest rival is gaining ground. A new formula has tested well. Do you replace the drink your customers have bought for generations?",
-  question: "What should Company A do with its flagship formula?",
+    "April 1985. Pepsi is gaining ground on Coca-Cola. A new formula has tested well. Do you replace the drink your customers have bought for generations?",
+  question: "What should Coca-Cola do with its flagship formula?",
   evidence: [
     {
       id: "market-pressure",

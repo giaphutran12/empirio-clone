@@ -2183,3 +2183,49 @@ svg {
     padding: 10px 13px;
   }
 }
+
+.decision-score {
+  margin: 28px 0;
+  padding: clamp(20px, 4vw, 36px);
+  border: 1px solid var(--border, #d4d9ca);
+  border-radius: 8px;
+}
+.score-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+  margin-top: 12px;
+}
+.score-head > strong {
+  font-size: clamp(48px, 10vw, 76px);
+  line-height: 1;
+}
+.score-head small {
+  font-size: 20px;
+  font-weight: 400;
+}
+.score-head h2 {
+  margin: 0;
+  font-size: 28px;
+}
+.decision-score > p {
+  margin: 16px 0;
+}
+.score-part {
+  margin: 18px 0;
+}
+.score-part > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.score-part p {
+  margin: 6px 0 0;
+  line-height: 1.5;
+}
+.decision-score summary {
+  min-height: 44px;
+  padding: 12px 0;
+  cursor: pointer;
+}

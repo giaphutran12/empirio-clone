@@ -3,7 +3,6 @@ import assert from "node:assert/strict";
 import { newCoke } from "../src/lib/cases/new-coke";
 import {
   asksForSpoilers,
-  containsIdentity,
   buildAnalystContext,
   validateAnalystReply,
   fallbackDebrief,
@@ -16,7 +15,7 @@ const payload = {
   caseId: newCoke.id,
   version: newCoke.version,
   researchIds: [],
-  messages: [{ role: "user", text: "What is the real company?" }],
+  messages: [{ role: "user", text: "What actually happened?" }],
 };
 function request(body: unknown) {
   return new Request("http://localhost/api", {
@@ -28,7 +27,7 @@ function request(body: unknown) {
 test("analyst context has only unlocked evidence and no reveal or URLs", () => {
   const context = buildAnalystContext(newCoke, []);
   const json = JSON.stringify(context);
-  assert.equal(json.includes(newCoke.reveal.company), false);
+  assert.equal(context.company, newCoke.reveal.company);
   assert.equal(json.includes("https://"), false);
   assert.equal(json.includes(newCoke.event.text), false);
   for (const task of newCoke.research)
@@ -38,12 +37,13 @@ test("analyst context has only unlocked evidence and no reveal or URLs", () => {
 test("hindsight questions are blocked but scenario reasoning is allowed", () => {
   for (const question of [
     "What actually happened?",
-    "Which company is this?",
     "Tell me the historical outcome",
     "What happened next?",
   ])
     assert.equal(asksForSpoilers(question), true, question);
   for (const question of [
+    "Which company is this?",
+    "What should Coca-Cola check?",
     "What could happen if we launch?",
     "What is the risk of changing the brand?",
     "How should we test future demand?",
@@ -51,7 +51,7 @@ test("hindsight questions are blocked but scenario reasoning is allowed", () => 
   ])
     assert.equal(asksForSpoilers(question), false, question);
 });
-test("output reference validator rejects locked, invented, unaffordable and identity references", () => {
+test("output reference validator rejects locked, invented, unaffordable references", () => {
   const base = {
     answer: "The initial evidence leaves uncertainty.",
     evidenceIds: [newCoke.evidence[0].id],
@@ -82,13 +82,12 @@ test("output reference validator rejects locked, invented, unaffordable and iden
     ),
     null,
   );
-  assert.equal(
+  assert.ok(
     validateAnalystReply(
-      { ...base, answer: "This was Coca-Cola." },
+      { ...base, answer: "Coca-Cola should check repeat sales." },
       newCoke,
       [],
     ),
-    null,
   );
   assert.equal(
     validateAnalystReply({ ...base, researchIds: ["invented"] }, newCoke, []),
@@ -104,7 +103,7 @@ test("case endpoint rejects version mismatch and never serializes reveal", async
     400,
   );
 });
-test("analyst denies identity without requiring a provider and rejects invalid requests", async () => {
+test("analyst denies hindsight without requiring a provider and rejects invalid requests", async () => {
   const response = await analyst(request(payload));
   assert.equal(response.status, 200);
   const reply = await response.json();
@@ -181,40 +180,19 @@ test("debrief requires a valid committed decision; written fallback quotes actua
   assert.deepEqual(fallback.reveal, newCoke.reveal);
 });
 
-test("case-specific identity aliases block standalone company and product guesses", () => {
-  const definition = {
-    ...newCoke,
-    reveal: { ...newCoke.reveal, identityAliases: ["Acme Tools", "Widget+"] },
-  };
-  const base = {
-    answer: "This is Acme Tools.",
-    evidenceIds: [newCoke.evidence[0].id],
-    researchIds: [],
-    kind: "interpretation",
-  };
-  assert.equal(validateAnalystReply(base, definition, []), null);
-  assert.equal(
-    JSON.stringify(buildAnalystContext(definition, [])).includes("Acme Tools"),
-    false,
-  );
-});
-
-test("case aliases stay out of analyst context at every research stage", async () => {
+test("all analyst contexts name the company but keep outcomes and locked evidence private", async () => {
   const { cases } = await import("../src/lib/catalog");
   for (const definition of cases) {
-    for (const researchIds of [
-      [],
-      ...definition.research.map((task) => [task.id]),
-    ]) {
-      const context = JSON.stringify(
-        buildAnalystContext(definition, researchIds),
-      ).toLowerCase();
-      assert.equal(
-        containsIdentity(context, definition),
-        false,
-        `${definition.id} exposes an identity`,
-      );
-    }
+    const context = buildAnalystContext(definition, []);
+    assert.equal(context.company, definition.reveal.company);
+    assert.equal(
+      JSON.stringify(context).includes(definition.reveal.history),
+      false,
+    );
+    assert.equal(
+      JSON.stringify(context).includes(definition.reveal.lesson),
+      false,
+    );
   }
 });
 
