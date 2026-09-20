@@ -158,7 +158,7 @@ export function AnalystView({
               className="chat-form"
               onSubmit={(event) => {
                 event.preventDefault();
-                onAsk();
+                if (!busy && online && session.draft.trim()) onAsk();
               }}
             >
               <label className="sr-only" htmlFor="analyst-question">
@@ -171,6 +171,17 @@ export function AnalystView({
                 maxLength={1000}
                 value={session.draft}
                 onChange={(event) => onDraftChange(event.target.value)}
+                onKeyDown={(event) => {
+                  if (
+                    event.key !== "Enter" ||
+                    event.shiftKey ||
+                    event.nativeEvent.isComposing ||
+                    event.nativeEvent.keyCode === 229
+                  )
+                    return;
+                  event.preventDefault();
+                  if (!event.repeat) event.currentTarget.form?.requestSubmit();
+                }}
                 disabled={busy}
               />
               <button

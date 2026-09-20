@@ -39,3 +39,7 @@ Reviews should aim for grade 3 reading: short words, two brief sentences per not
 Edward requested real company names up front and numeric decision feedback. All 30 case summaries and briefings name the business; the analyst can discuss it by name while still withholding future outcomes and locked evidence. Existing attempts remain valid.
 
 Score the actual choice and reasoning out of 100 using four equal parts: choice fit, facts, risk, and next step. Luna supplies anchored 0–5 levels and short explanations; the server checks bounds, validates the example option, and computes points and verdict. Show a strong sample answer behind a tap. Historical agreement earns no automatic full marks. Missing AI feedback has no invented score and offers retry. Old reviews refresh on opening. These are coaching judgments, not an objective prediction of business results.
+
+## Chat keyboard, 2026-09-20
+
+Enter and Command-Enter send the analyst draft; Shift-Enter inserts a newline. Composition keystrokes and held-key repeats do not submit. Keyboard submission uses the same busy, online, and nonempty checks as the send button. Browser receipt: docs/qa/chat-keyboard.txt; typecheck and build passed.
