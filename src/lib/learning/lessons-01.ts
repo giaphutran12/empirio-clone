@@ -7,7 +7,7 @@ export const lessons01: Record<string, CaseLesson> = {
     takeaway: "Liking a new taste does not mean wanting the old drink gone.",
     choices: {
       replace: { score: 55, verdict: "Risky move", why: "The taste tests support the new drink. They do not show buyers will accept losing the old one.", tradeoff: "One drink keeps the launch simple, but puts all current buyers at risk." },
-      alongside: { score: 80, verdict: "Strong move", why: "You act on the taste tests while letting loyal buyers keep their drink.", tradeoff: "Two drinks need more shelf space and work. One may take sales from the other." },
+      alongside: { score: 80, verdict: "Strong move", why: "You act on the taste tests while letting loyal buyers keep their drink.", tradeoff: "Two drinks add work and may split sales that one drink would have won." },
       pilot: { score: 85, verdict: "Strong move", why: "A small sales test checks buying habits while keeping the old drink safe.", tradeoff: "Learning takes time, and one place may not speak for the whole country." },
       hold: { score: 55, verdict: "Risky move", why: "Keeping the old drink avoids harm, but leaves years of lost ground unanswered.", tradeoff: "You gain time to think while your rival can keep winning buyers." },
     },
@@ -84,7 +84,7 @@ export const lessons01: Record<string, CaseLesson> = {
     takeaway: "Keeping every project alive can stop the most useful work from moving forward.",
     choices: {
       exit: { score: 80, verdict: "Strong move", why: "Processors have a proven customer in IBM. A staged DRAM exit can free people for that path.", tradeoff: "You give up a memory business and must help its customers switch. The full costs remain unclear." },
-      reinvest: { score: 70, verdict: "Reasonable move", why: "An upgrade could rebuild DRAM's position if it fixes the reason Intel is losing ground.", tradeoff: "Price pressure affects the industry. Spending more does not itself show a path to better returns." },
+      reinvest: { score: 70, verdict: "Reasonable move", why: "An upgrade could improve DRAM if it fixes a clear cost or performance problem.", tradeoff: "Price pressure affects the industry. Spending more does not itself show a path to better returns." },
       balance: { score: 80, verdict: "Strong move", why: "Keeping both paths is defensible while product profits are unclear, if each has a workable scope.", tradeoff: "Shared people and cash can make both programs slower. Keeping options has a cost." },
       hold: { score: 60, verdict: "Reasonable move", why: "Waiting can avoid a rushed exit while the market is weak across many chips.", tradeoff: "Current pressure continues, and you delay changes that could strengthen the business." },
     },
@@ -281,7 +281,7 @@ export const lessons01: Record<string, CaseLesson> = {
     takeaway: "A reader, its books, and the path to buying them must work together.",
     choices: {
       device: { score: 80, verdict: "Strong move", why: "A reader with wireless book buying joins the device and store into one clear offer.", tradeoff: "At $399, buyers need books they want and service that works. A large catalog alone is not enough." },
-      software: { score: 70, verdict: "Reasonable move", why: "Software on computers can test paid digital reading without building a new device business first.", tradeoff: "Computer reading does not test the value of a light, mobile reader with a different screen." },
+      software: { score: 70, verdict: "Reasonable move", why: "Software on computers can test paid digital reading without building a new device business first.", tradeoff: "Computer reading does not test the value of a wireless reader with a different screen." },
       pilot: { score: 85, verdict: "Strong move", why: "A limited run can test repeat book buying and support needs before a wider device launch.", tradeoff: "A small group may read differently, and a slower rollout may give publishers less reason to join." },
       hold: { score: 60, verdict: "Reasonable move", why: "Waiting protects the print business while you improve a costly new offer.", tradeoff: "It also delays learning from real digital buyers and leaves the reader's promise untested." },
     },
@@ -323,7 +323,7 @@ export const lessons01: Record<string, CaseLesson> = {
       unlimited: { score: 80, verdict: "Strong move", why: "A simple $79 fee removes a shipping hurdle each time a buyer considers an order.", tradeoff: "Frequent small orders may cost more to deliver. More orders need to bring enough extra profit." },
       minimum: { score: 70, verdict: "Reasonable move", why: "An order minimum may keep delivery costs down by encouraging larger baskets.", tradeoff: "Buyers still have to wait or add items, so the membership solves less of their problem." },
       pilot: { score: 85, verdict: "Strong move", why: "A limited test can compare extra item profit with real delivery bills before a wider launch.", tradeoff: "The test needs frequent buyers too. A group of light users could hide the cost risk." },
-      hold: { score: 60, verdict: "Reasonable move", why: "Keeping current charges avoids a new promise before its costs are clear.", tradeoff: "It leaves the repeat-order idea untested despite the company's ability to fund learning." },
+      hold: { score: 60, verdict: "Reasonable move", why: "Keeping current charges avoids a new promise before its costs are clear.", tradeoff: "It leaves the repeat-order idea untested. A small trial could check costs before a larger promise." },
     },
     history: {
       decision: "Amazon launched Prime in February 2005 at $79 a year, with unlimited two-day shipping and no order minimum.",
