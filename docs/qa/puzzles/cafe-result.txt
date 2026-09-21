@@ -1,0 +1,83 @@
+- alert
+- banner:
+  - button "Back to case library":
+  - generic: ↗
+  - text: THE CALL
+  - generic: .
+  - strong: 3h
+- main:
+  - generic: The cafe · Business puzzle
+  - 'heading "Your call: Run the $4 offer and pay $50" [level=1]'
+  - region "Your choice score":
+    - strong: 30/100
+    - text: CHOICE SCORE
+    - heading "Risky move" [level=2]
+    - paragraph: At the 150-cup forecast, the added fee cuts money left from $100 to $50.
+    - paragraph:
+      - strong: "The catch:"
+      - text: You now need 176 cups to beat the normal day’s $100.
+    - generic "How this score works"
+  - region "Compare the money":
+    - heading "Compare the money" [level=2]
+    - paragraph: One day · USD · forecast volumes
+    - article:
+      - heading "100 cups at $5" [level=3]
+      - term: Sales
+      - definition: $500
+      - term: Costs
+      - definition: $400
+      - term: Left over
+      - definition: $100
+    - article:
+      - heading "150 cups at $4 · before new fee" [level=3]
+      - term: Sales
+      - definition: $600
+      - term: Costs
+      - definition: $500
+      - term: Left over
+      - definition: $100
+    - article:
+      - heading "150 cups at $4 · after new fee" [level=3]
+      - term: Sales
+      - definition: $600
+      - term: Costs
+      - definition: $550
+      - term: Left over
+      - definition: $50
+    - generic "What these numbers assume"
+  - text: THE IDEA TO KEEP
+  - heading "More sales can leave you with the same money." [level=2]
+  - heading "What to notice" [level=2]
+  - paragraph:
+    - strong: The choice.
+    - text: Choose between more discounted cups and fewer full-price cups.
+  - paragraph:
+    - strong: The math.
+    - text: At full price, $500 minus $400 leaves $100. At 150 discounted cups, $600 minus $500 also leaves $100. The new $50 fee lowers that to $50.
+  - paragraph:
+    - strong: Why it matters.
+    - text: Check dollars left per cup, then multiply by a believable number of buyers.
+  - generic "Compare all choices"
+  - region "Quick practice":
+    - text: TRY THE IDEA · ONE TAP
+    - heading "At $4 per cup and $2 cost per cup, how many cups cover $200 of fixed costs?" [level=2]
+    - button "50 cups"
+    - button "100 cups"
+    - button "200 cups"
+  - region "Ask about your result":
+    - heading "Want to understand it better?" [level=2]
+    - button "Why is my choice stronger or weaker?"
+    - button "When would another choice work better?"
+    - generic: Ask about your result
+    - textbox "Ask about your result":
+      - /placeholder: Why would that work?
+    - button "Send follow-up" [disabled]:
+  - generic "About this scenario"
+  - text: KEEP PRACTICING
+  - 'heading "The online shop: Free shipping isn’t free" [level=2]'
+  - paragraph: Price the cost of a free perk · 5–10 min
+  - button "Next case":
+    - text: Next case
+  - button "Browse all cases"
+  - button "Play this case again":
+    - text: Play this case again

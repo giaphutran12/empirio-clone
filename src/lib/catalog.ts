@@ -1,3 +1,6 @@
+import { puzzleCases32 } from "./cases/puzzles-32";
+import { puzzleCases38 } from "./cases/puzzles-38";
+import { puzzleCases44 } from "./cases/puzzles-44";
 import { gym } from "./cases/gym";
 import { lessons } from "./learning";
 import { newCoke } from "./cases/new-coke";
@@ -17,6 +20,9 @@ const originalCases: CaseDefinition[] = [
   ...cases13to21,
   ...cases22to30,
   gym,
+  ...puzzleCases32,
+  ...puzzleCases38,
+  ...puzzleCases44,
 ];
 // Keep version 1 available so saved research ledgers retain their original costs.
 export const cases: CaseDefinition[] = originalCases.map((definition) => ({

@@ -2550,3 +2550,6 @@ svg {
 .money-comparison dl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0; }
 .money-comparison dt { font-size: 13px; margin-bottom: 6px; }
 .money-comparison dd { font-size: 20px; font-weight: 600; margin: 0; }
+
+.collection-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
+.collection-tabs button { min-height: 44px; }

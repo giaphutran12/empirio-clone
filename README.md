@@ -49,4 +49,4 @@ See [case source notes](docs/case-sources.md), [project decisions](PROJECT.md), 
 
 ## Case library
 
-30 historical decisions plus **The $500 gym pitch**, an ad-inspired pricing scenario with a 90-day money comparison. Cases04–30 add product launches, pricing, funding, recalls, company splits, pay, and market exits. Source/timeline audits: [04–12](docs/cases-04-sources.md), [13–21](docs/cases-13-sources.md), [22–30](docs/cases-22-sources.md). The library defaults to unfinished cases and supports search and progress filters.
+Two collections: **20 business puzzles** with practical numerical tradeoffs, and **30 historical decisions**. The puzzles cover pricing, capacity, cash timing, retention, delivery fees, ads and more. Each includes a money comparison and a short practice question. Cases04–30 add product launches, pricing, funding, recalls, company splits, pay, and market exits. Source/timeline audits: [04–12](docs/cases-04-sources.md), [13–21](docs/cases-13-sources.md), [22–30](docs/cases-22-sources.md). The library defaults to unfinished cases and supports search and progress filters.

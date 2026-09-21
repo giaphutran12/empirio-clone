@@ -60,6 +60,7 @@ function context(session: Session, messages = session.messages) {
 
 /** Keep a complete attempt on this device while the server owns the evidence and rules. */
 export function Game({ cases }: { cases: CaseSummary[] }) {
+  const [collection, setCollection] = useState("scenario");
   const [sessions, setSessions] = useState<Session[]>([]);
   const [loaded, setLoaded] = useState(false);
   const [storageBlocked, setStorageBlocked] = useState(false);
@@ -372,7 +373,13 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
     return (
       <>
         {notices}
-        <CaseLibrary cases={cases} sessions={sessions} onOpen={openCase} />
+        <CaseLibrary
+          cases={cases}
+          sessions={sessions}
+          onOpen={openCase}
+          collection={collection}
+          onCollection={setCollection}
+        />
         {busy === "opening" && (
           <div className="loading-toast" role="status">
             <LoaderCircle className="spin" size={17} />
@@ -393,11 +400,15 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
     ...cases.slice(currentIndex + 1),
     ...cases.slice(0, currentIndex),
   ];
+  const sameCollection = orderedNext.filter(
+    (item) => (item.format === "scenario") === (gameCase.format === "scenario"),
+  );
   const nextCase =
-    orderedNext.find(
+    sameCollection.find(
       (item) =>
         !completedIds.has(item.id) && item.category === gameCase.category,
     ) ??
+    sameCollection.find((item) => !completedIds.has(item.id)) ??
     orderedNext.find((item) => !completedIds.has(item.id)) ??
     orderedNext[0];
   const task = gameCase.research.find((item) => item.id === researchId);

@@ -1,0 +1,91 @@
+- alert
+- banner:
+  - button "Back to case library":
+  - generic: ↗
+  - text: THE CALL
+  - generic: .
+  - strong: 6h
+- main:
+  - generic: Tool Shelf · Business puzzle
+  - 'heading "Your call: Buy eight more tools now" [level=1]'
+  - region "Your choice score":
+    - strong: 25/100
+    - text: CHOICE SCORE
+    - heading "Risky move" [level=2]
+    - paragraph: You have 240 available tool-days and sell only 80. More stock alone does not create rentals.
+    - paragraph:
+      - strong: "The catch:"
+      - text: Capacity doubles, but current demand already fits most days.
+    - generic "How this score works"
+  - region "Compare the money":
+    - heading "Compare the plans" [level=2]
+    - paragraph: 1 month · USD · cash in minus cash paid · opening ad price
+    - article:
+      - heading "Keep current 80 days" [level=3]
+      - term: Cash in
+      - definition: $2,400
+      - term: Cash out
+      - definition: $1,320
+      - term: Left over
+      - definition: $1,080
+    - article:
+      - heading "Campaign target · 120 days at $30" [level=3]
+      - term: Cash in
+      - definition: $3,600
+      - term: Cash out
+      - definition: $1,720
+      - term: Left over
+      - definition: $1,880
+    - article:
+      - heading "Price cut target · 120 days at $20" [level=3]
+      - term: Cash in
+      - definition: $2,400
+      - term: Cash out
+      - definition: $1,480
+      - term: Left over
+      - definition: $920
+    - article:
+      - heading "Buy tools · same 80 paid days" [level=3]
+      - term: Cash in
+      - definition: $2,400
+      - term: Cash out
+      - definition: $3,720
+      - term: Cash shortfall
+      - definition: −$1,320
+    - generic "What these numbers assume"
+  - text: THE IDEA TO KEEP
+  - heading "More room to sell is not more people buying." [level=2]
+  - heading "What to notice" [level=2]
+  - paragraph:
+    - strong: The choice.
+    - text: Keep the current tools and seek weekday rentals before doubling the fleet.
+  - paragraph:
+    - strong: The math.
+    - text: Current use fills one third of capacity. At the target, the original campaign leaves $1,880 in monthly cash after stated bills, versus $1,080 without it. Buying tools with unchanged rentals leaves a $1,320 cash shortfall that month.
+  - paragraph:
+    - strong: Why it matters.
+    - text: Buying capacity is different from finding demand. Measure weekday and peak demand separately before making a lasting purchase.
+  - generic "Compare all choices"
+  - region "Quick practice":
+    - text: TRY THE IDEA · ONE TAP
+    - heading "Eight tools can each rent for 30 days. You sell 60 tool-days. What share of capacity did you use?" [level=2]
+    - button "25%"
+    - button "50%"
+    - button "75%"
+  - region "Ask about your result":
+    - heading "Want to understand it better?" [level=2]
+    - button "Why is my choice stronger or weaker?"
+    - button "When would another choice work better?"
+    - generic: Ask about your result
+    - textbox "Ask about your result":
+      - /placeholder: Why would that work?
+    - button "Send follow-up" [disabled]:
+  - generic "About this scenario"
+  - text: KEEP PRACTICING
+  - 'heading "The online shop: The ad that sells at a loss" [level=2]'
+  - paragraph: Look past the ad sales number · 5–10 min
+  - button "Next case":
+    - text: Next case
+  - button "Browse all cases"
+  - button "Play this case again":
+    - text: Play this case again

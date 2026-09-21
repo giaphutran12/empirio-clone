@@ -93,21 +93,35 @@ export function DebriefView({
         <section className="money-comparison" aria-label="Compare the money">
           <h2>{lesson.moneyComparison.title}</h2>
           <p>{lesson.moneyComparison.period}</p>
-          <p>Before refunds or any added space and staff costs.</p>
+
           {lesson.moneyComparison.rows.map((row) => (
             <article key={row.label}>
               <h3>{row.label}</h3>
               <dl>
                 <div>
-                  <dt>Sales</dt>
+                  <dt>
+                    {lesson.moneyComparison?.basis === "cash"
+                      ? "Cash in"
+                      : "Sales"}
+                  </dt>
                   <dd>${row.sales.toLocaleString("en-US")}</dd>
                 </div>
                 <div>
-                  <dt>Costs</dt>
+                  <dt>
+                    {lesson.moneyComparison?.basis === "cash"
+                      ? "Cash out"
+                      : "Costs"}
+                  </dt>
                   <dd>${row.costs.toLocaleString("en-US")}</dd>
                 </div>
                 <div>
-                  <dt>{row.sales >= row.costs ? "Left over" : "Loss"}</dt>
+                  <dt>
+                    {row.sales >= row.costs
+                      ? "Left over"
+                      : lesson.moneyComparison?.basis === "cash"
+                        ? "Cash shortfall"
+                        : "Loss"}
+                  </dt>
                   <dd>
                     {row.sales < row.costs ? "−" : ""}$
                     {Math.abs(row.sales - row.costs).toLocaleString("en-US")}
@@ -129,14 +143,14 @@ export function DebriefView({
       <section className="history-section compact-history">
         <h2>
           {gameCase.format === "scenario"
-            ? "What the pitch left out"
+            ? "What to notice"
             : "What happened next"}
         </h2>
         {lesson ? (
           <>
             <p>
               <strong>
-                {gameCase.format === "scenario" ? "The pitch." : "The move."}
+                {gameCase.format === "scenario" ? "The choice." : "The move."}
               </strong>{" "}
               {lesson.history.decision}
             </p>

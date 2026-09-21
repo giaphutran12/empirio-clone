@@ -15,32 +15,39 @@ export function CaseLibrary({
   cases,
   sessions,
   onOpen,
+  collection,
+  onCollection,
 }: {
   cases: CaseSummary[];
   sessions: Session[];
   onOpen: (item: CaseSummary) => void;
+  collection: string;
+  onCollection: (value: string) => void;
 }) {
   const [filter, setFilter] = useState("new");
   const [search, setSearch] = useState("");
+  const collectionCases = cases.filter(
+    (item) =>
+      (item.format === "scenario" ? "scenario" : "historical") === collection,
+  );
   const completedIds = new Set(
     sessions
       .filter((session) => session.debrief)
       .map((session) => session.caseId),
   );
-  const completed = completedIds.size;
+  const completed = collectionCases.filter((item) =>
+    completedIds.has(item.id),
+  ).length;
   const activeIds = new Set(
     sessions.filter((item) => !item.debrief).map((item) => item.caseId),
   );
   const featured =
-    cases.find(
-      (item) => item.format === "scenario" && !completedIds.has(item.id),
-    ) ??
-    cases.find(
+    collectionCases.find(
       (item) => activeIds.has(item.id) && !completedIds.has(item.id),
     ) ??
-    cases.find((item) => !completedIds.has(item.id)) ??
-    cases[0];
-  const visibleCases = cases.filter((item) => {
+    collectionCases.find((item) => !completedIds.has(item.id)) ??
+    collectionCases[0];
+  const visibleCases = collectionCases.filter((item) => {
     const matchesStatus =
       filter === "all" ||
       (filter === "new" && !completedIds.has(item.id)) ||
@@ -64,7 +71,37 @@ export function CaseLibrary({
       <main>
         <div className="intro returning-intro">
           <h1>One choice. One useful lesson.</h1>
-          <p>Real cases. Fresh challenges. No writing needed.</p>
+          <p>A tempting move. A hidden catch. Make your call.</p>
+          <div
+            className="case-filters collection-tabs"
+            role="group"
+            aria-label="Case collection"
+          >
+            {[
+              ["scenario", "Business puzzles"],
+              ["historical", "Real company cases"],
+            ].map(([value, label]) => (
+              <button
+                key={value}
+                aria-pressed={collection === value}
+                onClick={() => {
+                  onCollection(value);
+                  setFilter("new");
+                  setSearch("");
+                }}
+              >
+                {label} ·{" "}
+                {
+                  cases.filter(
+                    (item) =>
+                      (item.format === "scenario"
+                        ? "scenario"
+                        : "historical") === value,
+                  ).length
+                }
+              </button>
+            ))}
+          </div>
         </div>
         <section className="featured" aria-label="Featured case">
           <div className="featured-copy">
@@ -84,7 +121,9 @@ export function CaseLibrary({
                     session.caseId === featured.id && !session.debrief,
                 )
                   ? "Continue the case"
-                  : "Start this case"}
+                  : completedIds.has(featured.id)
+                    ? "Review this case"
+                    : "Start this case"}
                 <ArrowUpRight size={19} />
               </button>
               <span className="duration">
@@ -116,7 +155,7 @@ export function CaseLibrary({
               <h2>Pick your next case.</h2>
             </div>
             <span className="progress-label">
-              {completed} / {cases.length} explored
+              {completed} / {collectionCases.length} explored
             </span>
           </div>
           <div className="library-tools">

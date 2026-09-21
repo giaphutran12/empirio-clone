@@ -6,6 +6,7 @@ export type ChoiceLesson = {
 };
 export type CaseLesson = {
   moneyComparison?: {
+    basis?: "cash";
     title: string;
     period: string;
     rows: { label: string; sales: number; costs: number }[];

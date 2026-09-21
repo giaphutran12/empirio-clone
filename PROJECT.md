@@ -55,3 +55,7 @@ Enter and Command-Enter send the analyst draft; Shift-Enter inserts a newline. C
 ## Gym challenge, 2026-09-21
 
 Case 31 turns Edward’s transcribed Facebook ad into an explicitly ad-inspired scenario, separate from the 30 historical cases. No named gym or successful outcome is invented. Authored bills, cash, coaching quotes, buyer interest and capacity support a playable decision. Research retains its time cost for scenario findings; pure unknowns remain free. The debrief compares the same 90 days, separates sales from costs, exposes assumptions, and tests lost membership income. The unfinished scenario is featured for discovery. Existing historical cases and saved versions remain intact.
+
+## General business puzzles, 2026-09-21
+
+Edward clarified that the gym ad was a model for a whole collection, not a request for only one extra case. The Business puzzles collection contains 20 short scenarios (31–50), alongside the 30 real-company cases. Each has a tempting decision, enough initial numbers to reason, meaningful research, a changed condition, a plain lesson, a money comparison and a one-tap practice question. Fictional businesses and authored numbers are labeled Business puzzle, never presented as verified historical outcomes. Strong options vary; testing is not the universal answer. Library counts/search/featured case follow the selected collection, and Next case prefers unfinished cases in that collection.
