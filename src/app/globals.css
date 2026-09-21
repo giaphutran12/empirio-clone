@@ -2542,3 +2542,11 @@ svg {
     flex-wrap: wrap;
   }
 }
+
+.money-comparison { margin: 24px 0; }
+.money-comparison > p { color: var(--muted); }
+.money-comparison article { border: 1px solid #d4dac9; border-radius: 8px; padding: 18px; margin: 12px 0; }
+.money-comparison h3 { font-size: 19px; margin: 0 0 16px; }
+.money-comparison dl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0; }
+.money-comparison dt { font-size: 13px; margin-bottom: 6px; }
+.money-comparison dd { font-size: 20px; font-weight: 600; margin: 0; }

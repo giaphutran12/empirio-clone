@@ -33,6 +33,9 @@ export function CaseLibrary({
   );
   const featured =
     cases.find(
+      (item) => item.format === "scenario" && !completedIds.has(item.id),
+    ) ??
+    cases.find(
       (item) => activeIds.has(item.id) && !completedIds.has(item.id),
     ) ??
     cases.find((item) => !completedIds.has(item.id)) ??
@@ -61,7 +64,7 @@ export function CaseLibrary({
       <main>
         <div className="intro returning-intro">
           <h1>One choice. One useful lesson.</h1>
-          <p>Real companies. Short cases. No writing needed.</p>
+          <p>Real cases. Fresh challenges. No writing needed.</p>
         </div>
         <section className="featured" aria-label="Featured case">
           <div className="featured-copy">

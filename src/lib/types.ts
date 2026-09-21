@@ -23,6 +23,7 @@ export type DecisionOption = {
 export type Source = { id: string; title: string; url: string };
 export type CaseDefinition = {
   teaching?: CaseLesson;
+  format?: "historical" | "scenario";
   id: string;
   version: number;
   number: string;
@@ -52,7 +53,14 @@ export type CaseDefinition = {
 };
 export type CaseSummary = Pick<
   CaseDefinition,
-  "id" | "version" | "number" | "title" | "subtitle" | "category" | "year"
+  | "id"
+  | "version"
+  | "number"
+  | "title"
+  | "subtitle"
+  | "category"
+  | "year"
+  | "format"
 > & { company: string; skill: string };
 export type PlayableCase = Omit<
   CaseDefinition,

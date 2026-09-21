@@ -1,6 +1,16 @@
-import type { CaseDefinition, PlayableCase } from "./types";
+import type { CaseDefinition, PlayableCase, Research } from "./types";
 
 export const RESEARCH_HOURS = 6;
+export function hasResearchFindings(
+  definition: CaseDefinition,
+  task: Research,
+) {
+  return task.evidence.some(
+    (item) =>
+      item.kind === "fact" ||
+      (definition.format === "scenario" && item.kind === "simulation"),
+  );
+}
 export class InputError extends Error {
   constructor(
     message: string,
@@ -28,8 +38,7 @@ export function replayResearch(
       .filter(
         (task) =>
           task.hours === 0 ||
-          (!!definition.teaching &&
-            !task.evidence.some((item) => item.kind === "fact")),
+          (!!definition.teaching && !hasResearchFindings(definition, task)),
       )
       .flatMap((task) => task.evidence),
   ];
@@ -83,8 +92,7 @@ export function toPlayableCase(
       .filter(
         (task) =>
           task.hours === 0 ||
-          (!!definition.teaching &&
-            !task.evidence.some((item) => item.kind === "fact")),
+          (!!definition.teaching && !hasResearchFindings(definition, task)),
       )
       .flatMap((task) => task.evidence),
     options: definition.options.map((option) => {
@@ -102,8 +110,7 @@ export function toPlayableCase(
       .filter(
         (task) =>
           task.hours > 0 &&
-          (!definition.teaching ||
-            task.evidence.some((item) => item.kind === "fact")),
+          (!definition.teaching || hasResearchFindings(definition, task)),
       )
       .map(({ evidence: _evidence, helpsWith, ...task }) => ({
         ...task,

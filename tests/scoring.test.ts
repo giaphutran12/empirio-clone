@@ -37,7 +37,9 @@ for (const definition of cases) {
     assert.ok(
       lesson.check.options.every((item) => item.explanation.length > 10),
     );
-    assert.ok(lesson.history.sources.length > 0);
+    assert.ok(
+      definition.format === "scenario" || lesson.history.sources.length > 0,
+    );
     for (const source of lesson.history.sources)
       assert.equal(new URL(source.url).protocol, "https:");
     assert.ok(lesson.history.result.length > 30);

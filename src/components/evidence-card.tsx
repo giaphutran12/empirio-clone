@@ -13,7 +13,7 @@ export function EvidenceCard({
           {evidence.kind === "fact"
             ? "FACT"
             : evidence.kind === "simulation"
-              ? "UPDATE"
+              ? "SCENARIO"
               : evidence.kind === "interpretation"
                 ? "ASSESSMENT"
                 : "UNKNOWN"}

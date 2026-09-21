@@ -155,7 +155,10 @@ test("case catalog has unique stable IDs and complete research packs", () => {
       definition.options.length >= 3 && definition.options.length <= 4,
       definition.id,
     );
-    assert.ok(definition.reveal.sources.length > 0, definition.id);
+    assert.ok(
+      definition.format === "scenario" || definition.reveal.sources.length > 0,
+      definition.id,
+    );
     for (const evidence of [
       ...definition.evidence,
       ...definition.research.flatMap((task) => task.evidence),

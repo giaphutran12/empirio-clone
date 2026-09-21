@@ -89,19 +89,62 @@ export function DebriefView({
           {session.informedReplay && <p>You have seen this case before.</p>}
         </details>
       </section>
+      {lesson?.moneyComparison && (
+        <section className="money-comparison" aria-label="Compare the money">
+          <h2>{lesson.moneyComparison.title}</h2>
+          <p>{lesson.moneyComparison.period}</p>
+          <p>Before refunds or any added space and staff costs.</p>
+          {lesson.moneyComparison.rows.map((row) => (
+            <article key={row.label}>
+              <h3>{row.label}</h3>
+              <dl>
+                <div>
+                  <dt>Sales</dt>
+                  <dd>${row.sales.toLocaleString("en-US")}</dd>
+                </div>
+                <div>
+                  <dt>Costs</dt>
+                  <dd>${row.costs.toLocaleString("en-US")}</dd>
+                </div>
+                <div>
+                  <dt>{row.sales >= row.costs ? "Left over" : "Loss"}</dt>
+                  <dd>
+                    {row.sales < row.costs ? "−" : ""}$
+                    {Math.abs(row.sales - row.costs).toLocaleString("en-US")}
+                  </dd>
+                </div>
+              </dl>
+            </article>
+          ))}
+          <details className="review-details">
+            <summary>What these numbers assume</summary>
+            <p>{lesson.moneyComparison.note}</p>
+          </details>
+        </section>
+      )}
       <section className="lesson-takeaway">
         <span className="eyebrow">THE IDEA TO KEEP</span>
         <h2>{lesson?.takeaway ?? feedback.takeaway}</h2>
       </section>
       <section className="history-section compact-history">
-        <h2>What happened next</h2>
+        <h2>
+          {gameCase.format === "scenario"
+            ? "What the pitch left out"
+            : "What happened next"}
+        </h2>
         {lesson ? (
           <>
             <p>
-              <strong>The move.</strong> {lesson.history.decision}
+              <strong>
+                {gameCase.format === "scenario" ? "The pitch." : "The move."}
+              </strong>{" "}
+              {lesson.history.decision}
             </p>
             <p>
-              <strong>The result.</strong> {lesson.history.result}
+              <strong>
+                {gameCase.format === "scenario" ? "The math." : "The result."}
+              </strong>{" "}
+              {lesson.history.result}
             </p>
             <p>
               <strong>Why it matters.</strong> {lesson.history.connection}
@@ -251,7 +294,10 @@ export function DebriefView({
         </details>
       )}
       <details className="source-list">
-        <summary>Sources</summary>
+        <summary>
+          {gameCase.format === "scenario" ? "About this scenario" : "Sources"}
+        </summary>
+        {gameCase.format === "scenario" && <p>{reveal.history}</p>}
         {[...reveal.sources, ...(lesson?.history.sources ?? [])]
           .filter(
             (source, index, all) =>

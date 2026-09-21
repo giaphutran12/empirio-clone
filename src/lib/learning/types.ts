@@ -5,6 +5,12 @@ export type ChoiceLesson = {
   tradeoff: string;
 };
 export type CaseLesson = {
+  moneyComparison?: {
+    title: string;
+    period: string;
+    rows: { label: string; sales: number; costs: number }[];
+    note: string;
+  };
   skill: string;
   takeaway: string;
   choices: Record<string, ChoiceLesson>;

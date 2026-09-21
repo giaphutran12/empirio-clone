@@ -51,3 +51,7 @@ See docs/qa/teaching/README.md for current receipts. Source follow-through audit
 ## Chat keyboard, 2026-09-20
 
 Enter and Command-Enter send the analyst draft; Shift-Enter inserts a newline. Composition keystrokes and held-key repeats do not submit. Keyboard submission uses the same busy, online, and nonempty checks as the send button. Browser receipt: docs/qa/chat-keyboard.txt; typecheck and build passed.
+
+## Gym challenge, 2026-09-21
+
+Case 31 turns Edward’s transcribed Facebook ad into an explicitly ad-inspired scenario, separate from the 30 historical cases. No named gym or successful outcome is invented. Authored bills, cash, coaching quotes, buyer interest and capacity support a playable decision. Research retains its time cost for scenario findings; pure unknowns remain free. The debrief compares the same 90 days, separates sales from costs, exposes assumptions, and tests lost membership income. The unfinished scenario is featured for discovery. Existing historical cases and saved versions remain intact.

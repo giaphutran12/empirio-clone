@@ -12,7 +12,9 @@ export default function Page() {
       year,
       reveal,
       teaching,
+      format,
     }) => ({
+      format,
       company: reveal.company,
       skill: teaching?.skill ?? category,
       id,

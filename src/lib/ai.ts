@@ -69,6 +69,7 @@ export function buildAnalystContext(
 ) {
   const state = toPlayableCase(definition, researchIds);
   return {
+    format: state.format ?? "historical",
     company: state.company,
     terms: state.learning.terms,
     year: state.year,
