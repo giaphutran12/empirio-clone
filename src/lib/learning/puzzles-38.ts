@@ -592,6 +592,7 @@ export const puzzleLessons38: Record<string, CaseLesson> = {
       "sources": []
     },
     "moneyComparison": {
+      "basis": "cash",
       "title": "Compare the plans",
       "period": "1 month · USD · cash in minus cash paid · opening ad price",
       "rows": [
