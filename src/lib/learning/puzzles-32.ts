@@ -32,9 +32,9 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
       }
     },
     "history": {
-      "decision": "This is a fictional business puzzle. No real company made this call.",
+      "decision": "Choose between more discounted cups and fewer full-price cups.",
       "result": "At full price, $500 minus $400 leaves $100. At 150 discounted cups, $600 minus $500 also leaves $100. The new $50 fee lowers that to $50.",
-      "connection": "These are calculated examples using the stated assumptions, not measured business results.",
+      "connection": "Check dollars left per cup, then multiply by a believable number of buyers.",
       "sources": []
     },
     "moneyComparison": {
@@ -135,9 +135,9 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
       }
     },
     "history": {
-      "decision": "This is a fictional business puzzle. No real company made this call.",
+      "decision": "Decide whether the bulk order deserves space already used by regular buyers.",
       "result": "The whole $2 order leaves $200 after costs, versus $500 from regular sales alone. A 100-pastry bulk deal leaves $600. At the new $3.50 rate, taking all 300 leaves $650.",
-      "connection": "These are calculated examples using the stated assumptions, not measured business results.",
+      "connection": "A discount order is more useful in spare capacity than in a slot that already earns more.",
       "sources": []
     },
     "moneyComparison": {
@@ -243,9 +243,9 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
       }
     },
     "history": {
-      "decision": "This is a fictional business puzzle. No real company made this call.",
+      "decision": "Decide whether extra delivery orders pay for the app’s fees and added work.",
       "result": "Before the launch fee, 40 extra app meals raise money left from $120 to $280. On the first night with the fee, only $80 remains, below the direct-only plan.",
-      "connection": "These are calculated examples using the stated assumptions, not measured business results.",
+      "connection": "Count genuinely new orders, then check whether they fit when the kitchen has spare time.",
       "sources": []
     },
     "moneyComparison": {
@@ -346,9 +346,9 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
       }
     },
     "history": {
-      "decision": "This is a fictional business puzzle. No real company made this call.",
+      "decision": "Choose whether to charge for delivery, absorb it or link it to a bigger basket.",
       "result": "Paid shipping leaves $700. Free shipping on every order leaves $410. The $40 threshold leaves $660. A bigger average basket alone does not prove a better offer.",
-      "connection": "These are calculated examples using the stated assumptions, not measured business results.",
+      "connection": "An extra dollar of sales is not an extra dollar available to pay for shipping.",
       "sources": []
     },
     "moneyComparison": {
@@ -449,9 +449,9 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
       }
     },
     "history": {
-      "decision": "This is a fictional business puzzle. No real company made this call.",
+      "decision": "Choose payment terms that let you pay the team before the client settles the bill.",
       "result": "The original job leaves $18,000 over three months but runs $4,000 short at the first payday. A deposit changes cash timing, not the total project surplus. The $500 loan fee lowers that surplus to $17,500.",
-      "connection": "These are calculated examples using the stated assumptions, not measured business results.",
+      "connection": "Put cash receipts and bills on a calendar before accepting a profitable project.",
       "sources": []
     },
     "moneyComparison": {
@@ -557,9 +557,9 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
       }
     },
     "history": {
-      "decision": "This is a fictional business puzzle. No real company made this call.",
+      "decision": "Choose between reminders, deposits, a higher price and the current booking rules.",
       "result": "The current plan leaves $700. Repeating the reminder trial would leave $880. Deposits with unchanged bookings and attendance would leave $800 after handling fees. None of those attendance assumptions is guaranteed.",
-      "connection": "These are calculated examples using the stated assumptions, not measured business results.",
+      "connection": "Track completed visits and lost bookings together. Collecting money earlier does not always mean collecting more.",
       "sources": []
     },
     "moneyComparison": {
