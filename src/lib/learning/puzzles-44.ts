@@ -39,7 +39,7 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
     },
     "moneyComparison": {
       "title": "Compare the money",
-      "period": "US dollars · same period within this table",
+      "period": "One month · USD · before overhead",
       "rows": [
         {
           "label": "Last month: 100 orders",
@@ -142,7 +142,7 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
     },
     "moneyComparison": {
       "title": "Compare the money",
-      "period": "US dollars · same period within this table",
+      "period": "One order · USD · before overhead",
       "rows": [
         {
           "label": "Full order on 60-day terms",
@@ -245,7 +245,7 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
     },
     "moneyComparison": {
       "title": "Compare the money",
-      "period": "US dollars · same period within this table",
+      "period": "One offer and replaced visits · USD · before fixed bills",
       "rows": [
         {
           "label": "40 deal buyers, all extra visits",
@@ -348,7 +348,7 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
     },
     "moneyComparison": {
       "title": "Compare the money",
-      "period": "US dollars · same period within this table",
+      "period": "Three months · USD · before shop bills",
       "rows": [
         {
           "label": "Monthly orders: sell 300 units",
@@ -451,7 +451,7 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
     },
     "moneyComparison": {
       "title": "Compare the money",
-      "period": "US dollars · same period within this table",
+      "period": "One project · USD · fees before owner labor and overhead",
       "rows": [
         {
           "label": "Hourly: 30 total hours",
@@ -554,7 +554,7 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
     },
     "moneyComparison": {
       "title": "Compare the money",
-      "period": "US dollars · same period within this table",
+      "period": "One event · USD · all modeled event costs",
       "rows": [
         {
           "label": "Original package: 60 guests",
@@ -662,7 +662,7 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
     },
     "moneyComparison": {
       "title": "Compare the money",
-      "period": "US dollars · same period within this table",
+      "period": "First full month after changes · USD · before overhead and financing",
       "rows": [
         {
           "label": "Hold spending: 420 active users",
