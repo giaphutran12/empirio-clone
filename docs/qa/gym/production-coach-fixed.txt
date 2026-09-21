@@ -1,0 +1,94 @@
+- alert
+- banner:
+  - button "Back to case library":
+    - generic: Case files
+  - generic: ↗
+  - text: THE CALL
+  - generic: .
+  - strong: 6h
+  - generic: left
+- main:
+  - generic: The gym · Ad-inspired scenario
+  - 'heading "Your call: Keep passes. Test one small group" [level=1]'
+  - region "Your choice score":
+    - strong: 85/100
+    - text: CHOICE SCORE
+    - heading "Strong move" [level=2]
+    - paragraph: Keep income coming in while testing whether people will pay for extra help. Check costs before making the full promise.
+    - paragraph:
+      - strong: "The catch:"
+      - text: A test still costs money. Some buyers may switch from passes instead of adding new income.
+    - generic "How this score works"
+  - region "Compare the money":
+    - heading "Put each plan on the same clock" [level=2]
+    - paragraph: 90 days · US dollars · all places sold
+    - paragraph: Before refunds or any added space and staff costs.
+    - article:
+      - heading "Keep 100 passes" [level=3]
+      - term: Sales
+      - definition: $15,000
+      - term: Costs
+      - definition: $16,500
+      - term: Loss
+      - definition: −$1,500
+    - article:
+      - heading "Replace passes · 20 challenge buyers" [level=3]
+      - term: Sales
+      - definition: $10,000
+      - term: Costs
+      - definition: $19,500
+      - term: Loss
+      - definition: −$9,500
+    - article:
+      - heading "Replace passes · 60 buyers (if capacity allows)" [level=3]
+      - term: Sales
+      - definition: $30,000
+      - term: Costs
+      - definition: $25,500
+      - term: Left over
+      - definition: $4,500
+    - generic "What these numbers assume"
+  - text: THE IDEA TO KEEP
+  - heading "Money paid today still has to pay for tomorrow’s work." [level=2]
+  - heading "What the pitch left out" [level=2]
+  - paragraph:
+    - strong: The pitch.
+    - text: The ad compares $5,000 from one month of passes with $10,000 from a three-month challenge.
+  - paragraph:
+    - strong: The math.
+    - text: Over the same 90 days, passes bring in $15,000 and one sold-out challenge brings in $10,000. The challenge collects cash sooner; it does not bring in more sales.
+  - paragraph:
+    - strong: Why it matters.
+    - text: These are calculated examples, not a real gym’s results. The ad’s claims about fitness gains and repeat sales are not verified.
+  - generic "Compare all choices"
+  - region "Quick practice":
+    - text: TRY THE IDEA · ONE TAP
+    - heading "Ten current members buy a $500 challenge instead of paying their $50 monthly fee for three months. How much extra sales income is that?" [level=2]
+    - button "$5,000 extra"
+    - button "$3,500 extra, before coaching costs"
+    - button "$3,500 profit"
+  - region "Ask about your result":
+    - heading "Want to understand it better?" [level=2]
+    - button "Why is my choice stronger or weaker?"
+    - button "When would another choice work better?"
+    - generic: YOU
+    - paragraph: When would another choice work better?
+    - generic: COACH
+    - paragraph: Another choice could work better if its key condition is true. Replace could work if 20 new buyers are already committed and coaching costs are covered. Scale could work if demand, staff, and space are proven for three groups. Hold could work if losses stop soon or a clear recovery plan exists. Without those facts, the pilot is safer because it protects current income and tests paid demand.
+    - generic: YOU
+    - paragraph: When would another choice work better?
+    - generic: COACH
+    - paragraph: Replacing passes with 20 buyers still loses $9,500 at these costs, even if everyone pays. It needs lower costs or a different offer. Three groups need paid demand, enough room and a full staffing budget. Keeping passes needs a plan to close the $500 monthly gap. A small test helps check those conditions first.
+    - generic: Ask about your result
+    - textbox "Ask about your result":
+      - /placeholder: Why would that work?
+    - button "Send follow-up" [disabled]:
+  - generic "About this scenario"
+  - text: KEEP PRACTICING
+  - 'heading "Apple: The pocket music bet" [level=2]'
+  - paragraph: Price the daily benefit for a clear buyer · 5–10 min
+  - button "Next case":
+    - text: Next case
+  - button "Browse all cases"
+  - button "Play this case again":
+    - text: Play this case again
