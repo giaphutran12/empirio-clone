@@ -1,5 +1,7 @@
 import type { CaseLesson } from "./types";
 export const gymLesson: CaseLesson = {
+  alternativeConditions:
+    "Replacing passes with 20 buyers still loses $9,500 at these costs, even if everyone pays. It needs lower costs or a different offer. Three groups need paid demand, enough room and a full staffing budget. Keeping passes needs a plan to close the $500 monthly gap. A small test helps check those conditions first.",
   skill: "Check the math behind a tempting pitch",
   takeaway: "Money paid today still has to pay for tomorrow’s work.",
   choices: {

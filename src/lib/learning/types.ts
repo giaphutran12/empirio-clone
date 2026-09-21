@@ -11,6 +11,7 @@ export type CaseLesson = {
     rows: { label: string; sales: number; costs: number }[];
     note: string;
   };
+  alternativeConditions?: string;
   skill: string;
   takeaway: string;
   choices: Record<string, ChoiceLesson>;
