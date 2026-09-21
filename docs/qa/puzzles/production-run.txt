@@ -1,0 +1,100 @@
+- alert
+- banner:
+  - button "Back to case library":
+    - generic: Case files
+  - generic: ↗
+  - text: THE CALL
+  - generic: .
+  - strong: 6h
+  - generic: left
+- main:
+  - generic: The subscription app · Business puzzle
+  - 'heading "Your call: Find and fix the biggest exit cause" [level=1]'
+  - region "Your choice score":
+    - strong: 85/100
+    - text: CHOICE SCORE
+    - heading "Strong move" [level=2]
+    - paragraph: Ninety exits offset most of 100 signups. A measured repair addresses the leak instead of assuming it is harmless.
+    - paragraph:
+      - strong: "The catch:"
+      - text: The repair may save few users, and new signups could slow.
+    - generic "How this score works"
+  - region "Compare the money":
+    - heading "Compare the money" [level=2]
+    - paragraph: First full month after changes · USD · before overhead and financing
+    - article:
+      - 'heading "Hold spending: 420 active users" [level=3]'
+      - term: Sales
+      - definition: $8,400
+      - term: Costs
+      - definition: $2,100
+      - term: Left over
+      - definition: $6,300
+    - article:
+      - 'heading "Repeat ads: 520 active users" [level=3]'
+      - term: Sales
+      - definition: $10,400
+      - term: Costs
+      - definition: $4,600
+      - term: Left over
+      - definition: $5,800
+    - article:
+      - 'heading "Repair: 450 active users if it saves 30 exits" [level=3]'
+      - term: Sales
+      - definition: $9,000
+      - term: Costs
+      - definition: $4,250
+      - term: Left over
+      - definition: $4,750
+    - article:
+      - 'heading "Double ads: 620 active users" [level=3]'
+      - term: Sales
+      - definition: $12,400
+      - term: Costs
+      - definition: $7,100
+      - term: Left over
+      - definition: $5,300
+    - generic "What these numbers assume"
+  - text: THE IDEA TO KEEP
+  - heading "New signups matter less when nearly as many people leave." [level=2]
+  - heading "What to notice" [level=2]
+  - paragraph:
+    - strong: The choice.
+    - text: Find and fix the biggest exit cause. Ninety exits offset most of 100 signups. A measured repair addresses the leak instead of assuming it is harmless.
+  - paragraph:
+    - strong: The math.
+    - text: "The celebrated month added only ten net users: 500 plus 100 minus 90 equals 510. Repair payback depends on how many users stay and for how long; no result is guaranteed."
+  - paragraph:
+    - strong: Why it matters.
+    - text: New signups matter less when nearly as many people leave.
+  - generic "Compare all choices"
+  - region "Quick practice":
+    - text: TRY THE IDEA · ONE TAP
+    - heading "You start with 510 users. Next month 80 join and 90 leave. How many remain?" [level=2]
+    - button "500 users" [active] [pressed]
+    - button "590 users"
+    - button "10 users"
+    - status:
+      - strong: That’s it.
+      - paragraph: 510 plus 80 minus 90 equals 500.
+  - region "Ask about your result":
+    - heading "Want to understand it better?" [level=2]
+    - button "Why is my choice stronger or weaker?"
+    - button "When would another choice work better?"
+    - generic: YOU
+    - paragraph: When would another choice work better?
+    - generic: COACH
+    - paragraph: Repeat ads can be worth it if users stay long enough to cover acquisition and service costs. At $15 monthly contribution, a $20 acquisition cost needs more than 1.33 paid months before overhead. A $2,000 repair needs over 133 saved user-months at $15 each; saving 30 for one month is not enough.
+    - generic: Ask about your result
+    - textbox "Ask about your result":
+      - /placeholder: Why would that work?
+    - button "Send follow-up" [disabled]:
+  - generic "About this scenario"
+  - text: KEEP PRACTICING
+  - 'heading "Market Lane: Big sales. Whose money?" [level=2]'
+  - paragraph: Count the platform’s fee, not sellers’ sales · 5–10 min
+  - button "Next case":
+    - text: Next case
+  - button "Browse all cases"
+  - button "Play this case again":
+    - text: Play this case again

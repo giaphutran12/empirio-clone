@@ -12,3 +12,5 @@ Actual local computer-use at 390×844:
 - Receipts: mobile-library.png, cafe-mobile.png, cafe-result.txt, rental-result.txt.
 
 Phone-sized browser proof is not a physical-phone test. Authored scores are teaching judgments. Optional freeform model replies may still make errors; the suggested alternatives question has authored answers for every puzzle.
+
+Production verification: runtime commit d770526, Vercel deployment dpl_FEDjUFGTgcxFvY7ZiHzwL8SGa38X, production alias https://empirio-clone.vercel.app/. Confirmed the live 20/30 collection counts. Played case 50 without a note: 85/100, four money comparisons, correct 500-user practice feedback, and the authored alternative-choice explanation all rendered. Inspected the result at 390×844. Receipts: production-run.txt and production-mobile.png. This run exercised the authored coach response, not a fresh freeform model response.
