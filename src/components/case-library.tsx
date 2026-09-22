@@ -1,6 +1,7 @@
 import { ArrowUpRight, ArrowRight, Clock3, Check, Layers3 } from "lucide-react";
 import type { CaseSummary, Session } from "@/lib/types";
 import { useState } from "react";
+import { startingCases, hasCurrentReview } from "@/lib/starting-path";
 
 export function Brand() {
   return (
@@ -26,20 +27,33 @@ export function CaseLibrary({
 }) {
   const [filter, setFilter] = useState("new");
   const [search, setSearch] = useState("");
-  const collectionCases = cases.filter(
-    (item) =>
-      (item.format === "scenario" ? "scenario" : "historical") === collection,
-  );
+  const isStartingPath = collection === "start";
+  const collectionCases = isStartingPath
+    ? startingCases(cases)
+    : cases.filter(
+        (item) =>
+          (item.format === "scenario" ? "scenario" : "historical") ===
+          collection,
+      );
   const completedIds = new Set(
-    sessions
-      .filter((session) => session.debrief)
-      .map((session) => session.caseId),
+    cases
+      .filter((item) => hasCurrentReview(item, sessions))
+      .map((item) => item.id),
   );
   const completed = collectionCases.filter((item) =>
     completedIds.has(item.id),
   ).length;
   const activeIds = new Set(
-    sessions.filter((item) => !item.debrief).map((item) => item.caseId),
+    sessions
+      .filter(
+        (item) =>
+          !item.debrief &&
+          cases.some(
+            (summary) =>
+              summary.id === item.caseId && summary.version === item.version,
+          ),
+      )
+      .map((item) => item.caseId),
   );
   const featured =
     collectionCases.find(
@@ -70,14 +84,18 @@ export function CaseLibrary({
       </header>
       <main>
         <div className="intro returning-intro">
-          <h1>One choice. One useful lesson.</h1>
-          <p>A tempting move. A hidden catch. Make your call.</p>
+          <h1>Would you make the call?</h1>
+          <p>
+            Five minutes. A business decision. Find out what you saw and what
+            you missed.
+          </p>
           <div
             className="case-filters collection-tabs"
             role="group"
             aria-label="Case collection"
           >
             {[
+              ["start", "Start here"],
               ["scenario", "Business puzzles"],
               ["historical", "Real company cases"],
             ].map(([value, label]) => (
@@ -92,11 +110,14 @@ export function CaseLibrary({
               >
                 {label} ·{" "}
                 {
-                  cases.filter(
-                    (item) =>
-                      (item.format === "scenario"
-                        ? "scenario"
-                        : "historical") === value,
+                  (value === "start"
+                    ? startingCases(cases)
+                    : cases.filter(
+                        (item) =>
+                          (item.format === "scenario"
+                            ? "scenario"
+                            : "historical") === value,
+                      )
                   ).length
                 }
               </button>
@@ -106,19 +127,23 @@ export function CaseLibrary({
         <section className="featured" aria-label="Featured case">
           <div className="featured-copy">
             <div className="feature-meta">
-              <span className="pill">YOUR NEXT CALL</span>
+              <span className="pill">
+                {isStartingPath ? "THREE WAYS TO THINK" : "YOUR NEXT CALL"}
+              </span>
               <span>
                 CASE {featured.number} / {featured.year}
               </span>
             </div>
             <span className="eyebrow">{featured.company}</span>
             <h2>{featured.title}</h2>
-            <p>{featured.skill}</p>
+            <p>{featured.subtitle}</p>
             <div className="feature-bottom">
               <button className="button lime" onClick={() => onOpen(featured)}>
                 {sessions.some(
                   (session) =>
-                    session.caseId === featured.id && !session.debrief,
+                    session.caseId === featured.id &&
+                    session.version === featured.version &&
+                    !session.debrief,
                 )
                   ? "Continue the case"
                   : completedIds.has(featured.id)
@@ -127,7 +152,7 @@ export function CaseLibrary({
                 <ArrowUpRight size={19} />
               </button>
               <span className="duration">
-                <Clock3 size={15} /> 5–10 min
+                <Clock3 size={15} /> About 5 min
               </span>
             </div>
           </div>
@@ -152,7 +177,11 @@ export function CaseLibrary({
           <div className="section-heading">
             <div>
               <span className="eyebrow">THE CASE FILES</span>
-              <h2>Pick your next case.</h2>
+              <h2>
+                {isStartingPath
+                  ? "Three calls. Three useful ideas."
+                  : "Pick your next case."}
+              </h2>
             </div>
             <span className="progress-label">
               {completed} / {collectionCases.length} explored
@@ -194,11 +223,12 @@ export function CaseLibrary({
           </p>
           <div className="case-grid">
             {visibleCases.map((item) => {
-              const done = sessions.some(
-                (session) => session.caseId === item.id && session.debrief,
-              );
+              const done = hasCurrentReview(item, sessions);
               const active = sessions.some(
-                (session) => session.caseId === item.id && !session.debrief,
+                (session) =>
+                  session.caseId === item.id &&
+                  session.version === item.version &&
+                  !session.debrief,
               );
               return (
                 <button
@@ -212,7 +242,7 @@ export function CaseLibrary({
                     <ArrowUpRight size={21} />
                   </div>
                   <h3>{item.title}</h3>
-                  <p>{item.skill}</p>
+                  <p>{item.subtitle}</p>
                   <div className="case-card-bottom">
                     <span>
                       {done ? (
@@ -223,11 +253,15 @@ export function CaseLibrary({
                         "In progress"
                       ) : (
                         <>
-                          <Clock3 size={14} /> 5–10 minutes
+                          <Clock3 size={14} /> About 5 minutes
                         </>
                       )}
                     </span>
-                    <span>{item.year}</span>
+                    <span>
+                      {item.format === "scenario"
+                        ? "Business puzzle"
+                        : `Real decision · ${item.year}`}
+                    </span>
                   </div>
                 </button>
               );
@@ -235,7 +269,9 @@ export function CaseLibrary({
           </div>
           {visibleCases.length === 0 && (
             <p className="empty-cases">
-              No cases here. Try another filter or search.
+              {isStartingPath && completed === collectionCases.length && !search
+                ? "All three explored. Choose Done to revisit your calls, or open another collection."
+                : "No cases here. Try another filter or search."}
             </p>
           )}
         </section>

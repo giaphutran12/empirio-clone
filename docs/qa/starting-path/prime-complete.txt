@@ -1,0 +1,76 @@
+Browser tab: 1, Title: "The Call — Decisions worth making", URL: "http://localhost:3012/".
+1 AXWebArea The Call — Decisions worth making, URL: localhost:3012/
+	2 container
+		3 button Back to case library
+		4 text ↗ THE CALL .
+		5 container
+			6 text 6 h
+		8 container Starting path progress
+			9 text CALL  3  OF 3 REAL COMPANY DECISION
+		10 text Amazon  ·  2005
+		11 heading Your call: Launch the full plan, Value: 1
+			12 text Your call:  Launch the full plan
+		13 container Your choice score
+			14 container
+				15 text 85 /100
+			16 text CHOICE SCORE
+			17 heading Strong move, Value: 2
+				18 text Strong move
+			19 text Removing basket minimums could make Amazon the first place buyers shop. That is a coherent strategic bet, not proven profit.
+			20 container
+				21 text The catch: You accept costly heavy users and need to track extra earnings after delivery.
+			22 button (collapsed) How this score works, Secondary Actions: Expand
+				23 text How this score works
+		24 container
+			25 text THE IDEA TO KEEP
+			26 heading A bold promise needs a reason it changes behavior, and a plan to measure what that change costs., Value: 2
+				27 text A bold promise needs a reason it changes behavior, and a plan to measure what that change costs.
+		28 container
+			29 heading What happened next, Value: 2
+				30 text What happened next
+			31 text The CEO’s move.
+			32 text Amazon launched Prime in February 2005 at $79 a year, with unlimited two-day shipping and no order minimum.
+			33 text The result.
+			34 text In its 2017 shareholder letter, Amazon reported more than 100 million paid Prime members worldwide, thirteen years after launch.
+			35 text Why it matters.
+			36 text The promise attracted many members as benefits and reach grew. Member count alone does not show the profit from the original shipping plan.
+		37 container
+			38 heading When would another call work?, Value: 2
+				39 text When would another call work?
+			40 text A full launch is stronger when extra purchase contribution and fees exceed added delivery costs. An order minimum is stronger if small shipments dominate costs and customers still value the plan. Those member-level numbers are missing here, not claimed absent inside Amazon.
+		41 button (collapsed) Compare all choices, Secondary Actions: Expand
+			42 text Compare all choices
+		43 text Matching the CEO is not the test. Your score weighs the decision with the evidence available then; the outcome alone cannot prove it was right.
+		44 container Quick practice
+			45 text TRY THE IDEA · ONE TAP
+			46 heading A car-wash chain wants an unlimited monthly pass. What evidence would matter most?, Value: 2
+				47 text A car-wash chain wants an unlimited monthly pass. What evidence would matter most?
+			48 checkbox How many people say they will join, Value: 0
+			49 checkbox Visits, added earnings and costs for different member groups, Value: 1
+			50 checkbox Whether another famous company sold a subscription, Value: 0
+			70 container
+				71 text That’s it. Heavy users may join first. Compare their economics and behavior with what would happen without the pass.
+		51 container Ask about your result
+			52 heading Want to understand it better?, Value: 2
+				53 text Want to understand it better?
+			54 button Why is my choice stronger or weaker?
+			55 button When would another choice work better?
+			56 container
+				57 text Ask about your result
+				58 text entry area (settable) Ask about your result, ID: coach-question
+				59 button (disabled) Send follow-up
+		72 container
+			73 button (expanded) Sources, Secondary Actions: Collapse
+				74 text Sources
+			75 link Description: Amazon 2004 results and Prime launch, February 2, 2005, Value: press.aboutamazon.com/2005/2/amazon-com-announces-record-free-cash-flow-fueled-by-lower-prices-and-free-shipping-introduces-new-express-shipping-program-amazon-prime
+			76 link Description: Amazon 2017 shareholder letter, Prime membership, Value: aboutamazon.com/news/company-news/2017-letter-to-shareholders
+		62 container
+			63 text THREE CALLS MADE
+			64 heading You’ve tried three ways to think., Value: 2
+				65 text You’ve tried three ways to think.
+			66 text Where does the profit come from? What happens beyond the first sale? What makes a strategic bet worth taking?
+			67 button Explore more decisions
+			68 button Browse all cases
+			69 button Play this case again
+
+The focused UI element is 73 button (expanded) Sources, Secondary Actions: Collapse

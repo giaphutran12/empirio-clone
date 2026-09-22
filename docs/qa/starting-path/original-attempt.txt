@@ -1,0 +1,147 @@
+Browser tab: 1, Title: "The Call — Decisions worth making", URL: "http://localhost:3012/".
+1 AXWebArea The Call — Decisions worth making, URL: localhost:3012/
+	2 container
+		3 button Back to case library
+		4 text ↗ THE CALL .
+		5 container
+			6 text 4 h
+		7 container Starting path progress
+			8 text CALL  1  OF 3 BUSINESS PUZZLE
+		9 text Your saved attempts
+		10 pop up button (collapsed, settable) Description: View saved attempt, Value: Original attempt · v3 · reviewed · 9/22/2026, Secondary Actions: Expand
+			11 menu
+				12 (selected) Original attempt · v3 · reviewed · 9/22/2026
+				13 Attempt 2 · v3 · unfinished · 9/22/2026
+		14 text The cafe  ·  Business puzzle
+		15 heading Your call: Seek prepaid breakfast orders, Value: 1
+			16 text Your call:  Seek prepaid breakfast orders
+		17 container Your choice score
+			18 container
+				19 text 90 /100
+			20 text CHOICE SCORE
+			21 heading Strong move, Value: 2
+				22 text Strong move
+			23 text The offer requires paid demand. Research finds 30 new orders that add $150 without replacing current sales.
+			24 container
+				25 text The catch: You must secure the group payment; this is not a forecast for daily demand.
+			26 button (collapsed) How this score works, Secondary Actions: Expand
+				27 text How this score works
+		28 container Compare the money
+			29 heading What each offer leaves, Value: 2
+				30 text What each offer leaves
+			31 text One day · USD · after all listed costs
+			32 container
+				33 heading Normal trading, Value: 3
+					34 text Normal trading
+				35 definition list
+					36 container Sales
+						37 text Sales
+					38 container
+						39 text $ 560
+					40 container Costs
+						41 text Costs
+					42 container
+						43 text $ 410
+					44 container Left over
+						45 text Left over
+					46 container
+						47 text $ 150
+			48 container
+				49 heading Free coffee: 60 breakfasts, Value: 3
+					50 text Free coffee: 60 breakfasts
+				51 definition list
+					52 container Sales
+						53 text Sales
+					54 container
+						55 text $ 480
+					56 container Costs
+						57 text Costs
+					58 container
+						59 text $ 730
+					60 container Loss
+						61 text Loss
+					62 container
+						63 text − $ 250
+			64 container
+				65 heading Free day with $200 sponsor, Value: 3
+					66 text Free day with $200 sponsor
+				67 definition list
+					68 container Sales
+						69 text Sales
+					70 container
+						71 text $ 680
+					72 container Costs
+						73 text Costs
+					74 container
+						75 text $ 730
+					76 container Loss
+						77 text Loss
+					78 container
+						79 text − $ 50
+			80 container
+				81 heading Normal day plus 30 prepaid bundles, Value: 3
+					82 text Normal day plus 30 prepaid bundles
+				83 definition list
+					84 container Sales
+						85 text Sales
+					86 container
+						87 text $ 830
+					88 container Costs
+						89 text Costs
+					90 container
+						91 text $ 530
+					92 container Left over
+						93 text Left over
+					94 container
+						95 text $ 300
+			96 button (collapsed) What these numbers assume, Secondary Actions: Expand
+				97 text What these numbers assume
+		98 container
+			99 text THE IDEA TO KEEP
+			100 heading Free can work when extra earnings cover the giveaway and the sales it replaces., Value: 2
+				101 text Free can work when extra earnings cover the giveaway and the sales it replaces.
+		102 container
+			103 heading What to notice, Value: 2
+				104 text What to notice
+			105 text The choice.
+			106 text The prepaid group offer has the strongest support in this puzzle.
+			107 text The math.
+			108 text At the stated demand, normal trading earns $150; free coffee loses $250, or $50 with the sponsor; paid bundles earn $300 total.
+			109 text Why it matters.
+			110 text The offer matters less than which extra purchases it causes and what each leaves behind.
+		111 container
+			112 heading When would another call work?, Value: 2
+				113 text When would another call work?
+			114 text With 300 free cups and no sponsor, 140 breakfasts at $5 contribution each would match the normal $150 result. With $200 sponsorship, 100 breakfasts match it. Capacity is 100 breakfasts, so beating normal trading needs better terms or more capacity.
+		115 button (collapsed) Compare all choices, Secondary Actions: Expand
+			116 text Compare all choices
+		117 container Quick practice
+			118 text TRY THE IDEA · ONE TAP
+			119 heading A bookstore offers free workshops to sell books. What best tests whether the offer pays?, Value: 2
+				120 text A bookstore offers free workshops to sell books. What best tests whether the offer pays?
+			121 checkbox How many people attend, Value: 0
+			122 checkbox Extra book earnings minus workshop costs and lost sales, Value: 1
+			123 checkbox All books sold during workshops, Value: 0
+			124 container
+				125 text That’s it. Count the sales caused by the workshop, their costs, and any normal sales it replaces.
+		126 container Ask about your result
+			127 heading Want to understand it better?, Value: 2
+				128 text Want to understand it better?
+			129 button Why is my choice stronger or weaker?
+			130 button When would another choice work better?
+			131 container
+				132 text Ask about your result
+				133 text entry area (settable) Ask about your result, ID: coach-question
+				134 button (disabled) Send follow-up
+		135 button (collapsed) About this scenario, Secondary Actions: Expand
+			136 text About this scenario
+		137 container
+			138 text THREE CALLS MADE
+			139 heading You’ve tried three ways to think., Value: 2
+				140 text You’ve tried three ways to think.
+			141 text Where does the profit come from? What happens beyond the first sale? What makes a strategic bet worth taking?
+			142 button Explore more decisions
+			143 button Browse all cases
+			144 button Play this case again
+
+The focused UI element is 1 AXWebArea The Call — Decisions worth making, URL: localhost:3012/

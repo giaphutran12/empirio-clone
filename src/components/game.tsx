@@ -9,6 +9,12 @@ import type {
   PlayableCase,
   Session,
 } from "@/lib/types";
+import {
+  nextStartingCase,
+  startingCaseIds,
+  startingCases,
+  hasCurrentReview,
+} from "@/lib/starting-path";
 import { loadSessions, saveSessions } from "@/lib/storage";
 import { CaseLibrary } from "./case-library";
 import { BriefingView } from "./briefing-view";
@@ -60,7 +66,7 @@ function context(session: Session, messages = session.messages) {
 
 /** Keep a complete attempt on this device while the server owns the evidence and rules. */
 export function Game({ cases }: { cases: CaseSummary[] }) {
-  const [collection, setCollection] = useState("scenario");
+  const [collection, setCollection] = useState("start");
   const [sessions, setSessions] = useState<Session[]>([]);
   const [loaded, setLoaded] = useState(false);
   const [storageBlocked, setStorageBlocked] = useState(false);
@@ -145,12 +151,22 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
       !replay &&
       [...sessions]
         .reverse()
-        .find((item) => item.caseId === summary.id && !item.debrief);
+        .find(
+          (item) =>
+            item.caseId === summary.id &&
+            item.version === summary.version &&
+            !item.debrief,
+        );
     const completed =
       !replay &&
       [...sessions]
         .reverse()
-        .find((item) => item.caseId === summary.id && item.debrief);
+        .find(
+          (item) =>
+            item.caseId === summary.id &&
+            item.version === summary.version &&
+            item.debrief,
+        );
     const attempt: Session = existing ||
       completed || {
         id: crypto.randomUUID(),
@@ -190,6 +206,9 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
     try {
       setGameCase(await request<PlayableCase>(caseUrl(attempt)));
       await refreshSavedReview(attempt);
+      setTab(attempt.decision ? "decision" : "briefing");
+      setEventNotice(false);
+      setResearchId(null);
       setActiveId(id);
       window.scrollTo(0, 0);
     } catch (cause) {
@@ -390,7 +409,7 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
     );
 
   const savedAttempts = sessions.filter(
-    (item) => item.caseId === session.caseId && item.debrief,
+    (item) => item.caseId === session.caseId,
   );
   const completedIds = new Set(
     sessions.filter((item) => item.debrief).map((item) => item.caseId),
@@ -403,50 +422,80 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
   const sameCollection = orderedNext.filter(
     (item) => (item.format === "scenario") === (gameCase.format === "scenario"),
   );
-  const nextCase =
-    sameCollection.find(
-      (item) =>
-        !completedIds.has(item.id) && item.category === gameCase.category,
-    ) ??
-    sameCollection.find((item) => !completedIds.has(item.id)) ??
-    orderedNext.find((item) => !completedIds.has(item.id)) ??
-    orderedNext[0];
+  const pathNext =
+    collection === "start"
+      ? nextStartingCase(cases, sessions, session.caseId)
+      : undefined;
+  const pathFinished =
+    collection === "start" &&
+    startingCases(cases).every((item) => hasCurrentReview(item, sessions));
+  const nextCase = pathFinished
+    ? undefined
+    : (pathNext ??
+      sameCollection.find(
+        (item) =>
+          !completedIds.has(item.id) && item.category === gameCase.category,
+      ) ??
+      sameCollection.find((item) => !completedIds.has(item.id)) ??
+      orderedNext.find((item) => !completedIds.has(item.id)) ??
+      orderedNext[0]);
   const task = gameCase.research.find((item) => item.id === researchId);
   return (
     <div className="game-shell">
       {notices}
       <GameHeader gameCase={gameCase} busy={!!busy} onExit={leaveCase} />
+      {collection === "start" && startingCaseIds.includes(gameCase.id) && (
+        <div className="path-progress" aria-label="Starting path progress">
+          <span>CALL {startingCaseIds.indexOf(gameCase.id) + 1} OF 3</span>
+          <span>
+            {gameCase.format === "scenario"
+              ? "Business puzzle"
+              : "Real company decision"}
+          </span>
+        </div>
+      )}
+      <div className="saved-attempts">
+        {savedAttempts.length > 1 && (
+          <label className="attempt-picker">
+            Your saved attempts
+            <select
+              aria-label="View saved attempt"
+              value={session.id}
+              disabled={!!busy}
+              onChange={(event) => reviewAttempt(event.target.value)}
+            >
+              {savedAttempts.map((item, index) => (
+                <option key={item.id} value={item.id}>
+                  {index === 0 ? "Original attempt" : `Attempt ${index + 1}`} ·
+                  v{item.version}
+                  {item.debrief ? " · reviewed" : " · unfinished"} ·{" "}
+                  {new Date(item.startedAt).toLocaleDateString()}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
+      </div>
       {session.debrief ? (
         <main className="game-main">
-          {savedAttempts.length > 1 && (
-            <label className="attempt-picker">
-              Your saved calls
-              <select
-                aria-label="View saved attempt"
-                value={session.id}
-                disabled={!!busy}
-                onChange={(event) => reviewAttempt(event.target.value)}
-              >
-                {savedAttempts.map((item, index) => (
-                  <option key={item.id} value={item.id}>
-                    {index === 0 ? "Original call" : `Informed replay ${index}`}{" "}
-                    · {new Date(item.startedAt).toLocaleDateString()}
-                  </option>
-                ))}
-              </select>
-            </label>
-          )}
           <DebriefView
             session={session}
             gameCase={gameCase}
-            onExit={leaveCase}
+            onExit={() => {
+              if (collection === "start") setCollection("scenario");
+              leaveCase();
+            }}
             online={online}
             nextCase={nextCase}
-            onNext={() =>
-              nextCase
-                ? openCase(nextCase, completedIds.has(nextCase.id))
-                : leaveCase()
-            }
+            pathFinished={pathFinished}
+            onNext={() => {
+              if (nextCase) {
+                openCase(nextCase, hasCurrentReview(nextCase, sessions));
+              } else {
+                setCollection("scenario");
+                leaveCase();
+              }
+            }}
             onPractice={(practiceAnswerId) =>
               updateSession({ practiceAnswerId })
             }
@@ -464,7 +513,9 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
         </main>
       ) : (
         <>
-          {session.version < 2 && (
+          {session.version <
+            (cases.find((item) => item.id === session.caseId)?.version ??
+              2) && (
             <div className="global-notice">
               Your saved research time is kept.{" "}
               <button

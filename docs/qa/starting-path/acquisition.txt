@@ -1,0 +1,127 @@
+Browser tab: 1, Title: "The Call — Decisions worth making", URL: "http://localhost:3012/".
+1 AXWebArea The Call — Decisions worth making, URL: localhost:3012/
+	2 container
+		3 button Back to case library
+		4 text ↗ THE CALL .
+		5 container
+			6 text 2 h
+		7 text left
+		8 container Starting path progress
+			9 text CALL  2  OF 3 BUSINESS PUZZLE
+		10 text The refill shop  ·  Business puzzle
+		11 heading Your call: Require payment terms before funding 100, Value: 1
+			12 text Your call:  Require payment terms before funding 100
+		13 container Your choice score
+			14 container
+				15 text 80 /100
+			16 text CHOICE SCORE
+			17 heading Strong move, Value: 2
+				18 text Strong move
+			19 text The new upfront bill exceeds cash by $500. Later profit cannot pay that bill today.
+			20 container
+				21 text The catch: No payment extension is agreed. If refused, this plan cannot proceed with current cash.
+			22 button (collapsed) How this score works, Secondary Actions: Expand
+				23 text How this score works
+		24 container Compare the money
+			25 heading Follow the same 100 buyers, Value: 2
+				26 text Follow the same 100 buyers
+			27 text 90 days · USD · before reserved overhead
+			28 container
+				29 heading Starter sales only, original ads, Value: 3
+					30 text Starter sales only, original ads
+				31 definition list
+					32 container Sales
+						33 text Sales
+					34 container
+						35 text $ 4,000
+					36 container Costs
+						37 text Costs
+					38 container
+						39 text $ 5,500
+					40 container Loss
+						41 text Loss
+					42 container
+						43 text − $ 1,500
+			44 container
+				45 heading Starter + 150 refills, original ads, Value: 3
+					46 text Starter + 150 refills, original ads
+				47 definition list
+					48 container Sales
+						49 text Sales
+					50 container
+						51 text $ 8,500
+					52 container Costs
+						53 text Costs
+					54 container
+						55 text $ 7,000
+					56 container Left over
+						57 text Left over
+					58 container
+						59 text $ 1,500
+			60 container
+				61 heading Same repeat demand, higher ad quote, Value: 3
+					62 text Same repeat demand, higher ad quote
+				63 definition list
+					64 container Sales
+						65 text Sales
+					66 container
+						67 text $ 8,500
+					68 container Costs
+						69 text Costs
+					70 container
+						71 text $ 7,500
+					72 container Left over
+						73 text Left over
+					74 container
+						75 text $ 1,000
+			76 button (collapsed) What these numbers assume, Secondary Actions: Expand
+				77 text What these numbers assume
+		78 container
+			79 text THE IDEA TO KEEP
+			80 heading A first-sale loss can pay back through measured repeat business, if cash lasts until it does., Value: 2
+				81 text A first-sale loss can pay back through measured repeat business, if cash lasts until it does.
+		82 container
+			83 heading What to notice, Value: 2
+				84 text What to notice
+			85 text The choice.
+			86 text At the opening quote, funding another similar 100 buyers is supported by the records.
+			87 text The math.
+			88 text Each earlier group lost $1,500 initially, earned $3,000 on refills, and kept $1,500 before overhead. New customers may behave differently.
+			89 text Why it matters.
+			90 text Losses are investments only when later earnings and funding have credible support.
+		91 container
+			92 heading When would another call work?, Value: 2
+				93 text When would another call work?
+			94 text At the opening ad quote, 75 refills recover the $1,500 first-sale loss; 76 leave a positive contribution. At the higher quote, 100 refills recover $2,000. Funding still matters even if repeat demand is strong.
+		95 button (collapsed) Compare all choices, Secondary Actions: Expand
+			96 text Compare all choices
+		97 container Quick practice
+			98 text TRY THE IDEA · ONE TAP
+			99 heading A printer shop loses $30 selling a printer. What would justify that offer?, Value: 2
+				100 text A printer shop loses $30 selling a printer. What would justify that offer?
+			101 checkbox Selling many more printers, Value: 0
+			102 checkbox Knowing customers need ink, Value: 0
+			103 checkbox Measured ink earnings above $30, with cash to wait, Value: 1
+			123 container
+				124 text That’s it. Track actual later purchases, their costs, and how long the initial loss must be funded.
+		104 container Ask about your result
+			105 heading Want to understand it better?, Value: 2
+				106 text Want to understand it better?
+			107 button Why is my choice stronger or weaker?
+			108 button When would another choice work better?
+			109 container
+				110 text Ask about your result
+				111 text entry area (settable) Ask about your result, ID: coach-question
+				112 button (disabled) Send follow-up
+		113 button (collapsed) About this scenario, Secondary Actions: Expand
+			114 text About this scenario
+		115 container
+			116 text KEEP PRACTICING
+			117 heading Amazon: Would you put a flat price on shipping?, Value: 2
+				118 text Amazon :  Would you put a flat price on shipping?
+			119 text $79 once. Then every order feels different.  · About 5 min
+			120 button Next case
+			121 button Browse all cases
+			122 button Play this case again
+
+The focused UI element is 103 checkbox Measured ink earnings above $30, with cash to wait, Value: 1

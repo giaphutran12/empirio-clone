@@ -59,3 +59,11 @@ Case 31 turns Edward’s transcribed Facebook ad into an explicitly ad-inspired 
 ## General business puzzles, 2026-09-21
 
 Edward clarified that the gym ad was a model for a whole collection, not a request for only one extra case. The Business puzzles collection contains 20 short scenarios (31–50), alongside the 30 real-company cases. Each has a tempting decision, enough initial numbers to reason, meaningful research, a changed condition, a plain lesson, a money comparison and a one-tap practice question. Fictional businesses and authored numbers are labeled Business puzzle, never presented as verified historical outcomes. Strong options vary; testing is not the universal answer. Library counts/search/featured case follow the selected collection, and Next case prefers unfinished cases in that collection.
+
+## Three decisions first, 2026-09-22
+
+Edward approved a focused starting experience: a short hook, credible choices, commitment before reveal, causal business logic and a one-tap transfer to a different business. The cafe is a business proposal to judge, not an operations simulator. The starting path revises existing cases 032 (free coffee), 044 (first-sale loss and repeat purchases), and 009 (Amazon Prime); the library remains 50 cases. Start here crosses from authored puzzles into a sourced historical decision, then returns to the wider library.
+
+These three cases use version 3. Versions 1 and 2 remain addressable; saved attempts are not rewritten. A revised case opens as a new attempt, with earlier reviewed or unfinished attempts accessible in the picker. Historical choice marks judge the available evidence, not agreement with the CEO or the eventual outcome. Alternative conditions are visible in the reveal. Five-minute playtime, learning transfer and voluntary continuation remain product hypotheses requiring real player feedback.
+
+Local browser receipts and verification: docs/qa/starting-path/README.md. Sources and arithmetic: docs/spotlight-sources.md. Ticket: BLI-4595. Deployment is a separate step from this implementation.
