@@ -5,7 +5,7 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
     skill: "Check what a discount leaves behind",
     takeaway: "More sales can leave you with the same money.",
     alternativeConditions:
-      "Without the fee, 151 discounted cups beat the normal day by $2. With the fee, you need 176 cups to beat $100. Both fit the 200-cup limit, but demand is unproved.",
+      "Without the fee, 151 discounted cups beat the normal day by $2. With the fee, you need 176 cups to beat $100. Both fit the 200-cup limit, but demand is not proven.",
     choices: {
       discount: {
         score: 55,
@@ -29,9 +29,9 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
       bundle: {
         score: 70,
         verdict: "Reasonable move",
-        why: "Adding value may protect the coffee price. Check snack costs and buyer interest before promising it.",
+        why: "Adding a snack may protect the coffee price. Check snack costs and buyer interest before promising it.",
         tradeoff:
-          "A higher ticket is useful only if the extra cost is lower than the extra price.",
+          "A bigger sale helps only if the extra cost is lower than the extra price.",
       },
     },
     history: {
@@ -63,7 +63,7 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
           costs: 550,
         },
       ],
-      note: "Costs include $2 per cup and $200 fixed daily costs. The last row also includes the event’s $50 fee. Sales volumes are assumptions, not guaranteed orders.",
+      note: "Costs include $2 per cup and $200 fixed daily costs. The last row also includes the event’s $50 fee. Sales numbers are guesses, not guaranteed orders.",
     },
     check: {
       question:
@@ -92,7 +92,7 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
     terms: [
       {
         term: "Contribution",
-        meaning: "The sale price minus the costs of that extra sale.",
+        meaning: "The money a sale leaves after that sale’s own costs.",
       },
       {
         term: "Fixed costs",
@@ -105,7 +105,7 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
       bundle:
         "A bundle can raise dollars left per order, but demand still needs proof.",
       target:
-        "Targeting new sales can avoid cutting the price on sales you already have.",
+        "Aiming the offer at new buyers avoids cutting the price on sales you already have.",
     },
     eventChange: {
       optionId: "discount",
@@ -120,7 +120,7 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
     skill: "Count the sales a big order pushes out",
     takeaway: "Busy is not the same as profitable.",
     alternativeConditions:
-      "At the original price, the full order can work only if extra capacity costs little enough or regular demand falls. At $3.50, the 300-order mix beats regular-only earnings by $150, though it still turns away regular buyers.",
+      "At the original price, the full order works only if extra oven time is cheap enough or regular demand falls. At $3.50, taking all 300 beats regular sales alone by $150, though it still turns away regular buyers.",
     choices: {
       full: {
         score: 30,
@@ -143,7 +143,7 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
       expand: {
         score: 65,
         verdict: "Reasonable move",
-        why: "Extra capacity could protect regular sales. But its full added cost must fit inside the bulk order’s $300 contribution.",
+        why: "An extra shift could protect regular sales. But its full cost must fit inside the $300 the bulk order leaves toward the bills.",
         tradeoff: "You may lose the order while finding staff and oven time.",
       },
     },
@@ -153,7 +153,7 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
       result:
         "The whole $2 order leaves $200 after costs, versus $500 from regular sales alone. A 100-pastry bulk deal leaves $600. At the new $3.50 rate, taking all 300 leaves $650.",
       connection:
-        "A discount order is more useful in spare capacity than in a slot that already earns more.",
+        "A cheap order is worth more in a spare slot than in a slot that already earns more.",
       sources: [],
     },
     moneyComparison: {
@@ -181,7 +181,7 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
           costs: 1200,
         },
       ],
-      note: "Costs include $1 per pastry and the $700 daily bill. The smaller deal needs the buyer’s agreement. No overtime is used in these rows.",
+      note: "Costs include $1 per pastry and the $700 daily bill. The smaller deal needs the buyer’s agreement. No extra shift is used in these rows.",
     },
     check: {
       question:
@@ -222,9 +222,9 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
       partial:
         "A smaller order fills spare space without replacing full-price sales.",
       overtime:
-        "Extra bulk contribution is $200, less than the $250 shift cost.",
+        "The extra bulk pastries leave $200, less than the $250 shift cost.",
       regulars:
-        "Most shop demand is already committed. Bulk sales would displace valuable orders.",
+        "Most shop sales are already booked. Bulk pastries would push out orders that earn more.",
     },
     eventChange: {
       optionId: "full",
@@ -247,12 +247,12 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
         verdict: "Reasonable move",
         why: "Each new app meal leaves $4 after its fee, food and packing. Forty truly extra orders add $160 before fixed costs.",
         tradeoff:
-          "Buyer switching or peak-time crowding could erase that gain.",
+          "Buyers moving from direct to the app, or a crowded busy hour, could erase that gain.",
       },
       direct: {
         score: 70,
         verdict: "Reasonable move",
-        why: "The current 60 direct meals leave $120 after costs. You avoid a lower-margin channel.",
+        why: "The current 60 direct meals leave $120 after costs. You avoid a channel that leaves less per meal.",
         tradeoff:
           "You give up a possible $160 nightly gain if all app orders are truly extra.",
       },
@@ -277,7 +277,7 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
       result:
         "Before the launch fee, 40 extra app meals raise money left from $120 to $280. On the first night with the fee, only $80 remains, below the direct-only plan.",
       connection:
-        "Count genuinely new orders, then check whether they fit when the kitchen has spare time.",
+        "Count the truly new orders. Then check whether they fit when the kitchen has spare time.",
       sources: [],
     },
     moneyComparison: {
@@ -300,7 +300,7 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
           costs: 1920,
         },
       ],
-      note: "Costs include $8 per meal, $600 fixed bills, 30% of app sales and $2 packing per app meal. The final row adds the $200 first-night fee. No direct customer switches channels in this calculation.",
+      note: "Costs include $8 per meal, $600 fixed bills, 30% of app sales and $2 packing per app meal. The final row adds the $200 first-night fee. These rows assume no direct customer moves to the app.",
     },
     check: {
       question:
@@ -341,7 +341,7 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
       switching:
         "Count new buyers separately from buyers who move to a more costly channel.",
       menu: "A higher app price can protect money per order, but may reduce demand.",
-      rush: "Nightly capacity does not guarantee room when buyers actually order.",
+      rush: "Room over the whole night does not mean room at the hour buyers actually order.",
     },
     eventChange: {
       optionId: "all",
@@ -357,7 +357,7 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
     skill: "Price the cost of a free perk",
     takeaway: "Free perks must be paid for somewhere.",
     alternativeConditions:
-      "At $5 delivery, 172 free-shipping orders at $30 beat the current $700 by $4. Under the researched $3 carrier rate, 130 such orders leave $670, still $30 short. A higher basket threshold needs real buyer demand.",
+      "At $5 delivery, 172 free-shipping orders at $30 beat the current $700 by $4. At the $3 carrier rate from the quote, 130 such orders leave $670, still $30 short. A higher basket threshold needs real buyer demand.",
     choices: {
       all: {
         score: 40,
@@ -371,7 +371,7 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
         verdict: "Reasonable move",
         why: "The forecast leaves $660 after costs. Bigger baskets help, but each $10 add-on leaves only $4 to cover $5 shipping.",
         tradeoff:
-          "The offer may attract buyers, but it is not an earnings gain at these assumptions.",
+          "The offer may attract buyers, but at these forecasts it does not add earnings.",
       },
       keep: {
         score: 90,
@@ -382,14 +382,14 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
       raise: {
         score: 75,
         verdict: "Reasonable move",
-        why: "You need more than $12.50 of added goods at a 40% margin to cover a $5 delivery subsidy.",
+        why: "Goods keep 40% of their price. You need more than $12.50 of added goods to cover the $5 shipping you give away.",
         tradeoff:
           "A higher threshold may persuade fewer customers to add items.",
       },
     },
     history: {
       decision:
-        "Choose whether to charge for delivery, absorb it or link it to a bigger basket.",
+        "Choose whether to charge for delivery, pay for it yourself or tie it to a bigger basket.",
       result:
         "Paid shipping leaves $700. Free shipping on every order leaves $410. The $40 threshold leaves $660. A bigger average basket alone does not prove a better offer.",
       connection:
@@ -457,15 +457,15 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
       demand:
         "Clicks do not prove that enough new orders will cover free delivery.",
       basket:
-        "The basket forecast is uncertain; even a larger basket must pay for the shipping subsidy.",
-      rate: "A lower delivery cost could change the free-shipping math, but the volume condition matters.",
+        "The basket forecast is uncertain. Even a larger basket must pay for the shipping you give away.",
+      rate: "A cheaper carrier could change the free-shipping math, but only if you reach the order count.",
     },
     eventChange: {
       optionId: "keep",
       title: "Keep charging $5 with $7 delivery",
       description: "Keep the offer while paying the new carrier rate.",
       tradeoff:
-        "You now subsidize $2 per order and should seek another rate or price.",
+        "You now cover $2 per order yourself. Look for another carrier or price.",
       why: "At 100 orders, the extra $2 delivery cost cuts weekly money left from $700 to $500.",
       score: 70,
     },
@@ -474,12 +474,12 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
     skill: "Separate profit from cash timing",
     takeaway: "Good profit does not always mean cash in time.",
     alternativeConditions:
-      "Accepting late payment works only with enough cash or confirmed funding. A deposit avoids loan fees if the client agrees. After revisions, a $12,000 deposit plus $8,000 cash covers the $18,000 bill, but leaves only $2,000 cash until final payment.",
+      "Accepting late payment works only if you have enough cash or an agreed loan. A deposit avoids loan fees if the client agrees. After revisions, a $12,000 deposit plus $8,000 cash covers the $18,000 bill, but leaves only $2,000 cash until final payment.",
     choices: {
       accept: {
         score: 25,
         verdict: "Risky move",
-        why: "The project has an $18,000 surplus, but you are $4,000 short when the $12,000 delivery bill falls due.",
+        why: "The project leaves $18,000 in the end, but you are $4,000 short when the $12,000 delivery bill is due.",
         tradeoff: "Expected profit does not fill the bank before payday.",
       },
       deposit: {
@@ -498,16 +498,17 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
         score: 80,
         verdict: "Strong move",
         why: "Without new funding or earlier payment, you cannot cover the delivery bill. Passing protects cash for other work.",
-        tradeoff: "You lose a potentially useful $18,000 project surplus.",
+        tradeoff:
+          "You give up a project that could leave $18,000 after its costs.",
       },
     },
     history: {
       decision:
         "Choose payment terms that let you pay the team before the client settles the bill.",
       result:
-        "The original job leaves $18,000 over three months but runs $4,000 short at the first payday. A deposit changes cash timing, not the total project surplus. The $500 loan fee lowers that surplus to $17,500.",
+        "The original job leaves $18,000 over three months but runs $4,000 short at the first payday. A deposit changes when cash arrives, not what the project leaves in total. The $500 loan fee lowers that total to $17,500.",
       connection:
-        "Put cash receipts and bills on a calendar before accepting a profitable project.",
+        "Put money in and bills out on a calendar before accepting a profitable project.",
       sources: [],
     },
     moneyComparison: {
@@ -535,7 +536,7 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
           costs: 18000,
         },
       ],
-      note: "Rows show project surplus, not whole-agency profit. Existing work covers fixed costs separately. Costs include all added delivery costs; the loan row adds its $500 fee, not repayment of principal. The revisions row is a separate event scenario, without a loan.",
+      note: "Rows show what the project leaves, not the whole agency’s profit. Existing work covers fixed costs separately. Costs include every added delivery cost. The loan row adds its $500 fee, not paying back the loan itself. The revisions row is the event on its own, without a loan.",
     },
     check: {
       question:
@@ -546,7 +547,7 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
           id: "18",
           text: "$18,000",
           explanation:
-            "That is the original project surplus, not cash at this point.",
+            "That is what the whole project leaves, not the cash you hold at this point.",
         },
         {
           id: "8",
@@ -572,7 +573,7 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
     ],
     researchNotes: {
       deposit: "The deposit funds delivery without needing a loan.",
-      loan: "Financing fills the gap but lowers earnings and leaves repayment risk if the client pays late.",
+      loan: "A loan fills the gap but lowers earnings. You still owe it if the client pays late.",
       credit:
         "A profitable deal can still put wages or loan repayment at risk when payment arrives late.",
     },
@@ -582,7 +583,7 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
       description: "Take $30,000 with $18,000 delivery costs due in month one.",
       tradeoff:
         "You would need $10,000 more cash before the first bill is due.",
-      why: "The new work cuts the project surplus to $12,000 and widens the immediate cash gap to $10,000.",
+      why: "The new work cuts what the project leaves to $12,000 and grows the cash gap at the first bill to $10,000.",
       score: 15,
     },
   },
@@ -614,8 +615,8 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
       hold: {
         score: 60,
         verdict: "Reasonable move",
-        why: "The current plan leaves $700 a week after listed costs. It avoids new fees and booking friction.",
-        tradeoff: "Twenty unused slots still have no revenue.",
+        why: "The current plan leaves $700 a week after listed costs. It avoids new fees and extra steps for customers.",
+        tradeoff: "Twenty empty slots still bring in no money.",
       },
     },
     history: {
@@ -647,7 +648,7 @@ export const puzzleLessons32: Record<string, CaseLesson> = {
           costs: 3400,
         },
       ],
-      note: "The reminder row uses the trial’s 85 visits and original $20 fee. The deposit row assumes all 100 still book, no late-cancellation refunds, unchanged attendance and the researched $1 fee on each deposit. Attendees pay $50 total, not $60. Fixed costs are included.",
+      note: "The reminder row uses the trial’s 85 visits and original $20 fee. The deposit row assumes all 100 still book, no refunds for late cancellations, the same attendance and the $1 fee on each deposit. Attendees pay $50 total, not $60. Fixed costs are included.",
     },
     check: {
       question:

@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import type { PlayableCase } from "@/lib/types";
 import { EvidenceCard } from "./evidence-card";
+import { Gloss } from "./gloss";
 export function BriefingView({
   gameCase,
   onTalkToAnalyst,
@@ -16,8 +17,12 @@ export function BriefingView({
           <span className="eyebrow">
             {gameCase.company} · {gameCase.year}
           </span>
-          <h2>{gameCase.question}</h2>
-          <p>{gameCase.briefing}</p>
+          <h2>
+            <Gloss text={gameCase.question} />
+          </h2>
+          <p>
+            <Gloss text={gameCase.briefing} />
+          </p>
         </div>
       </div>
       <div className="section-heading">
@@ -48,14 +53,15 @@ export function BriefingView({
           <summary>Known gaps & free checks · no time cost</summary>
           {gameCase.knownLimits.map((item) => (
             <p key={item.id}>
-              <strong>{item.label}.</strong> {item.text}
+              <strong>{item.label}.</strong> <Gloss text={item.text} />
             </p>
           ))}
         </details>
       )}
       <div className="briefing-actions">
         <p>
-          <strong>You’ll practice:</strong> {gameCase.learning.skill}
+          <strong>You’ll practice:</strong>{" "}
+          <Gloss text={gameCase.learning.skill} />
         </p>
         <button className="button outline" onClick={onTalkToAnalyst}>
           Ask a question or research

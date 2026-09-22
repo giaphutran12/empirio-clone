@@ -67,3 +67,11 @@ Edward approved a focused starting experience: a short hook, credible choices, c
 These three cases use version 3. Versions 1 and 2 remain addressable; saved attempts are not rewritten. A revised case opens as a new attempt, with earlier reviewed or unfinished attempts accessible in the picker. Historical choice marks judge the available evidence, not agreement with the CEO or the eventual outcome. Alternative conditions are visible in the reveal. Five-minute playtime, learning transfer and voluntary continuation remain product hypotheses requiring real player feedback.
 
 Local browser receipts and verification: docs/qa/starting-path/README.md. Sources and arithmetic: docs/spotlight-sources.md. Ticket: BLI-4595. Deployment is a separate step from this implementation.
+
+## Step feed and plain words, 2026-09-23
+
+Edward found the case pages too much to read at once and the wording too finance-heavy. Cases now open in a step-by-step feed: one screen per fact, research task or option, with Next, Back, arrow keys and vertical swipe. Research, the halfway development and the decision are screens in the same feed. The old tab layout remains as Full page behind a switch stored per device, so both can be compared; the plan is to retire it once the feed feels right. The review screen after a decision is unchanged.
+
+A shared glossary (src/lib/glossary.ts) defines business terms in one line plus a worked example. Every occurrence in briefings, facts, research, options and live analyst answers is tappable and opens a modal (bottom sheet on phones); desktop hover shows the one-liner. Case-specific words merge in. Edward chose the modal over hover because phones make the two identical.
+
+The 20 business puzzles, the gym case and the three starting cases were rewritten in plain words with numbers, ids, hours and scores unchanged. The 30 historical cases keep their wording and get the popups. Receipts: docs/qa/feed/README.md.

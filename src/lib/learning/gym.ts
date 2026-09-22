@@ -1,7 +1,7 @@
 import type { CaseLesson } from "./types";
 export const gymLesson: CaseLesson = {
   alternativeConditions:
-    "Replacing passes with 20 buyers still loses $9,500 at these costs, even if everyone pays. It needs lower costs or a different offer. Three groups need paid demand, enough room and a full staffing budget. Keeping passes needs a plan to close the $500 monthly gap. A small test helps check those conditions first.",
+    "Replacing passes with 20 buyers still loses $9,500 at these costs, even if everyone pays. It needs lower costs or a different offer. Three groups need paid demand, enough room and a full staff budget. Keeping passes needs a plan to close the $500 monthly gap. A small test checks those things first.",
   skill: "Check the math behind a tempting pitch",
   takeaway: "Money paid today still has to pay for tomorrow’s work.",
   choices: {
@@ -10,7 +10,7 @@ export const gymLesson: CaseLesson = {
       verdict: "Risky move",
       why: "Twenty buyers pay $10,000 for three months. Your current members would pay $15,000 over the same time, if they stay.",
       tradeoff:
-        "You give up repeat payments while the $16,500 base bill stays. Coaching costs extra.",
+        "You give up monthly payments. The $16,500 in bills stays. Coaching costs extra.",
     },
     pilot: {
       score: 85,
@@ -24,7 +24,7 @@ export const gymLesson: CaseLesson = {
       verdict: "Risky move",
       why: "Sixty buyers could bring in $30,000. But there are no paid orders or proof you can serve three groups yet.",
       tradeoff:
-        "A larger target is not a larger bank balance. More clients also mean more work.",
+        "A bigger target is not more money in the bank. More clients also mean more work.",
     },
     hold: {
       score: 50,
@@ -38,9 +38,9 @@ export const gymLesson: CaseLesson = {
     decision:
       "The ad compares $5,000 from one month of passes with $10,000 from a three-month challenge.",
     result:
-      "Over the same 90 days, passes bring in $15,000 and one sold-out challenge brings in $10,000. The challenge collects cash sooner; it does not bring in more sales.",
+      "Over the same 90 days, passes bring in $15,000 and one sold-out challenge brings in $10,000. The challenge collects cash sooner. It does not bring in more sales.",
     connection:
-      "These are calculated examples, not a real gym’s results. The ad’s claims about fitness gains and repeat sales are not verified.",
+      "These are worked examples, not a real gym’s results. The ad’s claims about fitness gains and repeat sales have not been checked.",
     sources: [],
   },
   moneyComparison: {
@@ -59,7 +59,7 @@ export const gymLesson: CaseLesson = {
         costs: 25500,
       },
     ],
-    note: "Challenge costs use the $3,000 coaching quote per group plus $16,500 base bills. The 60-buyer row is arithmetic, not a workable plan yet: extra space or staff could cost more. These rows replace passes; adding a group requires counting members who switch, too. All places sell at full price with no refunds in this example.",
+    note: "Challenge costs use the $3,000 coaching quote per group plus $16,500 in bills. The 60-buyer row is only arithmetic, not a workable plan yet. Extra space or staff could cost more. These rows replace passes. If you add a group instead, you must also count members who switch. In this example every place sells at full price with no refunds.",
   },
   check: {
     question:
@@ -101,7 +101,7 @@ export const gymLesson: CaseLesson = {
     costs:
       "A higher price also buys more of your team’s time. Subtract the coaching bill.",
     demand:
-      "Interest is not a paid order. Count old members separately from new buyers.",
+      "Interest is not a paid order. Count current members separately from new buyers.",
     capacity:
       "One full group does not prove three groups fit. Price the added space and staff first.",
     gaps: "Do not treat a promise in an ad as measured results.",
@@ -112,8 +112,8 @@ export const gymLesson: CaseLesson = {
     description:
       "Keep passes. Find buyers first and agree clear refund terms before risking the $1,000 booking payment.",
     tradeoff:
-      "You may lose this coach’s slot, but paying now would put half your cash at risk before any sales.",
-    why: "The booking payment changes the order of the test: prove paid demand before committing half your cash. Do not count a refundable payment as money you can safely spend.",
+      "You may lose this coach’s slot. But paying now puts half your cash at risk before any sales.",
+    why: "The booking payment changes the order of the test. Prove paid demand before you commit half your cash. Do not count a refundable payment as money you can safely spend.",
     score: 85,
   },
 };

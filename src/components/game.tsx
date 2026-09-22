@@ -22,6 +22,9 @@ import { AnalystView } from "./analyst-view";
 import { DecisionView } from "./decision-view";
 import { ResearchConfirmation } from "./research-confirmation";
 import { DebriefView } from "./debrief";
+import { CaseFeed } from "./case-feed";
+import { GlossaryProvider } from "./gloss";
+import { loadLayout, saveLayout, type Layout } from "@/lib/storage";
 
 import {
   GameHeader,
@@ -78,6 +81,7 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
   const [researchId, setResearchId] = useState<string | null>(null);
   const [eventNotice, setEventNotice] = useState(false);
   const [online, setOnline] = useState(true);
+  const [layout, setLayout] = useState<Layout>("feed");
   const session = sessions.find((item) => item.id === activeId);
 
   useEffect(() => {
@@ -90,6 +94,7 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
       );
     }
     setLoaded(true);
+    setLayout(loadLayout());
     const update = () => setOnline(navigator.onLine);
     update();
     window.addEventListener("online", update);
@@ -248,6 +253,7 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
               researchIds: [],
               kind: "evidence",
             },
+            researchId,
           },
         ],
       });
@@ -368,6 +374,12 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
     setError("");
     window.scrollTo(0, 0);
   }
+  function switchLayout(next: Layout) {
+    setLayout(next);
+    saveLayout(next);
+    setResearchId(null);
+    window.scrollTo(0, 0);
+  }
 
   const notices = (
     <>
@@ -441,177 +453,224 @@ export function Game({ cases }: { cases: CaseSummary[] }) {
       orderedNext[0]);
   const task = gameCase.research.find((item) => item.id === researchId);
   return (
-    <div className="game-shell">
-      {notices}
-      <GameHeader gameCase={gameCase} busy={!!busy} onExit={leaveCase} />
-      {collection === "start" && startingCaseIds.includes(gameCase.id) && (
-        <div className="path-progress" aria-label="Starting path progress">
-          <span>CALL {startingCaseIds.indexOf(gameCase.id) + 1} OF 3</span>
-          <span>
-            {gameCase.format === "scenario"
-              ? "Business puzzle"
-              : "Real company decision"}
-          </span>
-        </div>
-      )}
-      <div className="saved-attempts">
-        {savedAttempts.length > 1 && (
-          <label className="attempt-picker">
-            Your saved attempts
-            <select
-              aria-label="View saved attempt"
-              value={session.id}
-              disabled={!!busy}
-              onChange={(event) => reviewAttempt(event.target.value)}
-            >
-              {savedAttempts.map((item, index) => (
-                <option key={item.id} value={item.id}>
-                  {index === 0 ? "Original attempt" : `Attempt ${index + 1}`} ·
-                  v{item.version}
-                  {item.debrief ? " · reviewed" : " · unfinished"} ·{" "}
-                  {new Date(item.startedAt).toLocaleDateString()}
-                </option>
-              ))}
-            </select>
-          </label>
+    <GlossaryProvider caseTerms={gameCase.learning.terms}>
+      <div className="game-shell">
+        {notices}
+        <GameHeader gameCase={gameCase} busy={!!busy} onExit={leaveCase} />
+        {collection === "start" && startingCaseIds.includes(gameCase.id) && (
+          <div className="path-progress" aria-label="Starting path progress">
+            <span>CALL {startingCaseIds.indexOf(gameCase.id) + 1} OF 3</span>
+            <span>
+              {gameCase.format === "scenario"
+                ? "Business puzzle"
+                : "Real company decision"}
+            </span>
+          </div>
         )}
-      </div>
-      {session.debrief ? (
-        <main className="game-main">
-          <DebriefView
-            session={session}
-            gameCase={gameCase}
-            onExit={() => {
-              if (collection === "start") setCollection("scenario");
-              leaveCase();
-            }}
-            online={online}
-            nextCase={nextCase}
-            pathFinished={pathFinished}
-            onNext={() => {
-              if (nextCase) {
-                openCase(nextCase, hasCurrentReview(nextCase, sessions));
-              } else {
-                setCollection("scenario");
-                leaveCase();
-              }
-            }}
-            onPractice={(practiceAnswerId) =>
-              updateSession({ practiceAnswerId })
-            }
-            onCoach={askCoach}
-            onCoachDraft={(coachDraft) => updateSession({ coachDraft })}
-            onRetry={() => submitDecision()}
-            busy={!!busy}
-            onReplay={() =>
-              openCase(
-                cases.find((item) => item.id === session.caseId)!,
-                true,
-              )
-            }
-          />
-        </main>
-      ) : (
-        <>
-          {session.version <
-            (cases.find((item) => item.id === session.caseId)?.version ??
-              2) && (
-            <div className="global-notice">
-              Your saved research time is kept.{" "}
+        <div className="saved-attempts">
+          {!session.debrief && (
+            <div
+              className="layout-switch"
+              role="group"
+              aria-label="Reading mode"
+            >
               <button
-                className="text-button"
-                disabled={!!busy}
-                onClick={() =>
-                  openCase(
-                    cases.find((item) => item.id === session.caseId)!,
-                    true,
-                  )
-                }
+                className={layout === "feed" ? "active" : ""}
+                aria-pressed={layout === "feed"}
+                onClick={() => switchLayout("feed")}
               >
-                Start the updated case
+                Step by step
+              </button>
+              <button
+                className={layout === "tabs" ? "active" : ""}
+                aria-pressed={layout === "tabs"}
+                onClick={() => switchLayout("tabs")}
+              >
+                Full page
               </button>
             </div>
           )}
-          <CaseNavigation
-            gameCase={gameCase}
-            informedReplay={session.informedReplay}
-            tab={tab}
-            onTabChange={switchTab}
-          />
+          {savedAttempts.length > 1 && (
+            <label className="attempt-picker">
+              Your saved attempts
+              <select
+                aria-label="View saved attempt"
+                value={session.id}
+                disabled={!!busy}
+                onChange={(event) => reviewAttempt(event.target.value)}
+              >
+                {savedAttempts.map((item, index) => (
+                  <option key={item.id} value={item.id}>
+                    {index === 0 ? "Original attempt" : `Attempt ${index + 1}`}{" "}
+                    · v{item.version}
+                    {item.debrief ? " · reviewed" : " · unfinished"} ·{" "}
+                    {new Date(item.startedAt).toLocaleDateString()}
+                  </option>
+                ))}
+              </select>
+            </label>
+          )}
+        </div>
+        {session.debrief ? (
           <main className="game-main">
-            {eventNotice && gameCase.event && (
-              <div className="event-notice" role="status">
-                <div>
-                  <span className="eyebrow">NEW DEVELOPMENT</span>
-                  <h3>{gameCase.event.title}</h3>
-                  <p>{gameCase.event.text}</p>
-                </div>
+            <DebriefView
+              session={session}
+              gameCase={gameCase}
+              onExit={() => {
+                if (collection === "start") setCollection("scenario");
+                leaveCase();
+              }}
+              online={online}
+              nextCase={nextCase}
+              pathFinished={pathFinished}
+              onNext={() => {
+                if (nextCase) {
+                  openCase(nextCase, hasCurrentReview(nextCase, sessions));
+                } else {
+                  setCollection("scenario");
+                  leaveCase();
+                }
+              }}
+              onPractice={(practiceAnswerId) =>
+                updateSession({ practiceAnswerId })
+              }
+              onCoach={askCoach}
+              onCoachDraft={(coachDraft) => updateSession({ coachDraft })}
+              onRetry={() => submitDecision()}
+              busy={!!busy}
+              onReplay={() =>
+                openCase(
+                  cases.find((item) => item.id === session.caseId)!,
+                  true,
+                )
+              }
+            />
+          </main>
+        ) : (
+          <>
+            {session.version <
+              (cases.find((item) => item.id === session.caseId)?.version ??
+                2) && (
+              <div className="global-notice">
+                Your saved research time is kept.{" "}
                 <button
-                  aria-label="Dismiss development"
-                  onClick={() => setEventNotice(false)}
+                  className="text-button"
+                  disabled={!!busy}
+                  onClick={() =>
+                    openCase(
+                      cases.find((item) => item.id === session.caseId)!,
+                      true,
+                    )
+                  }
                 >
-                  <X size={18} />
+                  Start the updated case
                 </button>
               </div>
             )}
-            {gameCase.remainingHours === 0 && (
-              <div className="deadline-notice">
-                <Clock3 size={19} />
-                <span>
-                  The research window has closed. Review what you know and make
-                  your call.
-                </span>
-              </div>
-            )}
-            {tab === "briefing" && (
-              <BriefingView
+            {layout === "tabs" && (
+              <CaseNavigation
                 gameCase={gameCase}
-                onTalkToAnalyst={() => switchTab("analyst")}
+                informedReplay={session.informedReplay}
+                tab={tab}
+                onTabChange={switchTab}
               />
             )}
-            {tab === "analyst" && (
-              <AnalystView
-                gameCase={gameCase}
-                session={session}
+            <main
+              className={`game-main ${layout === "feed" ? "feed-main" : ""}`}
+            >
+              {eventNotice && gameCase.event && layout === "tabs" && (
+                <div className="event-notice" role="status">
+                  <div>
+                    <span className="eyebrow">NEW DEVELOPMENT</span>
+                    <h3>{gameCase.event.title}</h3>
+                    <p>{gameCase.event.text}</p>
+                  </div>
+                  <button
+                    aria-label="Dismiss development"
+                    onClick={() => setEventNotice(false)}
+                  >
+                    <X size={18} />
+                  </button>
+                </div>
+              )}
+              {gameCase.remainingHours === 0 && (
+                <div className="deadline-notice">
+                  <Clock3 size={19} />
+                  <span>
+                    The research window has closed. Review what you know and
+                    make your call.
+                  </span>
+                </div>
+              )}
+              {layout === "feed" && (
+                <CaseFeed
+                  gameCase={gameCase}
+                  session={session}
+                  step={session.feedStep ?? 0}
+                  onStep={(feedStep) => updateSession({ feedStep })}
+                  busy={!!busy}
+                  thinking={busy === "analyst"}
+                  preparingDebrief={busy === "debrief"}
+                  online={online}
+                  onResearch={setResearchId}
+                  onAsk={askAnalyst}
+                  onDraftChange={(draft) => updateSession({ draft })}
+                  onDecisionChange={(decisionDraft) =>
+                    updateSession({ decisionDraft })
+                  }
+                  onSubmit={submitDecision}
+                />
+              )}
+              {layout === "tabs" && tab === "briefing" && (
+                <BriefingView
+                  gameCase={gameCase}
+                  onTalkToAnalyst={() => switchTab("analyst")}
+                />
+              )}
+              {layout === "tabs" && tab === "analyst" && (
+                <AnalystView
+                  gameCase={gameCase}
+                  session={session}
+                  busy={!!busy}
+                  thinking={busy === "analyst"}
+                  online={online}
+                  onResearch={setResearchId}
+                  onAsk={askAnalyst}
+                  onDraftChange={(draft) => updateSession({ draft })}
+                />
+              )}
+              {layout === "tabs" && tab === "decision" && (
+                <DecisionView
+                  gameCase={gameCase}
+                  session={session}
+                  busy={!!busy}
+                  preparingDebrief={busy === "debrief"}
+                  online={online}
+                  onChange={(decisionDraft) => updateSession({ decisionDraft })}
+                  onSubmit={submitDecision}
+                />
+              )}
+            </main>
+            {layout === "tabs" && tab !== "decision" && (
+              <DecisionDock
+                remainingHours={gameCase.remainingHours}
+                onDecide={() => switchTab("decision")}
+              />
+            )}
+            {task && (
+              <ResearchConfirmation
+                task={task}
+                remainingHours={gameCase.remainingHours}
                 busy={!!busy}
-                thinking={busy === "analyst"}
-                online={online}
-                onResearch={setResearchId}
-                onAsk={askAnalyst}
-                onDraftChange={(draft) => updateSession({ draft })}
+                reviewing={busy === "research"}
+                onConfirm={commissionResearch}
+                onCancel={() => setResearchId(null)}
               />
             )}
-            {tab === "decision" && (
-              <DecisionView
-                gameCase={gameCase}
-                session={session}
-                busy={!!busy}
-                preparingDebrief={busy === "debrief"}
-                online={online}
-                onChange={(decisionDraft) => updateSession({ decisionDraft })}
-                onSubmit={submitDecision}
-              />
-            )}
-          </main>
-          {tab !== "decision" && (
-            <DecisionDock
-              remainingHours={gameCase.remainingHours}
-              onDecide={() => switchTab("decision")}
-            />
-          )}
-          {task && (
-            <ResearchConfirmation
-              task={task}
-              remainingHours={gameCase.remainingHours}
-              busy={!!busy}
-              reviewing={busy === "research"}
-              onConfirm={commissionResearch}
-              onCancel={() => setResearchId(null)}
-            />
-          )}
-        </>
-      )}
-    </div>
+          </>
+        )}
+      </div>
+    </GlossaryProvider>
   );
 }
 

@@ -3,7 +3,7 @@ import type { CaseLesson } from "./types";
 export const puzzleLessons44: Record<string, CaseLesson> = {
   "case-044": {
     alternativeConditions:
-      "At $40 per order, goods, delivery and ad costs together must fall below $40 to leave anything for overhead. A $45 price works only if enough buyers still buy.",
+      "At $40 per order, goods, delivery and ad costs together must fall below $40 to leave anything for fixed bills. A $45 price works only if enough buyers still buy.",
     skill: "Look past the ad sales number",
     takeaway: "A sale can cost more than it brings in.",
     choices: {
@@ -36,7 +36,7 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
       decision:
         "Pause this ad and fix the costs. The last batch lost $300 before rent and salaries. Stop paying to repeat that loss.",
       result:
-        "At the opening rate, $4,000 sales minus $2,500 goods, $800 delivery and fees, and $1,000 ads leaves a $300 loss before overhead.",
+        "At the opening rate, $4,000 sales minus $2,500 goods, $800 delivery and fees, and $1,000 ads leaves a $300 loss before fixed bills.",
       connection: "A sale can cost more than it brings in.",
       sources: [],
     },
@@ -60,7 +60,7 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
           costs: 4300,
         },
       ],
-      note: "One month, before rent and salaries. Rows use the opening $10 ad cost per order and unchanged demand. The higher ad rate in the update is not included. Pausing means no new ad orders, sales or order costs. These are contribution comparisons, not total shop profit.",
+      note: "One month, before rent and salaries. Rows use the opening $10 ad cost per order and unchanged demand. The higher ad rate in the update is not included. Pausing means no new ad orders, sales or order costs. These rows show money left after order costs, not total shop profit.",
     },
     check: {
       question:
@@ -69,7 +69,7 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
         {
           id: "loss",
           text: "$1 loss",
-          explanation: "40 minus 31 minus 10 is minus 1, before overhead.",
+          explanation: "40 minus 31 minus 10 is minus 1, before fixed bills.",
         },
         {
           id: "nine",
@@ -91,7 +91,7 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
       },
       {
         term: "Contribution",
-        meaning: "Sales left after the costs tied to those sales.",
+        meaning: "The money from a sale left after that sale’s own costs.",
       },
     ],
     researchNotes: {
@@ -102,15 +102,15 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
     eventChange: {
       optionId: "double",
       title: "Double ads at the higher rate",
-      description: "Spend $2,000 at the new $12 acquisition cost.",
-      tradeoff: "Each order now loses $5 before overhead.",
-      why: "The visible ad quote makes each new order worse: $40 minus $33 minus $12 is minus $5.",
+      description: "Spend $2,000 at the new $12 ad cost per order.",
+      tradeoff: "Each order now loses $5 before fixed bills.",
+      why: "The new ad quote makes each order worse: $40 minus $33 minus $12 is minus $5.",
       score: 10,
     },
   },
   "case-045": {
     alternativeConditions:
-      "With $8,000 spendable cash, this $20,000 upfront bill needs at least $12,000 collected first, or signed funding for the gap. Late payment still makes customer concentration risky.",
+      "With $8,000 to spend, this $20,000 upfront bill needs at least $12,000 collected first, or signed funding for the gap. Late payment is still a risk when one customer is most of your sales.",
     skill: "Check when the money arrives",
     takeaway: "Profit on paper cannot pay a bill today.",
     choices: {
@@ -123,29 +123,30 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
       deposit: {
         score: 90,
         verdict: "Strong move",
-        why: "The deposit plus $8,000 spendable cash covers the $20,000 bill without touching the reserve.",
+        why: "The deposit plus the $8,000 you can spend covers the $20,000 bill. Your reserve stays untouched.",
         tradeoff:
           "The buyer may refuse, and the unpaid balance still has risk.",
       },
       decline: {
         score: 75,
         verdict: "Reasonable move",
-        why: "Declining avoids a cash gap and more reliance on one customer. Asking for safe terms first could preserve the opportunity.",
-        tradeoff: "You lose a possible $10,000 contribution.",
+        why: "Declining avoids a cash gap. It also avoids leaning harder on one customer. Asking for safer terms first could keep the deal alive.",
+        tradeoff:
+          "You give up an order that could leave $10,000 after its own costs.",
       },
       small: {
         score: 70,
         verdict: "Reasonable move",
-        why: "Smaller goods cost less upfront, but delivery terms and buyer consent still need checking.",
+        why: "A smaller order costs less upfront. You still need a delivery quote and the buyer’s agreement.",
         tradeoff:
-          "A smaller order lowers exposure but may not meet the buyer’s needs.",
+          "A smaller order puts less cash at risk, but may not suit the buyer.",
       },
     },
     history: {
       decision:
-        "Require a 50% deposit. The deposit plus $8,000 spendable cash covers the $20,000 bill without touching the reserve.",
+        "Require a 50% deposit. The deposit plus the $8,000 you can spend covers the $20,000 bill. Your reserve stays untouched.",
       result:
-        "The full order leaves $10,000 before overhead if paid. Yet the opening no-deposit plan needs $12,000 more than the $8,000 you can safely spend.",
+        "The full order leaves $10,000 before fixed bills if paid. Yet the opening no-deposit plan needs $12,000 more than the $8,000 you can safely spend.",
       connection: "Profit on paper cannot pay a bill today.",
       sources: [],
     },
@@ -169,7 +170,7 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
           costs: 0,
         },
       ],
-      note: "One full order, excluding existing overhead. Both full-order rows leave $10,000 contribution if paid in full; the deposit changes timing, not sales or costs. The 1,000-unit option needs a new delivery quote and is not priced here. The later 20% deposit does not change contribution, but cannot fund the order.",
+      note: "One full order, before fixed bills. Both full-order rows leave $10,000 if paid in full. The deposit changes when money arrives, not sales or costs. The 1,000-unit option needs a new delivery quote and is not priced here. The later 20% deposit leaves the same money, but cannot pay for the order.",
     },
     check: {
       question:
@@ -212,16 +213,16 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
       optionId: "deposit",
       title: "Decline unless funding is secured",
       description:
-        "Do not commit the full order at a $6,000 deposit without new funding.",
+        "Do not promise the full order on a $6,000 deposit without new funding.",
       tradeoff:
         "You may lose the buyer, but the reduced deposit leaves a $6,000 cash gap.",
-      why: "Only $8,000 available cash plus $6,000 deposit cannot cover $20,000 upfront. Refuse an unfunded promise.",
+      why: "Your $8,000 spendable cash plus the $6,000 deposit cannot cover $20,000 upfront. Do not promise what you cannot fund.",
       score: 95,
     },
   },
   "case-046": {
     alternativeConditions:
-      "At $2 per deal ticket and $8 per regular ticket, 40 deal buyers need fewer than 10 switchers to add contribution. A targeted offer is useful only if it actually reduces switching.",
+      "At $2 per deal ticket and $8 per regular ticket, 40 deal buyers must include fewer than 10 switchers to add any money. A targeted offer helps only if it really cuts switching.",
     skill: "Count sales you replace",
     takeaway: "A discount helps only when it adds enough new buying.",
     choices: {
@@ -234,14 +235,14 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
       new: {
         score: 85,
         verdict: "Strong move",
-        why: "Quiet seats cost little extra to fill. Targeting lapsed buyers lowers the risk of replacing full-price sales.",
+        why: "Quiet seats cost little extra to fill. Aiming at guests who stopped coming lowers the risk of replacing full-price sales.",
         tradeoff: "Some may still have bought without the offer.",
       },
       regular: {
         score: 65,
         verdict: "Reasonable move",
-        why: "You protect the $8 contribution from each regular sale. You also give up a chance to bring back guests.",
-        tradeoff: "You avoid switching, but may leave useful capacity empty.",
+        why: "You protect the $8 each regular sale leaves. You also give up a chance to bring back guests.",
+        tradeoff: "You avoid switching, but may leave useful seats empty.",
       },
       bundle: {
         score: 65,
@@ -252,7 +253,7 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
     },
     history: {
       decision:
-        "Target lapsed guests first. Quiet seats cost little extra to fill. Targeting lapsed buyers lowers the risk of replacing full-price sales.",
+        "Target lapsed guests first. Quiet seats cost little extra to fill. Aiming at guests who stopped coming lowers the risk of replacing full-price sales.",
       result:
         "Forty deal tickets leave $80. If ten of those buyers would have paid full price, you give up $80 from the regular visits. The extra gain becomes zero.",
       connection: "A discount helps only when it adds enough new buying.",
@@ -278,11 +279,11 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
           costs: 160,
         },
       ],
-      note: "One Tuesday offer and the regular visits it could replace. The third row leaves $80 contribution, equal to the $80 in the second row: with ten switchers, the net gain is zero. The all-extra row is an upper assumption, not a forecast. Fixed bills and snacks are excluded.",
+      note: "One Tuesday offer and the regular visits it could replace. The third row leaves $80 after costs, the same as the $80 in the second row. With ten switchers, the extra gain is zero. The all-extra row is a best case, not a forecast. Fixed bills and snacks are left out.",
     },
     check: {
       question:
-        "40 deal buyers include 5 people who would have bought regular tickets. What is the added contribution?",
+        "40 deal buyers include 5 people who would have bought regular tickets. How much extra money does the deal add?",
       options: [
         {
           id: "forty",
@@ -311,7 +312,7 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
       {
         term: "Added contribution",
         meaning:
-          "Money left from the offer after subtracting costs and sales it replaces.",
+          "Money the offer leaves after its own costs and the sales it replaces.",
       },
     ],
     researchNotes: {
@@ -324,13 +325,13 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
       title: "Send the repeat-use broad coupon",
       description: "Launch the four-week coupon to every subscriber.",
       tradeoff: "Regular buyers could switch several visits, not just one.",
-      why: "Repeat use adds exposure when even ten switched regular tickets erase the expected first-show gain.",
+      why: "Repeat use raises the risk. Even ten switched regular tickets wipe out the expected first-show gain.",
       score: 25,
     },
   },
   "case-047": {
     alternativeConditions:
-      "The $4,000 pallet needs at least $6,000 cash to preserve the opening $2,000 bill reserve, or agreed later payment. Extra stock also needs a safe demand plan.",
+      "The $4,000 pallet needs at least $6,000 in the bank to keep the opening $2,000 bill reserve, or an agreed later payment. Extra stock also needs a safe plan for how fast it sells.",
     skill: "Separate stock value from cash",
     takeaway: "A discount can be real and still be too expensive today.",
     choices: {
@@ -355,8 +356,9 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
       split: {
         score: 80,
         verdict: "Strong move",
-        why: "Better payment timing could preserve the discount. Do not treat a request as agreed terms.",
-        tradeoff: "The supplier may refuse or require a later commitment.",
+        why: "Paying in smaller steps could keep the discount. A request is not a deal until the supplier agrees.",
+        tradeoff:
+          "The supplier may refuse, or may want a promise on the later batch.",
       },
     },
     history: {
@@ -387,7 +389,7 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
           costs: 0,
         },
       ],
-      note: "Three months, assuming 100 full-price sales monthly. Costs shown are the cost of units sold, not cash spent. The bulk order spends $4,000 upfront, with $1,600 of unsold stock left after 300 sales. Monthly orders spend $3,000 in total. Other shop bills and the later repair are excluded, so the difference is contribution, not profit.",
+      note: "Three months, assuming 100 full-price sales monthly. Costs shown are the cost of units sold, not cash spent. The bulk order spends $4,000 upfront, with $1,600 of unsold stock left after 300 sales. Monthly orders spend $3,000 in total. Other shop bills and the later repair are left out, so the difference is money left after stock costs, not profit.",
     },
     check: {
       question:
@@ -424,7 +426,7 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
       },
     ],
     researchNotes: {
-      age: "Stock may retain value while still locking up cash.",
+      age: "Stock can keep its value and still tie up your cash.",
       terms: "Split payments ease today’s gap but create a later promise.",
       sales: "Use a slower-sales case before locking cash in inventory.",
     },
@@ -439,7 +441,7 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
   },
   "case-048": {
     alternativeConditions:
-      "The $1,200 fixed fee matches $50 an hour only at 24 hours or less. Accepting more time may still fit your goals, but it is a lower hourly return, not a free upgrade.",
+      "The $1,200 fixed fee matches $50 an hour only at 24 hours or less. You may still choose to accept more hours. But that means less pay per hour, not a better deal.",
     skill: "Price the whole promise",
     takeaway: "A fixed price needs a clear finish line.",
     choices: {
@@ -447,7 +449,7 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
         score: 30,
         verdict: "Risky move",
         why: "The fee beats 20 hours at $50 only if extra work stays small. Unlimited edits leave that open.",
-        tradeoff: "Total hours could exceed your 40-hour capacity.",
+        tradeoff: "Total hours could go past the 40 hours you have.",
       },
       hourly: {
         score: 85,
@@ -496,11 +498,11 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
           costs: 0,
         },
       ],
-      note: "One project. These are fee receipts before tax and overhead, not profit: owner labor is not charged as a cash cost in the table. Effective pay is $50, $40 and $50 per hour respectively. The 30- and 24-hour totals are scenarios, not promises. The later extra pages are not included in these baseline examples.",
+      note: "One project. These are fees before tax and fixed bills, not profit. Your own hours are not counted as a cash cost in the table. Pay per hour works out to $50, $40 and $50 in that order. The 30- and 24-hour totals are examples, not promises. The later extra pages are not included here.",
     },
     check: {
       question:
-        "A $1,200 fee takes 40 hours. What is your pay per hour before overhead?",
+        "A $1,200 fee takes 40 hours. What is your pay per hour before fixed bills?",
       options: [
         {
           id: "thirty",
@@ -540,13 +542,13 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
       title: "Accept the expanded $1,200 job",
       description: "Promise the new scope and unlimited edits at the same fee.",
       tradeoff: "Even the first draft pays only $40 per hour.",
-      why: "Thirty hours for $1,200 is $40 per hour before any edits. More scope makes the unchanged fee less attractive.",
+      why: "Thirty hours for $1,200 is $40 per hour before any edits. More work for the same fee makes the deal worse.",
       score: 15,
     },
   },
   "case-049": {
     alternativeConditions:
-      "At the original $2,400 fixed bill, 80 paid seats cover modeled costs. The $1,800 smaller package needs 60 seats. After the original price rises to $2,700, it needs 90 seats.",
+      "At the original $2,400 fixed bill, 80 paid seats cover all the costs counted here. The $1,800 smaller package needs 60 seats. After the original price rises to $2,700, it needs 90 seats.",
     skill: "Find the real break-even point",
     takeaway: "Count what each seat leaves, not just what it sells for.",
     choices: {
@@ -565,7 +567,7 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
       cancel: {
         score: 75,
         verdict: "Reasonable move",
-        why: "Cancelling avoids a known shortfall. The quote is still open, so you could wait for firm sales first.",
+        why: "Cancelling avoids a loss you can already see. The quote is still open, so you could wait for firm sales first.",
         tradeoff: "You lose a chance to sell more seats before the deadline.",
       },
       cheap: {
@@ -609,7 +611,7 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
           costs: 0,
         },
       ],
-      note: "One event, all modeled event costs included. Refunds on cancellation leave no retained sales and no event expense. The smaller-package row uses the research quote. Original-package rows use the opening $2,400 bill, not the later $2,700 update. Refundable presales must remain available for refunds until confirmation.",
+      note: "One event, with every event cost counted. If you cancel, you refund everything, so there are no sales and no event costs. The smaller-package row uses the research quote. Original-package rows use the opening $2,400 bill, not the later $2,700 update. Ticket money must stay available for refunds until you confirm.",
     },
     check: {
       question:
@@ -647,39 +649,40 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
     researchNotes: {
       sales: "Interest does not close the funding gap.",
       costs: "Lower fixed costs change how many seats must sell.",
-      sponsor: "Do not spend an unsigned sponsor promise.",
+      sponsor: "Do not spend sponsor money that is not signed and paid.",
     },
     eventChange: {
       optionId: "threshold",
       title: "Require 90 paid tickets first",
       description: "Only confirm the original package after 90 tickets sell.",
       tradeoff: "Ninety guests leave no cushion for surprises.",
-      why: "The visible new fixed bill needs 90 times $30, or $2,700. The old 80-ticket threshold no longer covers it.",
+      why: "The new fixed bill needs 90 times $30, or $2,700. The old 80-ticket rule no longer covers it.",
       score: 85,
     },
   },
   "case-050": {
     alternativeConditions:
-      "Repeat ads can be worth it if users stay long enough to cover acquisition and service costs. At $15 monthly contribution, a $20 acquisition cost needs more than 1.33 paid months before overhead. A $2,000 repair needs over 133 saved user-months at $15 each; saving 30 for one month is not enough.",
+      "Repeat ads can be worth it if users stay long enough to cover the cost of winning and serving them. Each user leaves $15 a month, so a $20 signup cost needs more than 1.33 paid months before fixed bills. A $2,000 repair needs over 133 saved user-months at $15 each. Saving 30 users for one month is not enough.",
     skill: "Look at who stays",
     takeaway: "New signups matter less when nearly as many people leave.",
     choices: {
       ads: {
         score: 55,
         verdict: "Risky move",
-        why: "New signups are real, but replacing departed users uses most of the effort. Repeat sales quality still needs checking.",
+        why: "New signups are real, but most of them only replace users who left. How long new users stay still needs checking.",
         tradeoff: "If 90 still leave, the base grows by just 10.",
       },
       bigger: {
         score: 30,
         verdict: "Risky move",
-        why: "More signups could grow the base, but this doubles an unproved long-term bet and creates a bill to repay.",
-        tradeoff: "You add debt while the cause of exits remains unknown.",
+        why: "More signups could grow the base. But this doubles a bet that is not yet proved, and adds a loan to repay.",
+        tradeoff:
+          "You take on debt while you still do not know why users leave.",
       },
       retain: {
         score: 85,
         verdict: "Strong move",
-        why: "Ninety exits offset most of 100 signups. A measured repair addresses the leak instead of assuming it is harmless.",
+        why: "Ninety exits cancel out most of 100 signups. A tested repair tackles the leak instead of assuming it does not matter.",
         tradeoff: "The repair may save few users, and new signups could slow.",
       },
       hold: {
@@ -691,9 +694,9 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
     },
     history: {
       decision:
-        "Find and fix the biggest exit cause. Ninety exits offset most of 100 signups. A measured repair addresses the leak instead of assuming it is harmless.",
+        "Find and fix the biggest exit cause. Ninety exits cancel out most of 100 signups. A tested repair tackles the leak instead of assuming it does not matter.",
       result:
-        "The celebrated month added only ten net users: 500 plus 100 minus 90 equals 510. Repair payback depends on how many users stay and for how long; no result is guaranteed.",
+        "The celebrated month added only ten users overall: 500 plus 100 minus 90 equals 510. The repair’s payback depends on how many users stay and for how long. Nothing is guaranteed.",
       connection: "New signups matter less when nearly as many people leave.",
       sources: [],
     },
@@ -723,7 +726,7 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
           costs: 7100,
         },
       ],
-      note: "Illustrative first full month after the next decision, before fixed overhead. Start with 510. Ads assumes 100 joins and 90 exits, leaving 520; costs include $2,600 service plus the $2,000 campaign. Repair assumes no new joins and only 60 exits, leaving 450; costs include $2,250 service plus the $2,000 fix. Saving 30 exits is an assumption, not a measured benefit. Hold assumes no joins and 90 exits, leaving 420. Double ads assumes 200 joins and 90 exits, leaving 620; costs include $3,100 service plus $4,000 ads. Loan principal repayment and interest are not included: financing terms are unknown, so the double-ad row is not a cash forecast. All use opening ad rates, not the later $25 quote.",
+      note: "An example first full month after the next decision, before fixed bills. Start with 510. Ads assumes 100 join and 90 leave, leaving 520; its costs are $2,600 service plus the $2,000 campaign. Repair assumes no one new joins and only 60 leave, leaving 450; its costs are $2,250 service plus the $2,000 fix. Saving 30 users is a guess, not a measured result. Hold assumes no one joins and 90 leave, leaving 420. Double ads assumes 200 join and 90 leave, leaving 620; its costs are $3,100 service plus $4,000 ads. Loan repayments and interest are not included. The loan terms are unknown, so the double-ads row is not a cash forecast. All rows use the opening ad price, not the later $25 quote.",
     },
     check: {
       question:
@@ -758,9 +761,9 @@ export const puzzleLessons44: Record<string, CaseLesson> = {
       },
     ],
     researchNotes: {
-      exit: "Find a specific cause before promising a retention gain.",
+      exit: "Find one clear cause before promising that more users will stay.",
       fix: "A feasible repair is not the same as a proved result.",
-      cohort: "Acquisition costs repeat when people leave quickly.",
+      cohort: "You pay to win users again and again when they leave quickly.",
     },
     eventChange: {
       optionId: "ads",

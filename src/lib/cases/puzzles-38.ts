@@ -26,7 +26,7 @@ export const puzzleCases38: CaseDefinition[] = [
       {
         id: "fact-2",
         label: "$40 per customer each month",
-        text: "Hosting and support cost $40 per active customer per month.",
+        text: "You pay $40 a month in hosting and support for each active customer.",
         kind: "simulation",
         sourceIds: [],
       },
@@ -47,7 +47,7 @@ export const puzzleCases38: CaseDefinition[] = [
       {
         id: "fact-5",
         label: "$6,000 in the bank",
-        text: "The current monthly plan is profitable at 100 customers. The business does not need an emergency cash raise.",
+        text: "The current monthly plan makes a profit at 100 customers. You do not need to raise cash in a hurry.",
         kind: "simulation",
         sourceIds: [],
       },
@@ -70,14 +70,14 @@ export const puzzleCases38: CaseDefinition[] = [
       },
       {
         id: "support",
-        title: "Audit support use",
+        title: "Check support use",
         description: "Check whether service costs vary by customer.",
         hours: 2,
         evidence: [
           {
             id: "support-finding",
             label: "20 customers use half the support",
-            text: "Twenty heavy users account for half of the support portion of costs. We do not yet have a fair usage limit they would accept.",
+            text: "Twenty heavy users cause half of the support costs. We do not yet have a usage limit they would accept as fair.",
             kind: "simulation",
             sourceIds: [],
           },
@@ -92,7 +92,7 @@ export const puzzleCases38: CaseDefinition[] = [
           {
             id: "cancellations-finding",
             label: "10 of 100 left within a year",
-            text: "In the previous group, ten customers left after six paid months. That group paid for 1,140 customer-months, not 1,200. Future retention is unknown.",
+            text: "In the previous group, ten customers left after six paid months. That group paid for 1,140 customer-months, not 1,200. How many will stay next year is unknown.",
             kind: "simulation",
             sourceIds: [],
           },
@@ -127,7 +127,7 @@ export const puzzleCases38: CaseDefinition[] = [
         id: "choice",
         title: "Offer $1,080 yearly or $100 monthly",
         description:
-          "Give a modest discount without forcing everyone to pay early.",
+          "Give a small discount without forcing everyone to pay early.",
         tradeoff:
           "Some cash comes sooner; each annual buyer gives up $120 of sales.",
       },
@@ -155,11 +155,11 @@ export const puzzleCases38: CaseDefinition[] = [
       sources: [],
       consequences: {
         cheap:
-          "At full retention, the offer cuts yearly sales from $120,000 to $90,000 while $84,000 in costs stay.",
+          "If everyone stays, the offer cuts yearly sales from $120,000 to $90,000 while $84,000 in costs stay.",
         choice:
           "A smaller discount buys earlier cash while keeping a monthly option. Check how many customers actually choose it.",
         monthly:
-          "The current plan covers its costs. You can afford to protect the price while learning about annual demand.",
+          "The current plan covers its costs. You can afford to protect the price while you learn who wants a yearly plan.",
         upfront:
           "The arithmetic works if all 100 agree. Nothing yet shows they will accept a $1,200 bill at once.",
       },
@@ -188,7 +188,7 @@ export const puzzleCases38: CaseDefinition[] = [
       {
         id: "fact-1",
         label: "1,000 orders · $100 each",
-        text: "Current monthly order value is $100,000. Sellers receive 90%; the platform keeps a 10% fee.",
+        text: "Each month, orders total $100,000. Sellers receive 90%; the platform keeps a 10% fee.",
         kind: "simulation",
         sourceIds: [],
       },
@@ -216,7 +216,7 @@ export const puzzleCases38: CaseDefinition[] = [
       {
         id: "fact-5",
         label: "A 12% fee is possible",
-        text: "You may raise the platform fee from 10% to 12%. Seller acceptance is not yet known.",
+        text: "You may raise the platform fee from 10% to 12%. You do not yet know whether sellers would accept it.",
         kind: "simulation",
         sourceIds: [],
       },
@@ -231,7 +231,7 @@ export const puzzleCases38: CaseDefinition[] = [
           {
             id: "sellers-finding",
             label: "100 orders may leave",
-            text: "Sellers responsible for 100 monthly orders say they would leave at 12%. The others say they would stay; nobody has signed new terms.",
+            text: "Sellers behind 100 monthly orders say they would leave at 12%. The others say they would stay; nobody has signed new terms.",
             kind: "simulation",
             sourceIds: [],
           },
@@ -261,7 +261,7 @@ export const puzzleCases38: CaseDefinition[] = [
           {
             id: "repeat-finding",
             label: "One in four came back",
-            text: "Of 400 first-time buyers from the last campaign, 100 made one extra order within the next three months. There is no longer record.",
+            text: "Of 400 first-time buyers from the last campaign, 100 made one extra order within the next three months. There is no record beyond that.",
             kind: "simulation",
             sourceIds: [],
           },
@@ -306,8 +306,10 @@ export const puzzleCases38: CaseDefinition[] = [
       {
         id: "coupon",
         title: "Give $10 off every current order",
-        description: "Fund the discount yourself to encourage loyalty.",
-        tradeoff: "The $10 reward uses the whole fee before service costs.",
+        description:
+          "Pay for the discount yourself to keep buyers coming back.",
+        tradeoff:
+          "The $10 discount uses up the whole fee before service costs.",
       },
     ],
     reveal: {
@@ -320,7 +322,7 @@ export const puzzleCases38: CaseDefinition[] = [
       consequences: {
         ads: "At the full target, the ad plan leaves $1,000 after stated costs. The current business leaves $2,000.",
         hold: "Current fees cover service and fixed costs. You avoid a growth plan that earns less even at its target.",
-        fee: "At unchanged orders, a 12% fee leaves $4,000. Check seller departures before counting that gain.",
+        fee: "At unchanged orders, a 12% fee leaves $4,000. Check how many sellers would leave before counting that gain.",
         coupon:
           "The platform earns $10 per order and would give all $10 away. Service costs and fixed bills remain.",
       },
@@ -349,7 +351,7 @@ export const puzzleCases38: CaseDefinition[] = [
       {
         id: "fact-1",
         label: "100 orders · $100 each",
-        text: "This is the expected monthly volume at the current offer. Use it as the comparison, not a sales guarantee.",
+        text: "This is the expected number of orders next month at the current offer. Use it for comparison, not as a sales guarantee.",
         kind: "simulation",
         sourceIds: [],
       },
@@ -377,7 +379,7 @@ export const puzzleCases38: CaseDefinition[] = [
       {
         id: "fact-5",
         label: "$500 fit-guide proposal",
-        text: "A new sizing guide costs $500 once. The vendor targets a 20% return rate; that improvement has not been measured.",
+        text: "A new sizing guide costs $500 once. The vendor aims for a 20% return rate; that improvement has not been measured.",
         kind: "simulation",
         sourceIds: [],
       },
@@ -392,7 +394,7 @@ export const puzzleCases38: CaseDefinition[] = [
           {
             id: "reasons-finding",
             label: "30 of 40 cite poor fit",
-            text: "Of the last 40 returns, 30 cited fit and ten cited quality. A sizing guide may address some, but not all, returns.",
+            text: "Of the last 40 returns, 30 blamed fit and ten blamed quality. A sizing guide may fix some returns, but not all.",
             kind: "simulation",
             sourceIds: [],
           },
@@ -456,7 +458,7 @@ export const puzzleCases38: CaseDefinition[] = [
         id: "repeat",
         title: "Repeat the current 100-order plan",
         description: "Keep prices, stock and return terms unchanged.",
-        tradeoff: "The headline sales hide refunds and wasted stock.",
+        tradeoff: "The big sales number hides refunds and wasted stock.",
       },
       {
         id: "pause",
@@ -470,7 +472,7 @@ export const puzzleCases38: CaseDefinition[] = [
         description:
           "Check legal terms and buyer response before changing the offer.",
         tradeoff:
-          "Fewer refunds could come with fewer buyers; you cannot assume both stay favorable.",
+          "Fewer refunds could also mean fewer buyers; you cannot assume both go your way.",
       },
     ],
     reveal: {
@@ -488,7 +490,7 @@ export const puzzleCases38: CaseDefinition[] = [
         pause:
           "Pause a plan expected to lose $1,400. You still pay $1,000 in fixed bills, so use the pause to find a fix.",
         restrict:
-          "Different terms may change buyer behavior. They do not fix poor fit, and no numbers yet show a better result.",
+          "Different terms may change how buyers act. They do not fix poor fit, and no numbers yet show a better result.",
       },
       rubric: [
         "Count refunds before calling a sale a win",
@@ -509,7 +511,7 @@ export const puzzleCases38: CaseDefinition[] = [
     role: "You run Bench Works.",
     objective: "Earn more from the hour you cannot replace",
     briefing:
-      "One finishing machine limits your workshop. The premium item leaves more dollars per sale, so your sales lead wants to make only premium items. Check what each uses up.",
+      "One finishing machine limits your workshop. The premium item leaves more dollars per sale. Your sales lead wants to make only premium items. Check what each uses up.",
     question: "What should fill next week’s machine time?",
     evidence: [
       {
@@ -536,14 +538,14 @@ export const puzzleCases38: CaseDefinition[] = [
       {
         id: "fact-4",
         label: "$1,000 in weekly fixed costs",
-        text: "These costs stay the same across the plans. Direct costs include materials and normal labor.",
+        text: "These costs stay the same across the plans. Direct costs include materials and normal wages.",
         kind: "simulation",
         sourceIds: [],
       },
       {
         id: "fact-5",
         label: "20 overtime hours cost $600 extra",
-        text: "Trained staff and safe machine capacity are available for those extra hours. The overtime charge is on top of direct and fixed costs.",
+        text: "The machine can safely run those extra hours, and trained staff are available. The overtime charge is on top of direct and fixed costs.",
         kind: "simulation",
         sourceIds: [],
       },
@@ -588,7 +590,7 @@ export const puzzleCases38: CaseDefinition[] = [
           {
             id: "supplier-finding",
             label: "A $2,000 fixture may save one hour",
-            text: "A supplier quotes $2,000 for a fixture that targets two hours per premium item. It cannot arrive this week and has not been tested.",
+            text: "A supplier quotes $2,000 for a fixture that aims to cut each premium item to two hours. It cannot arrive this week and has not been tested.",
             kind: "simulation",
             sourceIds: [],
           },
@@ -628,7 +630,7 @@ export const puzzleCases38: CaseDefinition[] = [
       {
         id: "basic",
         title: "Make 60 basic items",
-        description: "Use normal hours on the stronger return per hour.",
+        description: "Use normal hours on the item that earns more per hour.",
         tradeoff: "You delay premium orders this week.",
       },
       {
@@ -676,13 +678,13 @@ export const puzzleCases38: CaseDefinition[] = [
     role: "You run Bright Route.",
     objective: "Count travel time as paid work",
     briefing:
-      "Your cleaning crew spends half its day driving. A nearby apartment block offers six smaller-priced jobs in one place. Your manager worries that a lower price means a worse day.",
+      "Your cleaning crew spends half its day driving. A nearby apartment block offers six lower-priced jobs in one place. Your manager worries that a lower price means a worse day.",
     question: "Which daily schedule should you sell?",
     evidence: [
       {
         id: "fact-1",
         label: "One crew · eight paid hours",
-        text: "The crew costs $25 per hour, including travel. Each cleaning job takes one hour.",
+        text: "You pay the crew $25 per hour, including travel time. Each cleaning job takes one hour.",
         kind: "simulation",
         sourceIds: [],
       },
@@ -725,7 +727,7 @@ export const puzzleCases38: CaseDefinition[] = [
           {
             id: "route-finding",
             label: "Two hours with keys ready",
-            text: "A route check fits within two travel hours if keys are ready at each visit. One locked door could delay later jobs.",
+            text: "A test run fits within two travel hours if keys are ready at each visit. One locked door could delay later jobs.",
             kind: "simulation",
             sourceIds: [],
           },
@@ -855,7 +857,7 @@ export const puzzleCases38: CaseDefinition[] = [
       {
         id: "fact-2",
         label: "80 paid tool-days a month",
-        text: "Current use totals 80 rental days across all eight tools. Each paid day brings $30.",
+        text: "Customers currently rent 80 tool-days a month across all eight tools. Each paid day brings $30.",
         kind: "simulation",
         sourceIds: [],
       },
@@ -869,7 +871,7 @@ export const puzzleCases38: CaseDefinition[] = [
       {
         id: "fact-4",
         label: "Eight more tools cost $2,400",
-        text: "The new tools add capacity but no customers are promised. Depreciation, resale value and financing are outside this one-month cash exercise.",
+        text: "The new tools add capacity, but no new customers are promised. Loss of value over time, resale value and loans are outside this one-month cash exercise.",
         kind: "simulation",
         sourceIds: [],
       },
@@ -891,7 +893,7 @@ export const puzzleCases38: CaseDefinition[] = [
           {
             id: "peak-finding",
             label: "Four fully booked days",
-            text: "All eight tools were rented on four days last month. Sixteen requested tool-days were turned away on those dates; most weekday capacity was empty.",
+            text: "All eight tools were rented on four days last month. On those dates you turned away sixteen requested tool-days; most weekday capacity sat empty.",
             kind: "simulation",
             sourceIds: [],
           },
@@ -906,7 +908,7 @@ export const puzzleCases38: CaseDefinition[] = [
           {
             id: "campaign-finding",
             label: "No paid booking guarantee",
-            text: "The $240 campaign reaches local weekday users. It promises ad delivery, not the target of 40 added rental days.",
+            text: "The $240 campaign reaches local weekday users. It promises to show the ads, not the target of 40 added rental days.",
             kind: "simulation",
             sourceIds: [],
           },
@@ -915,7 +917,7 @@ export const puzzleCases38: CaseDefinition[] = [
       {
         id: "lease",
         title: "Price tools just for busy dates",
-        description: "Look for a smaller capacity commitment.",
+        description: "Look for a smaller commitment than buying.",
         hours: 3,
         evidence: [
           {
@@ -955,7 +957,7 @@ export const puzzleCases38: CaseDefinition[] = [
       {
         id: "market",
         title: "Sell spare weekdays at $30",
-        description: "Spend $240 to seek 40 added days using current tools.",
+        description: "Spend $240 to chase 40 added days using current tools.",
         tradeoff:
           "The target is uncertain, so track paid bookings against the ad bill.",
       },
@@ -970,7 +972,7 @@ export const puzzleCases38: CaseDefinition[] = [
         title: "Keep the current fleet and offer",
         description: "Spend nothing extra this month.",
         tradeoff:
-          "You keep a positive cash result but leave spare capacity unused.",
+          "You end the month with cash left over but leave spare capacity unused.",
       },
     ],
     reveal: {
@@ -981,9 +983,9 @@ export const puzzleCases38: CaseDefinition[] = [
       lesson: "More room to sell is not more people buying.",
       sources: [],
       consequences: {
-        buy: "You have 240 available tool-days and sell only 80. More stock alone does not create rentals.",
+        buy: "You have 240 available tool-days and sell only 80. More tools alone do not create rentals.",
         market:
-          "Forty extra days could add $1,040 after direct costs. At the opening $240 ad price, that leaves $800 extra if the target is met.",
+          "Forty extra days could add $1,040 after cleaning and wear costs. At the opening $240 ad price, that leaves $800 extra if the target is met.",
         cut: "At 120 days and $20, sales stay at $2,400 while wear costs rise. More activity leaves less cash.",
         hold: "Current rentals leave $1,080 after running costs. Waiting protects cash while you check where demand is missing.",
       },

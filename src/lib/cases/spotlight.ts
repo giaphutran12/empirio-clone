@@ -19,10 +19,10 @@ const coffee: CaseDefinition = {
   subtitle: "A packed shop. A tempting promise.",
   category: "Pricing",
   year: "Business puzzle",
-  role: "You decide whether to back a cafe's growth proposal.",
+  role: "You decide whether to back a cafe's plan to grow.",
   objective: "Judge whether free coffee can earn more than the current offer.",
   briefing:
-    "A promoter says: ‘Stop charging for coffee. Bring people in, then sell breakfast.’ The owner wants your call on a one-day offer. These are authored figures in US dollars.",
+    "A promoter says: ‘Stop charging for coffee. Bring people in, then sell breakfast.’ The owner wants your call on a one-day offer. The figures are made up for this puzzle, in US dollars.",
   question: "Would you back the free-coffee proposal?",
   evidence: [
     scenarioFact(
@@ -33,7 +33,7 @@ const coffee: CaseDefinition = {
     scenarioFact(
       "cost",
       "What each item costs",
-      "Coffee costs $1 per cup. Breakfast costs $3 per serving, including all costs tied to those sales.",
+      "Coffee costs $1 a cup. Breakfast costs $3 a serving. Those figures include every cost tied to those sales.",
     ),
     scenarioFact(
       "proposal",
@@ -43,12 +43,12 @@ const coffee: CaseDefinition = {
     scenarioFact(
       "capacity",
       "Enough room for the offer",
-      "Staff can serve 300 coffees and up to 100 breakfasts. Scheduled wages and rent total $250 a day under either offer.",
+      "Staff can serve 300 coffees and up to 100 breakfasts. Staff wages and rent come to $250 a day under either offer.",
     ),
     scenarioFact(
       "scope",
       "No other income promised",
-      "The free offer replaces paid coffee for everyone. There are no sponsor payments, other sales or proven repeat purchases.",
+      "The free offer replaces paid coffee for everyone. There are no sponsor payments, no other sales and no proven repeat buying.",
     ),
   ],
   research: [
@@ -73,8 +73,8 @@ const coffee: CaseDefinition = {
       evidence: [
         scenarioFact(
           "bundle-finding",
-          "Thirty paid reservations",
-          "Thirty new customers will prepay $9 each for coffee and breakfast, only as a group offer. The total item cost is $4 each. This adds to normal sales and fits current staff capacity.",
+          "Thirty prepaid orders",
+          "Thirty new customers will pay $9 each in advance for coffee and breakfast. It must be a group deal. The items cost $4 each. This adds to normal sales. Current staff can handle it.",
         ),
       ],
     },
@@ -87,7 +87,7 @@ const coffee: CaseDefinition = {
         scenarioFact(
           "target-finding",
           "Regulars get free coffee too",
-          "The campaign cannot exclude the 100 regular buyers. The 300 forecast visitors include them; they are not 300 extra visitors.",
+          "The offer cannot leave out the 100 regulars. The 300 forecast visitors include them. They are not 300 extra visitors.",
         ),
       ],
     },
@@ -99,11 +99,11 @@ const coffee: CaseDefinition = {
   ],
   event: {
     title: "A sponsor offers $200",
-    text: "A local office offers $200 upfront to sponsor the free-coffee day. It covers the same 300-cup limit with no extra work or sales conditions.",
+    text: "A local office offers $200 upfront to sponsor the free-coffee day. The same 300-cup limit applies. It asks for no extra work and sets no sales conditions.",
     evidence: scenarioFact(
       "event",
       "A sponsor offers $200",
-      "A local office offers $200 upfront to sponsor the free-coffee day. It covers the same 300-cup limit with no extra work or sales conditions.",
+      "A local office offers $200 upfront to sponsor the free-coffee day. The same 300-cup limit applies. It asks for no extra work and sets no sales conditions.",
     ),
   },
   options: [
@@ -112,53 +112,53 @@ const coffee: CaseDefinition = {
       title: "Back the free-coffee day",
       description: "Use the promoter's 300-visitor forecast.",
       tradeoff:
-        "A bold offer may bring new buyers; paid coffee sales disappear.",
+        "A bold offer may bring new buyers. Paid coffee sales disappear.",
     },
     {
       id: "keep",
       title: "Keep the paid offer",
-      description: "Decline the promotion and protect normal sales.",
+      description: "Say no to the offer and protect normal sales.",
       tradeoff:
-        "You preserve known earnings but leave a possible new audience untested.",
+        "You keep the earnings you know. But you never test a possible new crowd.",
     },
     {
       id: "target",
       title: "Offer 30 free trial cups",
       description:
-        "Seek a new-customer channel before spending up to $30 on coffee.",
+        "Find a way to reach new customers before spending up to $30 on coffee.",
       tradeoff:
-        "This limits cup costs, but the channel and follow-on demand are not secured.",
+        "This caps cup costs. But the way to reach new buyers, and the sales after, are not secured.",
     },
     {
       id: "bundle",
       title: "Seek prepaid breakfast orders",
       description: "Offer a $9 coffee-and-breakfast bundle to a new group.",
       tradeoff:
-        "Payment would support demand, but this reaches fewer people than a free day.",
+        "Payment backs up the demand, but this reaches fewer people than a free day.",
     },
   ],
   reveal: {
     company: "The cafe",
     title: "The crowd is not the business model",
     history:
-      "Normal sales leave $150 after listed costs. At the promoter's forecast, 60 breakfasts bring $480; breakfast costs $180, coffee $300 and daily bills $250. That leaves a $250 loss. The $200 sponsor reduces the loss to $50. The 30 prepaid bundles would instead add $150 to the normal day's $150.",
+      "Normal sales leave $150 after listed costs. At the promoter's forecast, 60 breakfasts bring $480; breakfast costs $180, coffee $300 and daily bills $250. That leaves a $250 loss. The $200 sponsor cuts the loss to $50. The 30 prepaid bundles would instead add $150 to the normal day's $150.",
     lesson:
       "Count what new buyers leave behind, including the paid sales your offer replaces.",
     sources: [],
     consequences: {
       discount:
-        "The forecast free day gives up $400 in coffee sales. Even 60 breakfasts do not cover the added cups and existing bills.",
-      keep: "Normal trading leaves $150 after listed costs. It is a sound fallback, though it does not test a new source of demand.",
+        "The forecast free day gives up $400 in coffee sales. Even 60 breakfasts do not cover the extra cups and the usual bills.",
+      keep: "A normal day leaves $150 after listed costs. It is a safe fallback. It does not test new demand.",
       target:
         "Thirty free cups cap coffee cost at $30. You still need a way to reach new buyers without replacing paid sales.",
       bundle:
-        "If you secure the researched 30 new prepaid orders, each adds $5 after item costs. Normal sales continue, leaving $300 total.",
+        "If you lock in the 30 new prepaid orders from the research, each adds $5 after item costs. Normal sales continue. That leaves $300 in total.",
     },
     rubric: [
       "Did you compare the same day?",
       "Did you count lost paid coffee sales?",
       "Did you separate a poll from prepaid demand?",
-      "Did you reconsider the sponsor without assuming it solves the gap?",
+      "Did you weigh the sponsor without assuming it closes the gap?",
     ],
   },
   teaching: {
@@ -181,23 +181,23 @@ const coffee: CaseDefinition = {
       target: {
         score: 70,
         verdict: "Reasonable move",
-        why: "A $30 cup limit bounds the cost of learning if you can reach new buyers.",
+        why: "A $30 cup limit caps what you spend to learn, if you can reach new buyers.",
         tradeoff:
-          "The channel is not secured; coupons might still replace paid purchases.",
+          "You have no sure way to reach new buyers. Coupons might still replace paid purchases.",
       },
       bundle: {
         score: 90,
         verdict: "Strong move",
-        why: "The offer requires paid demand. Research finds 30 new orders that add $150 without replacing current sales.",
+        why: "The offer needs paid demand. Research finds 30 new orders that add $150 without replacing current sales.",
         tradeoff:
-          "You must secure the group payment; this is not a forecast for daily demand.",
+          "You must lock in the group payment. This is not a forecast of daily demand.",
       },
     },
     history: {
       decision:
         "The prepaid group offer has the strongest support in this puzzle.",
       result:
-        "At the stated demand, normal trading earns $150; free coffee loses $250, or $50 with the sponsor; paid bundles earn $300 total.",
+        "At the stated demand, a normal day earns $150; free coffee loses $250, or $50 with the sponsor; paid bundles earn $300 in total.",
       connection:
         "The offer matters less than which extra purchases it causes and what each leaves behind.",
       sources: [],
@@ -206,15 +206,15 @@ const coffee: CaseDefinition = {
       title: "What each offer leaves",
       period: "One day · USD · after all listed costs",
       rows: [
-        { label: "Normal trading", sales: 560, costs: 410 },
+        { label: "Normal day", sales: 560, costs: 410 },
         { label: "Free coffee: 60 breakfasts", sales: 480, costs: 730 },
         { label: "Free day with $200 sponsor", sales: 680, costs: 730 },
         { label: "Normal day plus 30 prepaid bundles", sales: 830, costs: 530 },
       ],
-      note: "Authored comparison, not a real cafe result. Free-day rows assume 300 cups and the forecast 60 breakfasts. Sponsor income is included with sales. Bundle orders are additional; all rows include $250 scheduled wages and rent. No future sales are counted.",
+      note: "Made-up comparison, not a real cafe result. Free-day rows assume 300 cups and the forecast 60 breakfasts. Sponsor money is counted as sales. Bundle orders are on top of normal sales. All rows include $250 for wages and rent. No future sales are counted.",
     },
     alternativeConditions:
-      "With 300 free cups and no sponsor, 140 breakfasts at $5 contribution each would match the normal $150 result. With $200 sponsorship, 100 breakfasts match it. Capacity is 100 breakfasts, so beating normal trading needs better terms or more capacity.",
+      "With 300 free cups and no sponsor, you need 140 breakfasts to match the normal $150 result. That assumes each breakfast leaves $5 after its own costs. With the $200 sponsor, 100 breakfasts match it. Staff can serve 100 breakfasts at most, so beating a normal day needs better terms or more capacity.",
     check: {
       question:
         "A bookstore offers free workshops to sell books. What best tests whether the offer pays?",
@@ -258,8 +258,8 @@ const coffee: CaseDefinition = {
       title: "Back the sponsored free day",
       description: "Collect $200 and offer up to 300 free coffees.",
       tradeoff:
-        "Sponsorship helps, but forecast breakfast demand still matters.",
-      why: "The sponsor cuts the forecast loss to $50. That still trails the normal $150 gain.",
+        "The sponsor helps. But the forecast breakfast demand still matters.",
+      why: "The sponsor cuts the forecast loss to $50. That is still less than the normal $150 gain.",
       score: 50,
     },
   },
@@ -277,7 +277,7 @@ const acquisition: CaseDefinition = {
   role: "You approve growth spending for an online refill shop.",
   objective: "Decide whether repeat business can justify an upfront loss.",
   briefing:
-    "Your finance lead wants to stop an ad: every first order loses money. Your marketer says the refills pay it back. Decide whether to fund the next 100 buyers. All numbers are authored US dollars.",
+    "Your finance lead wants to stop an ad: every first order loses money. Your marketer says the refills pay it back. Decide whether to fund the next 100 buyers. All numbers are made up, in US dollars.",
   question: "Would you fund another group of buyers?",
   evidence: [
     scenarioFact(
@@ -287,7 +287,7 @@ const acquisition: CaseDefinition = {
     ),
     scenarioFact(
       "opening-2",
-      "$20 to acquire one buyer",
+      "$20 to win one buyer",
       "Ads cost $2,000 for the last 100 new buyers. The quote for the next 100 is the same; future results are not guaranteed.",
     ),
     scenarioFact(
@@ -302,21 +302,21 @@ const acquisition: CaseDefinition = {
     ),
     scenarioFact(
       "opening-5",
-      "$2,000 available above reserves",
-      "The first-order sales and fulfilment settle together. Ads are paid upfront. This plan must fund itself within 90 days; overhead is already reserved.",
+      "$2,000 spare beyond money set aside",
+      "Money from first orders and the cost to ship them settle at the same time. Ads are paid upfront. This plan must pay for itself within 90 days. Fixed costs are already set aside.",
     ),
   ],
   research: [
     {
       id: "trace",
-      title: "Audit earlier customer groups",
+      title: "Check earlier customer groups",
       description: "Match the first order to later paid refills.",
       hours: 2,
       evidence: [
         scenarioFact(
           "trace-finding",
           "Three completed groups",
-          "Each of three earlier 100-buyer groups made 150 paid refill orders within 90 days. All buyers were new, with the same offer and costs; refunds are already netted out.",
+          "Each of three earlier 100-buyer groups made 150 paid refill orders within 90 days. All buyers were new, with the same offer and costs. Refunds are already taken out.",
         ),
       ],
     },
@@ -329,7 +329,7 @@ const acquisition: CaseDefinition = {
         scenarioFact(
           "price-finding",
           "Cash dips before it returns",
-          "For each earlier group, all $2,000 of ads was due first. Starter orders then left $500. Refills arrived in days 31–90, with no extra stock prepayment. No other campaign bill is due.",
+          "For each earlier group, the full $2,000 for ads was due first. Starter orders then left $500. Refills came in days 31–90, with no stock to pay for in advance. No other campaign bill is due.",
         ),
       ],
     },
@@ -341,8 +341,8 @@ const acquisition: CaseDefinition = {
       evidence: [
         scenarioFact(
           "repeat-finding",
-          "Same channel, more uncertainty at scale",
-          "The next 100 use the same audience and offer. To buy 200 at once, the platform must widen the audience. There is no repeat-purchase record for that wider audience.",
+          "Same audience, less certain at a bigger size",
+          "The next 100 use the same audience and offer. To reach 200 at once, the ad platform must widen the audience. There is no record of repeat buying from that wider audience.",
         ),
       ],
     },
@@ -367,94 +367,95 @@ const acquisition: CaseDefinition = {
       title: "Buy 200 new customers",
       description: "Double the campaign to reach more buyers.",
       tradeoff:
-        "Repeat purchases could scale, but the broader audience and upfront bill create new risks.",
+        "Repeat buying could grow with it. But the wider audience and the upfront bill add new risks.",
     },
     {
       id: "pause",
       title: "Stop until first orders pay",
-      description: "Require the starter order to cover all acquisition costs.",
+      description:
+        "Require the starter order to cover the full cost of winning each buyer.",
       tradeoff:
-        "You protect cash but may reject a profitable repeat-purchase business.",
+        "You protect cash. But you may turn away a business that makes money on repeat orders.",
     },
     {
       id: "keep",
       title: "Fund the next 100 buyers",
       description:
-        "Keep the current offer and compare their 90-day earnings with prior groups.",
+        "Keep the current offer. Compare their 90-day earnings with earlier groups.",
       tradeoff:
-        "You accept an upfront loss and depend on repeat demand holding.",
+        "You accept an upfront loss and count on repeat demand holding up.",
     },
     {
       id: "price",
       title: "Raise the starter price to $55",
-      description: "Seek more money on the first order before scaling.",
+      description: "Take more money on the first order before growing.",
       tradeoff:
-        "It could reduce the early loss, but conversion and repeat demand at $55 are unknown.",
+        "It could shrink the early loss. But no one knows how many buy at $55 or how many come back.",
     },
   ],
   reveal: {
     company: "The refill shop",
     title: "The first loss can buy a profitable relationship",
     history:
-      "Each earlier 100-buyer group lost $1,500 on starter orders after ads. Its 150 refills left $3,000, for a $1,500 gain over 90 days before overhead. This supports another similar group, not unlimited scaling. The later $2,500 upfront quote exceeds the $2,000 cash available.",
+      "Each earlier 100-buyer group lost $1,500 on starter orders after ads. Its 150 refills left $3,000, a $1,500 gain over 90 days before fixed costs. This supports one more similar group, not growth without limit. The later $2,500 upfront quote is more than the $2,000 cash available.",
     lesson:
       "Judge the whole customer relationship, then check whether you can fund the wait.",
     sources: [],
     consequences: {
       double:
-        "Two hundred buyers need at least $4,000 upfront at the opening rate, beyond available cash. Wider-audience repeat purchases are also unproved.",
+        "Two hundred buyers need at least $4,000 upfront at the opening rate. That is more than the cash available. Repeat buying from a wider audience is also unproved.",
       pause:
-        "You protect cash but the earlier groups show why a first-sale loss need not mean a losing business.",
-      keep: "The opening $2,000 quote fits available cash. Earlier groups support a measured repeat; the higher quote requires new terms before proceeding.",
+        "You protect cash. But the earlier groups show a first-sale loss need not mean a losing business.",
+      keep: "The opening $2,000 quote fits the cash available. Earlier groups support a careful repeat. The higher quote needs new terms before you go ahead.",
       price:
-        "At unchanged demand, $55 would cover $35 fulfilment and the original $20 acquisition cost. The demand assumption must be checked.",
+        "If demand stays the same, $55 covers the $35 order cost and the original $20 to win the buyer. That demand guess must be checked.",
     },
     rubric: [
-      "Did you count repeat contribution rather than repeat sales?",
-      "Did you check comparable customer groups?",
+      "Did you count what refills leave after their costs, not just refill sales?",
+      "Did you check similar customer groups?",
       "Did you separate profit from cash timing?",
-      "Did you avoid assuming a larger audience behaves the same?",
+      "Did you avoid assuming a bigger audience behaves the same?",
     ],
   },
   teaching: {
-    skill: "See the whole transaction",
+    skill: "See the whole deal, not the first sale",
     takeaway:
       "A first-sale loss can pay back through measured repeat business, if cash lasts until it does.",
     choices: {
       double: {
         score: 30,
         verdict: "Risky move",
-        why: "The opening ad bill exceeds available cash. A wider audience also makes repeat demand less certain.",
-        tradeoff:
-          "Potential gains grow, but so do funding needs and uncertainty.",
+        why: "The opening ad bill is more than the cash available. A wider audience also makes repeat demand less certain.",
+        tradeoff: "Possible gains grow. So do the cash you need and the doubt.",
       },
       pause: {
         score: 65,
         verdict: "Reasonable move",
-        why: "You avoid cash risk, but requiring each first sale to pay ignores the profitable repeat orders in earlier groups.",
-        tradeoff: "A hard first-sale rule can reject good repeat business.",
+        why: "You avoid cash risk. But making each first sale pay ignores the profitable repeat orders in earlier groups.",
+        tradeoff:
+          "A strict first-sale rule can turn away good repeat business.",
       },
       keep: {
         score: 90,
         verdict: "Strong move",
-        why: "Comparable paid histories support another 100 buyers. The opening upfront bill fits the available cash.",
-        tradeoff:
-          "Past repeat buying supports the bet; it does not guarantee it.",
+        why: "Similar paid records support another 100 buyers. The opening upfront bill fits the cash available.",
+        tradeoff: "Past repeat buying backs the bet. It does not guarantee it.",
       },
       price: {
         score: 70,
         verdict: "Reasonable move",
-        why: "A higher first price could reduce the early loss. You still need evidence that buyers accept it.",
-        tradeoff: "The new price could lower conversion or later purchases.",
+        why: "A higher first price could reduce the early loss. You still need proof that buyers accept it.",
+        tradeoff:
+          "The new price could mean fewer buyers, or fewer later orders.",
       },
     },
     history: {
       decision:
-        "At the opening quote, funding another similar 100 buyers is supported by the records.",
+        "At the opening quote, the records support funding another 100 similar buyers.",
       result:
-        "Each earlier group lost $1,500 initially, earned $3,000 on refills, and kept $1,500 before overhead. New customers may behave differently.",
+        "Each earlier group lost $1,500 at first, earned $3,000 on refills, and kept $1,500 before fixed costs. New customers may behave differently.",
       connection:
-        "Losses are investments only when later earnings and funding have credible support.",
+        "A loss is an investment only when later earnings, and the cash to wait, have solid evidence.",
       sources: [],
     },
     moneyComparison: {
@@ -473,10 +474,10 @@ const acquisition: CaseDefinition = {
           costs: 7500,
         },
       ],
-      note: "The first row isolates the starter part of the same 90-day relationship. The completed earlier groups support row two. Row three assumes the same repeat demand; its $2,500 upfront ad bill does not fit the $2,000 cash available, despite a possible $1,000 gain. These are contribution figures, not company profit.",
+      note: "The first row shows only the starter part of the same 90-day relationship. The finished earlier groups support row two. Row three assumes the same repeat demand. Its $2,500 upfront ad bill does not fit the $2,000 cash available, even with a possible $1,000 gain. These figures are money left after each sale's own costs, not company profit.",
     },
     alternativeConditions:
-      "At the opening ad quote, 75 refills recover the $1,500 first-sale loss; 76 leave a positive contribution. At the higher quote, 100 refills recover $2,000. Funding still matters even if repeat demand is strong.",
+      "At the opening ad quote, 75 refills win back the $1,500 first-sale loss; at 76 you come out ahead. At the higher quote, 100 refills win back $2,000. Cash still matters even if repeat demand is strong.",
     check: {
       question:
         "A printer shop loses $30 selling a printer. What would justify that offer?",
@@ -484,7 +485,7 @@ const acquisition: CaseDefinition = {
         {
           id: "volume",
           text: "Selling many more printers",
-          explanation: "More first-sale losses do not establish a payback.",
+          explanation: "More first-sale losses do not prove a payback.",
         },
         {
           id: "hope",
@@ -496,7 +497,7 @@ const acquisition: CaseDefinition = {
           id: "repeat",
           text: "Measured ink earnings above $30, with cash to wait",
           explanation:
-            "Track actual later purchases, their costs, and how long the initial loss must be funded.",
+            "Track real later purchases, their costs, and how long you must carry the first loss.",
         },
       ],
       answerId: "repeat",
@@ -513,19 +514,19 @@ const acquisition: CaseDefinition = {
     ],
     researchNotes: {
       trace:
-        "Follow the same buyers through paid orders, not predicted lifetime value.",
+        "Follow the same buyers through paid orders, not a guess at their lifetime spending.",
       price:
         "A profitable relationship can still require cash you do not have today.",
       repeat: "Results for one audience may not hold when you widen it.",
     },
     eventChange: {
       optionId: "keep",
-      title: "Require payment terms before funding 100",
+      title: "Get payment terms before funding 100",
       description:
-        "Proceed only if at least $500 of the ad bill can wait until starter receipts settle.",
+        "Go ahead only if at least $500 of the ad bill can wait until starter orders pay in.",
       tradeoff:
-        "No payment extension is agreed. If refused, this plan cannot proceed with current cash.",
-      why: "The new upfront bill exceeds cash by $500. Later profit cannot pay that bill today.",
+        "No later payment is agreed yet. If the platform refuses, this plan cannot go ahead with current cash.",
+      why: "The new upfront bill is more than your cash by $500. Later profit cannot pay that bill today.",
       score: 80,
     },
   },
@@ -551,7 +552,7 @@ const prime: CaseDefinition = {
     {
       id: "member-economics",
       label: "The key unknown",
-      text: "This case has no verified forecast of member margins, order frequency or delivery costs. Company-wide cash flow cannot answer that question.",
+      text: "This case has no verified forecast of member margins, how often members order, or delivery costs. Company-wide cash flow cannot answer that question.",
       kind: "unknown",
       sourceIds: [],
     },
@@ -566,20 +567,20 @@ const prime: CaseDefinition = {
       unlimited: {
         score: 85,
         verdict: "Strong move",
-        why: "Removing basket minimums could make Amazon the first place buyers shop. That is a coherent strategic bet, not proven profit.",
+        why: "Dropping order minimums could make Amazon the first place buyers shop. That is a sound strategy bet, not proven profit.",
         tradeoff:
-          "You accept costly heavy users and need to track extra earnings after delivery.",
+          "You take on costly heavy users. You need to track the extra earnings after delivery costs.",
       },
       pilot: {
         score: 85,
         verdict: "Strong move",
         why: "A test with heavy and light users can reveal costs and changed buying before a wider promise.",
         tradeoff:
-          "A small trial may understate the habit change of a widely trusted offer.",
+          "A small trial may understate how much a widely trusted offer changes habits.",
       },
     },
     alternativeConditions:
-      "A full launch is stronger when extra purchase contribution and fees exceed added delivery costs. An order minimum is stronger if small shipments dominate costs and customers still value the plan. Those member-level numbers are missing here, not claimed absent inside Amazon.",
+      "A full launch is stronger when fees and extra purchases, after their own costs, beat the added delivery costs. An order minimum is stronger if small shipments drive most costs and customers still value the plan. Those member-level numbers are missing from this case. We do not claim Amazon lacked them.",
     check: {
       question:
         "A car-wash chain wants an unlimited monthly pass. What evidence would matter most?",
@@ -594,13 +595,13 @@ const prime: CaseDefinition = {
           id: "groups",
           text: "Visits, added earnings and costs for different member groups",
           explanation:
-            "Heavy users may join first. Compare their economics and behavior with what would happen without the pass.",
+            "Heavy users may join first. Compare their costs, earnings and visits with what would happen without the pass.",
         },
         {
           id: "history",
           text: "Whether another famous company sold a subscription",
           explanation:
-            "A successful subscription elsewhere does not establish these costs or buying habits.",
+            "A subscription that worked elsewhere does not prove these costs or buying habits.",
         },
       ],
       answerId: "groups",

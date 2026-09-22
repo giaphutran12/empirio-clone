@@ -1,4 +1,5 @@
 import type { Evidence } from "@/lib/types";
+import { Gloss } from "./gloss";
 export function EvidenceCard({
   evidence,
   index,
@@ -24,8 +25,12 @@ export function EvidenceCard({
           </span>
         )}
       </div>
-      <h3>{evidence.label}</h3>
-      <p>{evidence.text}</p>
+      <h3>
+        <Gloss text={evidence.label} />
+      </h3>
+      <p>
+        <Gloss text={evidence.text} />
+      </p>
     </article>
   );
 }

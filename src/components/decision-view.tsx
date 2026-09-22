@@ -1,5 +1,6 @@
 import { ArrowRight, Check, LoaderCircle } from "lucide-react";
 import type { Confidence, Decision, PlayableCase, Session } from "@/lib/types";
+import { Gloss } from "./gloss";
 
 export function DecisionView({
   gameCase,
@@ -28,7 +29,9 @@ export function DecisionView({
   return (
     <div className="decision-view">
       <span className="eyebrow">YOUR MOVE</span>
-      <h2>{gameCase.question}</h2>
+      <h2>
+        <Gloss text={gameCase.question} />
+      </h2>
       <p className="decision-description">
         Tap your choice. Then see the tradeoff and the lesson. No typing needed.
       </p>
@@ -45,9 +48,15 @@ export function DecisionView({
               {String.fromCharCode(65 + index)}
             </span>
             <span>
-              <strong>{option.title}</strong>
-              <span>{option.description}</span>
-              <small>{option.tradeoff}</small>
+              <strong>
+                <Gloss text={option.title} />
+              </strong>
+              <span>
+                <Gloss text={option.description} />
+              </span>
+              <small>
+                <Gloss text={option.tradeoff} />
+              </small>
             </span>
             <span className="radio-dot">
               {decision.optionId === option.id && <Check size={12} />}

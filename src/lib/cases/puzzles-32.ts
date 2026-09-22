@@ -33,7 +33,7 @@ export const puzzleCases32: CaseDefinition[] = [
       {
         id: "fact-2",
         label: "$200 per day",
-        text: "Rent and scheduled staff cost $200 a day. They do not change within 200 cups.",
+        text: "Rent and scheduled staff cost $200 a day. That stays the same up to 200 cups.",
         kind: "simulation",
         sourceIds: [],
       },
@@ -62,7 +62,7 @@ export const puzzleCases32: CaseDefinition[] = [
           {
             id: "demand-finding",
             label: "Only 20 new buyers",
-            text: "Twenty people commit to an extra $4 cup tomorrow. The other 30 extra cups are only an estimate. All 100 regular cups would get the discount.",
+            text: "Twenty people promise to buy an extra $4 cup tomorrow. The other 30 extra cups are only a guess. All 100 regular cups would get the discount.",
             kind: "simulation",
             sourceIds: [],
           },
@@ -70,7 +70,7 @@ export const puzzleCases32: CaseDefinition[] = [
       },
       {
         id: "bundle",
-        title: "Cost a coffee-and-cookie offer",
+        title: "Price a coffee-and-cookie offer",
         description: "Check the price, cost and room for a bundle.",
         hours: 2,
         evidence: [
@@ -92,7 +92,7 @@ export const puzzleCases32: CaseDefinition[] = [
           {
             id: "target-finding",
             label: "20 new-buyer coupons",
-            text: "The till can limit $1-off coupons to 20 first-time buyers. Staff estimate 15 redemptions; setup costs $10. Current buyers keep paying $5.",
+            text: "The till can limit $1-off coupons to 20 first-time buyers. Staff expect 15 coupons to be used; setup costs $10. Current buyers keep paying $5.",
             kind: "simulation",
             sourceIds: [],
           },
@@ -106,11 +106,11 @@ export const puzzleCases32: CaseDefinition[] = [
     ],
     event: {
       title: "The offer gets a fee",
-      text: "The promoter adds a $50 flat fee to tomorrow’s all-cup discount. It is paid even if the forecast is missed.",
+      text: "The promoter adds a $50 flat fee to tomorrow’s all-cup discount. You pay it even if the forecast is missed.",
       evidence: {
         id: "event",
         label: "The offer gets a fee",
-        text: "The promoter adds a $50 flat fee to tomorrow’s all-cup discount. It is paid even if the forecast is missed.",
+        text: "The promoter adds a $50 flat fee to tomorrow’s all-cup discount. You pay it even if the forecast is missed.",
         kind: "simulation",
         sourceIds: [],
       },
@@ -125,7 +125,7 @@ export const puzzleCases32: CaseDefinition[] = [
       {
         id: "keep",
         title: "Keep the $5 price",
-        description: "Keep the normal offer and volume plan.",
+        description: "Keep the normal price and sales plan.",
         tradeoff: "You may miss buyers who would only pay $4.",
       },
       {
@@ -138,9 +138,9 @@ export const puzzleCases32: CaseDefinition[] = [
       {
         id: "bundle",
         title: "Plan a higher-value bundle",
-        description: "Cost a snack bundle before offering it.",
+        description: "Price a snack bundle before offering it.",
         tradeoff:
-          "A higher ticket is useful only if the extra cost is lower than the extra price.",
+          "A bigger sale helps only if the extra cost is lower than the extra price.",
       },
     ],
     reveal: {
@@ -157,7 +157,7 @@ export const puzzleCases32: CaseDefinition[] = [
         target:
           "Keep full price on regular sales while checking whether a small offer adds new buyers.",
         bundle:
-          "Adding value may protect the coffee price. Check snack costs and buyer interest before promising it.",
+          "Adding a snack may protect the coffee price. Check snack costs and buyer interest before promising it.",
       },
       rubric: [
         "Check what a discount leaves behind",
@@ -192,7 +192,7 @@ export const puzzleCases32: CaseDefinition[] = [
       {
         id: "fact-1",
         label: "400 regular sales",
-        text: "Regular buyers are expected to buy 400 pastries at $4 each. Unsupplied sales are lost.",
+        text: "Regular buyers are expected to buy 400 pastries at $4 each. Any pastry you cannot supply is a lost sale.",
         kind: "simulation",
         sourceIds: [],
       },
@@ -206,7 +206,7 @@ export const puzzleCases32: CaseDefinition[] = [
       {
         id: "fact-3",
         label: "$700 daily bills",
-        text: "Scheduled staff, rent and utilities cost $700 tomorrow regardless of the mix.",
+        text: "Scheduled staff, rent and utilities cost $700 tomorrow, whatever you sell.",
         kind: "simulation",
         sourceIds: [],
       },
@@ -237,13 +237,13 @@ export const puzzleCases32: CaseDefinition[] = [
       {
         id: "overtime",
         title: "Price extra oven hours",
-        description: "Get a complete quote for more capacity tomorrow.",
+        description: "Get a full quote for more oven space tomorrow.",
         hours: 2,
         evidence: [
           {
             id: "overtime-finding",
             label: "200 extra spaces · $250",
-            text: "An early shift adds capacity for 200 pastries at a fixed extra cost of $250. Ingredients still cost $1 each.",
+            text: "An early shift adds room for 200 more pastries. The shift costs a flat extra $250. Ingredients still cost $1 each.",
             kind: "simulation",
             sourceIds: [],
           },
@@ -252,13 +252,14 @@ export const puzzleCases32: CaseDefinition[] = [
       {
         id: "regulars",
         title: "Check the regular orders",
-        description: "Ask how much of tomorrow’s shop demand is booked.",
+        description:
+          "Ask how many of tomorrow’s shop sales are already booked.",
         hours: 3,
         evidence: [
           {
             id: "regulars-finding",
             label: "350 paid reservations",
-            text: "There are 350 paid reservations and 50 expected walk-in purchases. Cancelling paid orders requires a full refund; no added penalty is included here.",
+            text: "There are 350 paid bookings and 50 expected walk-in sales. Cancelling a paid order means a full refund; no added penalty is included here.",
             kind: "simulation",
             sourceIds: [],
           },
@@ -291,19 +292,19 @@ export const puzzleCases32: CaseDefinition[] = [
       {
         id: "partial",
         title: "Ask to supply only 100",
-        description: "Seek a smaller order that uses the spare oven space.",
+        description: "Ask for a smaller order that fills the spare oven space.",
         tradeoff: "The buyer must agree to fewer pastries before you commit.",
       },
       {
         id: "decline",
         title: "Decline the bulk order",
-        description: "Keep all capacity for regular buyers tomorrow.",
+        description: "Keep every oven slot for regular buyers tomorrow.",
         tradeoff: "You leave 100 slots unused if no other buyers arrive.",
       },
       {
         id: "expand",
         title: "Seek an extra shift first",
-        description: "Price more capacity before accepting the whole order.",
+        description: "Price more oven space before accepting the whole order.",
         tradeoff: "You may lose the order while finding staff and oven time.",
       },
     ],
@@ -321,7 +322,7 @@ export const puzzleCases32: CaseDefinition[] = [
         decline:
           "The normal 400 sales leave $500 after listed costs. Protecting those buyers is a sound fallback.",
         expand:
-          "Extra capacity could protect regular sales. But its full added cost must fit inside the bulk order’s $300 contribution.",
+          "An extra shift could protect regular sales. But its full cost must fit inside the $300 the bulk order leaves toward the bills.",
       },
       rubric: [
         "Count the sales a big order pushes out",
@@ -356,7 +357,7 @@ export const puzzleCases32: CaseDefinition[] = [
       {
         id: "fact-1",
         label: "$8 per meal",
-        text: "Food, variable kitchen work and payment costs total $8 per meal, excluding delivery packing.",
+        text: "Food, extra kitchen work and payment fees cost $8 per meal. Delivery packing is not included.",
         kind: "simulation",
         sourceIds: [],
       },
@@ -393,13 +394,13 @@ export const puzzleCases32: CaseDefinition[] = [
       {
         id: "switching",
         title: "Check where app buyers come from",
-        description: "Survey the app’s likely local customers.",
+        description: "Ask likely local app customers how they order now.",
         hours: 2,
         evidence: [
           {
             id: "switching-finding",
             label: "15 may switch channels",
-            text: "Of the forecast 40 app buyers, 15 say they would otherwise order direct. That would mean 85 total meals, not 100. Their answers are not paid orders.",
+            text: "Of the forecast 40 app buyers, 15 say they would have ordered direct anyway. That would mean 85 meals in total, not 100. Their answers are not paid orders.",
             kind: "simulation",
             sourceIds: [],
           },
@@ -429,7 +430,7 @@ export const puzzleCases32: CaseDefinition[] = [
           {
             id: "rush-finding",
             label: "Only 10 extra peak slots",
-            text: "The busiest hour has room for only 10 extra meals. The app can cap orders in that hour; the rest of the nightly capacity is later.",
+            text: "The busiest hour has room for only 10 extra meals. The app can cap orders in that hour. The rest of the night’s room comes later.",
             kind: "simulation",
             sourceIds: [],
           },
@@ -458,7 +459,7 @@ export const puzzleCases32: CaseDefinition[] = [
         title: "Join for all 40 forecast orders",
         description: "List the $20 meals and accept up to the kitchen limit.",
         tradeoff:
-          "Buyer switching or peak-time crowding could erase that gain.",
+          "Buyers moving from direct to the app, or a crowded busy hour, could erase that gain.",
       },
       {
         id: "direct",
@@ -470,7 +471,8 @@ export const puzzleCases32: CaseDefinition[] = [
       {
         id: "limit",
         title: "Join with a small order cap",
-        description: "Check fees and cap app orders around direct service.",
+        description:
+          "Check the fees and cap app orders so direct service is not slowed.",
         tradeoff:
           "A small trial earns less and any launch fee still needs to be covered.",
       },
@@ -492,7 +494,7 @@ export const puzzleCases32: CaseDefinition[] = [
       consequences: {
         all: "Each new app meal leaves $4 after its fee, food and packing. Forty truly extra orders add $160 before fixed costs.",
         direct:
-          "The current 60 direct meals leave $120 after costs. You avoid a lower-margin channel.",
+          "The current 60 direct meals leave $120 after costs. You avoid a channel that leaves less per meal.",
         limit:
           "A cap limits the risk to current service while testing whether the orders are new.",
         discount:
@@ -559,7 +561,7 @@ export const puzzleCases32: CaseDefinition[] = [
       {
         id: "fact-5",
         label: "Threshold offer forecast",
-        text: "With free shipping from $40, the forecast stays at 100 orders: 40 baskets rise to $40 and 60 remain at $30 plus $5 shipping.",
+        text: "With free shipping from $40, the forecast stays at 100 orders. 40 baskets rise to $40 each. The other 60 stay at $30 plus $5 shipping.",
         kind: "simulation",
         sourceIds: [],
       },
@@ -568,7 +570,7 @@ export const puzzleCases32: CaseDefinition[] = [
       {
         id: "demand",
         title: "Check the growth forecast",
-        description: "Review the basis for 30 extra orders.",
+        description: "Ask where the forecast of 30 extra orders comes from.",
         hours: 2,
         evidence: [
           {
@@ -640,7 +642,7 @@ export const puzzleCases32: CaseDefinition[] = [
         title: "Offer free shipping from $40",
         description: "Use the larger-basket forecast.",
         tradeoff:
-          "The offer may attract buyers, but it is not an earnings gain at these assumptions.",
+          "The offer may attract buyers, but at these forecasts it does not add earnings.",
       },
       {
         id: "keep",
@@ -651,7 +653,7 @@ export const puzzleCases32: CaseDefinition[] = [
       {
         id: "raise",
         title: "Raise the free-shipping threshold",
-        description: "Cost a threshold above $40 before launching.",
+        description: "Price a threshold above $40 before launching.",
         tradeoff:
           "A higher threshold may persuade fewer customers to add items.",
       },
@@ -669,7 +671,7 @@ export const puzzleCases32: CaseDefinition[] = [
           "The forecast leaves $660 after costs. Bigger baskets help, but each $10 add-on leaves only $4 to cover $5 shipping.",
         keep: "The current plan leaves $700 a week after listed costs, more than either proposed free-shipping forecast.",
         raise:
-          "You need more than $12.50 of added goods at a 40% margin to cover a $5 delivery subsidy.",
+          "Goods keep 40% of their price. You need more than $12.50 of added goods to cover the $5 shipping you give away.",
       },
       rubric: [
         "Price the cost of a free perk",
@@ -704,7 +706,7 @@ export const puzzleCases32: CaseDefinition[] = [
       {
         id: "fact-1",
         label: "$12,000 delivery cost",
-        text: "Freelancers must be paid $12,000 at the end of month one. This is the entire added project cost.",
+        text: "Freelancers must be paid $12,000 at the end of month one. This is the whole extra cost of the project.",
         kind: "simulation",
         sourceIds: [],
       },
@@ -748,14 +750,14 @@ export const puzzleCases32: CaseDefinition[] = [
       },
       {
         id: "loan",
-        title: "Price short-term funding",
-        description: "Get terms to cover the cash gap.",
+        title: "Price a short loan",
+        description: "Get loan terms to cover the cash gap.",
         hours: 2,
         evidence: [
           {
             id: "loan-finding",
             label: "$5,000 loan · $500 fee",
-            text: "A lender offers $5,000 now. Repayment of $5,500 is due at the end of month three after the client’s scheduled payment. Approval is available today.",
+            text: "A lender offers $5,000 now. You repay $5,500 at the end of month three, after the client’s payment is due. You can get approval today.",
             kind: "simulation",
             sourceIds: [],
           },
@@ -764,7 +766,8 @@ export const puzzleCases32: CaseDefinition[] = [
       {
         id: "credit",
         title: "Check the client’s payment record",
-        description: "Review recent invoices with the client’s suppliers.",
+        description:
+          "Ask the client’s suppliers how quickly recent invoices were paid.",
         hours: 3,
         evidence: [
           {
@@ -809,26 +812,27 @@ export const puzzleCases32: CaseDefinition[] = [
       {
         id: "loan",
         title: "Arrange a loan before accepting",
-        description: "Price and secure funding before starting the project.",
+        description: "Price and agree a loan before starting the project.",
         tradeoff: "Debt adds a bill even if the client pays late.",
       },
       {
         id: "decline",
         title: "Decline without safer terms",
         description: "Turn down the job if payment terms cannot change.",
-        tradeoff: "You lose a potentially useful $18,000 project surplus.",
+        tradeoff:
+          "You give up a project that could leave $18,000 after its costs.",
       },
     ],
     reveal: {
       company: "The design agency",
       title: "Good profit does not always mean cash in time.",
       history:
-        "The original job leaves $18,000 over three months but runs $4,000 short at the first payday. A deposit changes cash timing, not the total project surplus. The $500 loan fee lowers that surplus to $17,500.",
+        "The original job leaves $18,000 over three months but runs $4,000 short at the first payday. A deposit changes when cash arrives, not what the project leaves in total. The $500 loan fee lowers that total to $17,500.",
       lesson: "Good profit does not always mean cash in time.",
       sources: [],
       consequences: {
         accept:
-          "The project has an $18,000 surplus, but you are $4,000 short when the $12,000 delivery bill falls due.",
+          "The project leaves $18,000 in the end, but you are $4,000 short when the $12,000 delivery bill is due.",
         deposit:
           "A $12,000 deposit covers the delivery bill and protects your $8,000 cash. Do not start until the terms are agreed.",
         loan: "A loan could fill the $4,000 timing gap while keeping the sale. You need its cost and repayment date first.",
@@ -861,7 +865,7 @@ export const puzzleCases32: CaseDefinition[] = [
       {
         id: "fact-0",
         label: "100 booked · 80 attend",
-        text: "Each completed visit costs $50. No-show slots cannot be filled at short notice.",
+        text: "A completed visit brings in $50. No-show slots cannot be filled at short notice.",
         kind: "simulation",
         sourceIds: [],
       },
@@ -875,7 +879,7 @@ export const puzzleCases32: CaseDefinition[] = [
       {
         id: "fact-2",
         label: "$2,500 weekly fixed costs",
-        text: "Rent and scheduled staff cost $2,500 a week regardless of attendance.",
+        text: "Rent and scheduled staff cost $2,500 a week whether or not customers show up.",
         kind: "simulation",
         sourceIds: [],
       },
@@ -911,7 +915,7 @@ export const puzzleCases32: CaseDefinition[] = [
           {
             id: "buyers-finding",
             label: "90 willing to book",
-            text: "Ninety of 100 recent customers say they would book with a $10 deposit. This is stated interest, not actual booking or attendance data.",
+            text: "Ninety of 100 recent customers say they would book with a $10 deposit. That is what people say, not real booking or attendance numbers.",
             kind: "simulation",
             sourceIds: [],
           },
@@ -935,7 +939,7 @@ export const puzzleCases32: CaseDefinition[] = [
       {
         id: "admin",
         title: "Price the deposit handling",
-        description: "Check the payment and cancellation workflow.",
+        description: "Check how payments and cancellations would be handled.",
         hours: 3,
         evidence: [
           {
@@ -955,11 +959,11 @@ export const puzzleCases32: CaseDefinition[] = [
     ],
     event: {
       title: "The reminder plan gets dearer",
-      text: "The service now requires a $300 prepaid, nonrefundable four-week plan instead of $20 per week. The attendance benefit is still uncertain.",
+      text: "The service now asks for a $300 four-week plan, paid upfront with no refund, instead of $20 per week. The effect on attendance is still uncertain.",
       evidence: {
         id: "event",
         label: "The reminder plan gets dearer",
-        text: "The service now requires a $300 prepaid, nonrefundable four-week plan instead of $20 per week. The attendance benefit is still uncertain.",
+        text: "The service now asks for a $300 four-week plan, paid upfront with no refund, instead of $20 per week. The effect on attendance is still uncertain.",
         kind: "simulation",
         sourceIds: [],
       },
@@ -969,7 +973,7 @@ export const puzzleCases32: CaseDefinition[] = [
         id: "deposit",
         title: "Require a $10 booking deposit",
         description:
-          "Explain the cancellation rule and apply the deposit toward each visit.",
+          "Explain the cancellation rule and count the deposit toward each visit.",
         tradeoff: "Fewer no-shows could help; fewer bookings could hurt.",
       },
       {
@@ -990,7 +994,7 @@ export const puzzleCases32: CaseDefinition[] = [
         id: "hold",
         title: "Keep booking without a change",
         description: "Keep the current rules and normal attendance.",
-        tradeoff: "Twenty unused slots still have no revenue.",
+        tradeoff: "Twenty empty slots still bring in no money.",
       },
     ],
     reveal: {
@@ -1007,7 +1011,7 @@ export const puzzleCases32: CaseDefinition[] = [
           "One recovered visit leaves $40 before fixed costs, more than the $20 weekly fee. The small cost limits the first test.",
         double:
           "This is a price rise to $60, not a deposit. You need to know how buyers react before assuming extra earnings.",
-        hold: "The current plan leaves $700 a week after listed costs. It avoids new fees and booking friction.",
+        hold: "The current plan leaves $700 a week after listed costs. It avoids new fees and extra steps for customers.",
       },
       rubric: [
         "Count what a deposit really changes",

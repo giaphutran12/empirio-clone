@@ -8,7 +8,7 @@ export const puzzleLessons38: Record<string, CaseLesson> = {
       cheap: {
         score: 45,
         verdict: "Risky move",
-        why: "At full retention, the offer cuts yearly sales from $120,000 to $90,000 while $84,000 in costs stay.",
+        why: "If everyone stays, the offer cuts yearly sales from $120,000 to $90,000 while $84,000 in costs stay.",
         tradeoff: "You collect sooner but cut each full-year sale by $300.",
       },
       choice: {
@@ -21,7 +21,7 @@ export const puzzleLessons38: Record<string, CaseLesson> = {
       monthly: {
         score: 80,
         verdict: "Strong move",
-        why: "The current plan covers its costs. You can afford to protect the price while learning about annual demand.",
+        why: "The current plan covers its costs. You can afford to protect the price while you learn who wants a yearly plan.",
         tradeoff:
           "Full-year income is higher if people stay, but they can leave sooner.",
       },
@@ -67,10 +67,10 @@ export const puzzleLessons38: Record<string, CaseLesson> = {
           costs: 84000,
         },
       ],
-      note: "Costs are 100 × $40 × 12 plus $3,000 × 12. The $1,080 row shows all customers choosing annual; a mixed group falls between that row and monthly. All payments are collected, with no refunds or departures. The later supplier change adds $12,000 to every row.",
+      note: "Costs are 100 × $40 × 12 plus $3,000 × 12. The $1,080 row shows all customers choosing annual; a mixed group falls between that row and monthly. Every payment is collected; there are no refunds and no one leaves. The later supplier change adds $12,000 to every row.",
     },
     alternativeConditions:
-      "The $900 offer needs lower costs or better retention to offset its discount. At opening costs, $1,200 monthly terms break even at 50 customers staying all year; $900 annual terms need at least 86. No offer guarantees those buyers.",
+      "The $900 offer needs lower costs or more customers staying to make up for its discount. At opening costs, $1,200 monthly terms break even at 50 customers staying all year; $900 annual terms need at least 86. No offer guarantees those buyers.",
     check: {
       question:
         "Ten customers choose $1,080 annual instead of paying $100 for all twelve months. How much sales income do you give up?",
@@ -143,14 +143,15 @@ export const puzzleLessons38: Record<string, CaseLesson> = {
       fee: {
         score: 75,
         verdict: "Reasonable move",
-        why: "At unchanged orders, a 12% fee leaves $4,000. Check seller departures before counting that gain.",
+        why: "At unchanged orders, a 12% fee leaves $4,000. Check how many sellers would leave before counting that gain.",
         tradeoff: "Each order pays more if sellers stay.",
       },
       coupon: {
         score: 20,
         verdict: "Risky move",
         why: "The platform earns $10 per order and would give all $10 away. Service costs and fixed bills remain.",
-        tradeoff: "The $10 reward uses the whole fee before service costs.",
+        tradeoff:
+          "The $10 discount uses up the whole fee before service costs.",
       },
     },
     history: {
@@ -187,7 +188,7 @@ export const puzzleLessons38: Record<string, CaseLesson> = {
           costs: 18000,
         },
       ],
-      note: "Order costs are $5 each. Each row includes $3,000 fixed bills; the ad row adds $6,000 and the coupon row adds $10,000. Coupons are platform-funded costs, not seller fee reductions. Targets assume no refunds. The later ad quote adds another $6,000 to that row.",
+      note: "Order costs are $5 each. Each row includes $3,000 fixed bills; the ad row adds $6,000 and the coupon row adds $10,000. The platform pays for the coupons; sellers’ fees do not change. Targets assume no refunds. The later ad quote adds another $6,000 to that row.",
     },
     alternativeConditions:
       "At a 10% fee, each extra $100 order leaves $5 before fixed bills. The $6,000 campaign needs more than 1,200 extra orders to improve profit. A 12% fee at 900 orders leaves $3,300, if those sellers really stay.",
@@ -230,7 +231,7 @@ export const puzzleLessons38: Record<string, CaseLesson> = {
     ],
     researchNotes: {
       sellers: "At 900 orders, the higher fee still needs a full cost check.",
-      ads: "A fee bill is certain even when extra orders are not.",
+      ads: "The agency’s bill is certain even when extra orders are not.",
       repeat:
         "Repeat orders may help later, but do not count them as certain cash next month.",
     },
@@ -258,7 +259,7 @@ export const puzzleLessons38: Record<string, CaseLesson> = {
         score: 30,
         verdict: "Risky move",
         why: "After 40 refunds, only $6,000 of sales remains. Stock, delivery, returns and fixed bills cost $7,400.",
-        tradeoff: "The headline sales hide refunds and wasted stock.",
+        tradeoff: "The big sales number hides refunds and wasted stock.",
       },
       pause: {
         score: 85,
@@ -269,9 +270,9 @@ export const puzzleLessons38: Record<string, CaseLesson> = {
       restrict: {
         score: 55,
         verdict: "Risky move",
-        why: "Different terms may change buyer behavior. They do not fix poor fit, and no numbers yet show a better result.",
+        why: "Different terms may change how buyers act. They do not fix poor fit, and no numbers yet show a better result.",
         tradeoff:
-          "Fewer refunds could come with fewer buyers; you cannot assume both stay favorable.",
+          "Fewer refunds could also mean fewer buyers; you cannot assume both go your way.",
       },
     },
     history: {
@@ -302,7 +303,7 @@ export const puzzleLessons38: Record<string, CaseLesson> = {
           costs: 1000,
         },
       ],
-      note: "Current costs: $5,000 stock + $1,000 outward shipping + $400 return handling + $1,000 fixed bills. Guide target costs add $500 guide work but reduce handling to $200. Returned stock has no resale value. No opening stock is sold in the pause row. Tighter return terms have no quantified demand estimate, so no invented total is shown.",
+      note: "Current costs: $5,000 stock + $1,000 outward shipping + $400 return handling + $1,000 fixed bills. Guide target costs add $500 guide work but reduce handling to $200. Returned stock has no resale value. No opening stock is sold in the pause row. There is no number for how tighter return terms would affect buyers, so no total is invented.",
     },
     alternativeConditions:
       "The guide needs no more than 22 returns out of 100 to avoid a loss in its first month at opening handling costs. With 23 returns, net sales are $7,700 and costs $7,730. A later month without the one-time guide cost differs.",
@@ -424,10 +425,10 @@ export const puzzleLessons38: Record<string, CaseLesson> = {
           costs: 4800,
         },
       ],
-      note: "Every row includes $1,000 fixed costs plus direct costs per unit. The 80-basic row also includes $600 overtime. The later overtime quote adds $400 to that row. There is no extra machine, uncounted labor or guaranteed future repeat sale in these calculations.",
+      note: "Every row includes $1,000 fixed costs plus direct costs per unit. The 80-basic row also includes $600 overtime. The later overtime quote adds $400 to that row. These sums assume no extra machine, no uncounted labor and no guaranteed repeat sale.",
     },
     alternativeConditions:
-      "Overtime improves this week’s result only below $800 for twenty extra hours. Premium would match basic’s $40 per hour if its $80 gain took two hours, but the proposed fixture is neither ready nor proven.",
+      "Overtime helps this week only if twenty extra hours cost less than $800 in total. Premium would match basic’s $40 per hour if its $80 gain took two hours, but the proposed fixture is neither ready nor proven.",
     check: {
       question:
         "A product leaves $90 after direct costs and uses three machine hours. How much does it leave per hour?",
@@ -447,7 +448,7 @@ export const puzzleLessons38: Record<string, CaseLesson> = {
           id: "c",
           text: "$270",
           explanation:
-            "Multiply hours to count usage, not to increase earnings.",
+            "Multiplying by hours counts time used; it does not raise earnings.",
         },
       ],
     },
@@ -467,7 +468,7 @@ export const puzzleLessons38: Record<string, CaseLesson> = {
     ],
     researchNotes: {
       hours: "Compare earnings per bottleneck hour rather than per sale.",
-      orders: "This week’s mix need not pay a hidden late fee.",
+      orders: "This week’s plan carries no hidden late fee.",
       supplier: "A future improvement does not add capacity to this week.",
     },
     eventChange: {
@@ -544,7 +545,7 @@ export const puzzleLessons38: Record<string, CaseLesson> = {
           costs: 360,
         },
       ],
-      note: "One crew costs $200 daily. Add $10 supplies per job and $100 fixed costs. Two routes add $300 agency labor and $80 vehicle cost; eight jobs use $80 supplies. The later road closure changes only the nearby route capacity to four jobs.",
+      note: "One crew costs $200 daily. Add $10 supplies per job and $100 fixed costs. Two routes add $300 agency labor and $80 vehicle cost; eight jobs use $80 supplies. The later road closure only cuts the nearby route to four jobs.",
     },
     alternativeConditions:
       "The nearby $80 route needs six jobs to beat the current $60 result. Five leave only $50 after the full paid day and fixed bills. A second scattered route needs a lower crew quote or a higher price to improve the current result.",
@@ -586,7 +587,7 @@ export const puzzleLessons38: Record<string, CaseLesson> = {
     ],
     researchNotes: {
       route:
-        "Dense routes work when access is planned, not just addresses nearby.",
+        "Close-together routes work when access is planned, not just when addresses are near.",
       buyers: "The first day is booked; future days still need sales.",
       agency: "Compare what a second route adds after all its own costs.",
     },
@@ -607,14 +608,14 @@ export const puzzleLessons38: Record<string, CaseLesson> = {
       buy: {
         score: 25,
         verdict: "Risky move",
-        why: "You have 240 available tool-days and sell only 80. More stock alone does not create rentals.",
+        why: "You have 240 available tool-days and sell only 80. More tools alone do not create rentals.",
         tradeoff:
           "Capacity doubles, but current demand already fits most days.",
       },
       market: {
         score: 85,
         verdict: "Strong move",
-        why: "Forty extra days could add $1,040 after direct costs. At the opening $240 ad price, that leaves $800 extra if the target is met.",
+        why: "Forty extra days could add $1,040 after cleaning and wear costs. At the opening $240 ad price, that leaves $800 extra if the target is met.",
         tradeoff:
           "The target is uncertain, so track paid bookings against the ad bill.",
       },
@@ -629,14 +630,14 @@ export const puzzleLessons38: Record<string, CaseLesson> = {
         verdict: "Strong move",
         why: "Current rentals leave $1,080 after running costs. Waiting protects cash while you check where demand is missing.",
         tradeoff:
-          "You keep a positive cash result but leave spare capacity unused.",
+          "You end the month with cash left over but leave spare capacity unused.",
       },
     },
     history: {
       decision:
         "Keep the current tools and seek weekday rentals before doubling the fleet.",
       result:
-        "Current use fills one third of capacity. At the target, the original campaign leaves $1,880 in monthly cash after stated bills, versus $1,080 without it. Buying tools with unchanged rentals leaves a $1,320 cash shortfall that month.",
+        "Current use fills one third of capacity. At the target, the original campaign leaves $1,880 in monthly cash after stated bills, versus $1,080 without it. Buying tools with unchanged rentals leaves you $1,320 short on cash that month.",
       connection:
         "Buying capacity is different from finding demand. Measure weekday and peak demand separately before making a lasting purchase.",
       sources: [],
@@ -667,7 +668,7 @@ export const puzzleLessons38: Record<string, CaseLesson> = {
           costs: 3720,
         },
       ],
-      note: "Running costs are $4 per paid day plus $1,000 fixed bills. The campaign row adds $240; the purchase row adds $2,400 for assets you still own. This is cash flow, not accounting profit: depreciation and resale value are excluded. No extra rental demand is assumed from buying tools. The later campaign quote adds $660 to that row.",
+      note: "Running costs are $4 per paid day plus $1,000 fixed bills. The campaign row adds $240; the purchase row adds $2,400 for tools you still own. This is cash flow, not accounting profit: the tools’ loss of value and resale value are left out. Buying tools is assumed to bring no extra rentals. The later campaign quote adds $660 to that row.",
     },
     alternativeConditions:
       "At the opening $240 campaign price, ten extra days cover the campaign because each adds $26 before ads. At $900, it needs 35 extra days. Buying tools may make sense for repeated peak demand, but one busy date is not a full-month forecast.",
@@ -701,7 +702,7 @@ export const puzzleLessons38: Record<string, CaseLesson> = {
       },
       {
         term: "Utilization",
-        meaning: "The share of available capacity that gets used.",
+        meaning: "How much of the available tool time gets used.",
       },
       {
         term: "Cash flow",

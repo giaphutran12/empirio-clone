@@ -70,6 +70,8 @@ export type PlayableCase = Omit<
   company: string;
   learning: { skill: string; terms: { term: string; meaning: string }[] };
   knownLimits: Evidence[];
+  /** Evidence unlocked by commissioned research, so the feed can show it beside its task. */
+  researchFindingIds: string[];
   remainingHours: number;
   event: CaseDefinition["event"] | null;
 };
@@ -85,6 +87,8 @@ export type Message = {
   role: "user" | "assistant";
   text: string;
   reply?: AnalystReply;
+  /** Set on "What we found" messages so the feed can show a finding on its research step. */
+  researchId?: string;
 };
 export type Confidence = "low" | "medium" | "high";
 export type Decision = {
@@ -121,4 +125,6 @@ export type Session = {
   practiceAnswerId?: string;
   coachMessages?: { role: "user" | "assistant"; text: string }[];
   coachDraft?: string;
+  /** Last screen viewed in the step-by-step feed. */
+  feedStep?: number;
 };

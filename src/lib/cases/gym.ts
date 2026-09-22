@@ -25,12 +25,12 @@ export const gym: CaseDefinition = {
     detail(
       "members",
       "100 members · $50 a month",
-      "All 100 currently pay. If they stay, memberships bring in $5,000 each month.",
+      "All 100 pay now. If they stay, passes bring in $5,000 each month.",
     ),
     detail(
       "bills",
       "$5,500 in monthly bills",
-      "Rent, current staff and other running costs total $5,500 a month. Extra challenge coaching is not included.",
+      "Rent, current staff and other running costs come to $5,500 a month. Extra coaching for the challenge is not included.",
     ),
     detail(
       "cash",
@@ -40,12 +40,12 @@ export const gym: CaseDefinition = {
     detail(
       "pitch",
       "$500 buys 90 days",
-      "The pitch offers 20 places, daily check-ins and group coaching. Twenty buyers are a sales target, not signed customers.",
+      "The pitch offers 20 places, daily check-ins and group coaching. Twenty buyers is a target. No one has signed up.",
     ),
     detail(
       "attendance",
       "20% show up in a typical week",
-      "Low use has not stopped the other members paying. We do not know if a higher price would make them attend.",
+      "Members who rarely come still pay. We do not know if a higher price would make them show up.",
     ),
   ],
   research: [
@@ -72,21 +72,20 @@ export const gym: CaseDefinition = {
         detail(
           "buyer-interest",
           "12 interested, none paid",
-          "Twelve people say they might join at $500. Eight already pay for membership; four are new. No one has paid or agreed to a start date.",
+          "Twelve people say they might join at $500. Eight are current members; four are new. No one has paid or agreed a start date.",
         ),
       ],
     },
     {
       id: "capacity",
       title: "Check the floor and staff",
-      description:
-        "See whether three groups can fit alongside current members.",
+      description: "See whether three groups fit around current members.",
       hours: 3,
       evidence: [
         detail(
           "capacity-limit",
           "Room for one extra group",
-          "The current timetable has space for one coached group. Three groups need new class times and another staffing quote; the cost is not known.",
+          "The current timetable has room for one coached group. Three groups need new class times and another staff quote. That cost is not known.",
         ),
       ],
     },
@@ -99,7 +98,7 @@ export const gym: CaseDefinition = {
         {
           id: "renewals",
           label: "The next 90 days are unknown",
-          text: "We have no paid sign-ups, measured fitness results, refund rate or repeat sales. Paying more does not prove people will show up.",
+          text: "We have no paid sign-ups, no measured fitness results, no refund history and no repeat sales. Paying more does not prove people will show up.",
           kind: "unknown",
           sourceIds: [],
         },
@@ -113,11 +112,11 @@ export const gym: CaseDefinition = {
   ],
   event: {
     title: "The coach needs a booking",
-    text: "The coach now wants a $1,000 nonrefundable booking payment today. It counts toward the full coaching bill. No customers have paid yet.",
+    text: "The coach now wants $1,000 today to hold the booking. You cannot get it back. It counts toward the full coaching bill. No customers have paid yet.",
     evidence: detail(
       "event",
       "$1,000 before any sales",
-      "The coach now wants a $1,000 nonrefundable booking payment today. It counts toward the full coaching bill. No customers have paid yet.",
+      "The coach now wants $1,000 today to hold the booking. You cannot get it back. It counts toward the full coaching bill. No customers have paid yet.",
     ),
   },
   options: [
@@ -126,13 +125,13 @@ export const gym: CaseDefinition = {
       title: "Replace passes with the challenge",
       description: "End monthly passes and aim for 20 buyers at $500.",
       tradeoff:
-        "Cash comes early, but one payment must cover three months of work.",
+        "Cash comes in early. But one payment must cover three months of work.",
     },
     {
       id: "pilot",
       title: "Keep passes. Test one small group",
       description:
-        "Keep memberships and test paid demand before a full launch. Set a spending cap and clear terms for refunds.",
+        "Keep passes and test paid demand before a full launch. Set a spending limit and clear refund terms.",
       tradeoff:
         "You learn with less at stake, but a small test may not cover the gym’s losses.",
     },
@@ -140,8 +139,7 @@ export const gym: CaseDefinition = {
       id: "scale",
       title: "Launch three groups right away",
       description: "Aim for 60 buyers at $500 while keeping memberships.",
-      tradeoff:
-        "The sales target is larger. So are the staffing and space needs.",
+      tradeoff: "The sales target is bigger. So are the staff and space needs.",
     },
     {
       id: "hold",
@@ -155,18 +153,18 @@ export const gym: CaseDefinition = {
     company: "The gym",
     title: "The pitch skipped two months",
     history:
-      "This is a practice case inspired by the ad transcript. The ad does not identify a gym or provide records of its results. The bills, cash and research findings here are authored scenario inputs.",
+      "This is a practice case inspired by the ad transcript. The ad does not name a gym or show records of its results. The bills, cash and research findings here are made up for this puzzle.",
     lesson:
       "Compare the same length of time. Then subtract the full cost of doing the work.",
     sources: [],
     consequences: {
       replace:
-        "At 20 paid places, $10,000 would not cover the $16,500 base bill for 90 days, even before coaching.",
+        "At 20 paid places, $10,000 does not cover the $16,500 in bills for 90 days, even before coaching.",
       pilot:
         "A paid test can check demand, costs and lost memberships before you bet the gym.",
       scale:
-        "Sixty paid places would bring in $30,000, but demand and capacity have not been proved.",
-      hold: "At unchanged membership, the next 90 days lose $1,500 before any new work.",
+        "Sixty paid places would bring in $30,000, but demand and capacity are not proved yet.",
+      hold: "If membership stays the same, the next 90 days lose $1,500 before any new work.",
     },
     rubric: [
       "Compare the same 90 days.",

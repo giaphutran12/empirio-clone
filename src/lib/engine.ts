@@ -81,9 +81,24 @@ export function toPlayableCase(
     definition,
     researchIds,
   );
+  const startingIds = new Set([
+    ...definition.evidence.map((item) => item.id),
+    ...definition.research
+      .filter(
+        (task) =>
+          task.hours === 0 ||
+          (!!definition.teaching && !hasResearchFindings(definition, task)),
+      )
+      .flatMap((task) => task.evidence.map((item) => item.id)),
+  ]);
   return {
     ...publicFields,
     company: definition.reveal.company,
+    researchFindingIds: evidence
+      .filter(
+        (item) => !startingIds.has(item.id) && item.id !== event?.evidence.id,
+      )
+      .map((item) => item.id),
     learning: {
       skill: teaching?.skill ?? definition.category,
       terms: teaching?.terms ?? [],
