@@ -1,0 +1,85 @@
+Browser tab: 1, Title: "The Call — Decisions worth making", URL: "http://localhost:3012/".
+1 AXWebArea The Call — Decisions worth making, URL: localhost:3012/
+	2 container
+		3 button Back to case library
+		4 text ↗ THE CALL .
+		5 container
+			6 text 2 h
+		7 text left
+		8 container Starting path progress
+			9 text CALL  2  OF 3 BUSINESS PUZZLE
+		10 text CASE  44  ·  Growth
+		11 heading Would you pay to lose the first sale?, Value: 1
+			12 text Would you pay to lose the first sale?
+		13 container 2 of 6 hours remaining
+		14 container Case views
+			15 button The briefing
+			16 button Your analyst
+			17 button Your call
+		98 container
+			99 text NEW DEVELOPMENT
+			100 heading The ad quote rises, Value: 3
+				101 text The ad quote rises
+			102 text Ads for the next 100 buyers now cost $2,500 upfront. Your $2,000 available cash and all other terms stay the same.
+			103 button Dismiss development
+		61 container
+			62 text A
+			63 heading Your analyst, Value: 2
+				64 text Your analyst
+			65 text What would you like to know? AI ANALYST
+			66 text Ask me to explain a fact or compare the tradeoffs. New research costs time; questions are free.
+			104 text ANALYST
+			105 text What we found: Each of three earlier 100-buyer groups made 150 paid refill orders within 90 days. All buyers were new, with the same offer and costs; refunds are already netted out.
+
+Why it matters: Follow the same buyers through paid orders, not predicted lifetime value.
+			106 text Evidence
+			107 button (collapsed) Evidence · 1, Secondary Actions: Expand
+				108 text Evidence · 
+				109 text 1
+			110 text ANALYST
+			111 text What we found: For each earlier group, all $2,000 of ads was due first. Starter orders then left $500. Refills arrived in days 31–90, with no extra stock prepayment. No other campaign bill is due.
+
+Why it matters: A profitable relationship can still require cash you do not have today.
+			112 text Evidence
+			113 button (collapsed) Evidence · 2, Secondary Actions: Expand
+				114 text Evidence · 
+				115 text 2
+			67 button How many refills recover the first loss?
+			68 button What makes the past useful here?
+			69 button Can we afford the wait?
+			70 text Ask your analyst
+			71 text entry area (settable) Ask your analyst, ID: analyst-question
+			72 button (disabled) Send question
+			73 text Questions are free. Research costs time.
+		74 container
+			75 text GO A LEVEL DEEPER
+			76 heading Research desk, Value: 2
+				77 text Research desk
+			78 text Research takes time. Choose what could change your mind.
+			79 button (disabled) REVIEWED Audit earlier customer groups Match the first order to later paid refills. Helps you decide: Follow the same buyers through paid orders, not predicted lifetime value. Added to your evidence
+				80 text REVIEWED
+				81 heading Audit earlier customer groups, Value: 3
+					82 text Audit earlier customer groups
+				83 text Match the first order to later paid refills.
+				116 container
+					117 text Helps you decide: Follow the same buyers through paid orders, not predicted lifetime value.
+				84 text Added to your evidence
+			85 button (disabled) REVIEWED Check cash timing See when repeat orders actually paid. Helps you decide: A profitable relationship can still require cash you do not have today. Added to your evidence
+				86 text REVIEWED
+				87 heading Check cash timing, Value: 3
+					88 text Check cash timing
+				89 text See when repeat orders actually paid.
+				118 container
+					119 text Helps you decide: A profitable relationship can still require cash you do not have today.
+				90 text Added to your evidence
+			91 button (disabled) 3H Check whether the next buyers differ Look for changes that make the past less useful. Not enough time remaining
+				92 text 3H
+				93 heading Check whether the next buyers differ, Value: 3
+					94 text Check whether the next buyers differ
+				95 text Look for changes that make the past less useful.
+				96 text Not enough time remaining
+			97 text More information is useful only if it might change the decision.
+		59 text Ready to decide?
+		60 button Make the call
+
+The focused UI element is 1 AXWebArea The Call — Decisions worth making, URL: localhost:3012/

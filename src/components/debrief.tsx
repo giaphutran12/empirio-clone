@@ -10,6 +10,7 @@ export function DebriefView({
   busy,
   online,
   nextCase,
+  pathFinished = false,
   onNext,
   onPractice,
   onCoach,
@@ -23,6 +24,7 @@ export function DebriefView({
   busy: boolean;
   online: boolean;
   nextCase?: CaseSummary;
+  pathFinished?: boolean;
   onNext: () => void;
   onPractice: (id: string) => void;
   onCoach: (question?: string) => void;
@@ -150,7 +152,9 @@ export function DebriefView({
           <>
             <p>
               <strong>
-                {gameCase.format === "scenario" ? "The choice." : "The move."}
+                {gameCase.format === "scenario"
+                  ? "The choice."
+                  : "The CEO’s move."}
               </strong>{" "}
               {lesson.history.decision}
             </p>
@@ -168,6 +172,12 @@ export function DebriefView({
           <p>{reveal.history}</p>
         )}
       </section>
+      {lesson?.alternativeConditions && (
+        <section className="alternative-conditions">
+          <h2>When would another call work?</h2>
+          <p>{lesson.alternativeConditions}</p>
+        </section>
+      )}
       {lesson && (
         <details className="review-details option-comparison">
           <summary>Compare all choices</summary>
@@ -187,6 +197,13 @@ export function DebriefView({
             ) : null;
           })}
         </details>
+      )}
+      {gameCase.format !== "scenario" && (
+        <p className="simulation-note">
+          Matching the CEO is not the test. Your score weighs the decision with
+          the evidence available then; the outcome alone cannot prove it was
+          right.
+        </p>
       )}
       {lesson && (
         <section className="practice-card" aria-label="Quick practice">
@@ -330,13 +347,24 @@ export function DebriefView({
           ))}
       </details>
       <section className="next-lesson">
-        <span className="eyebrow">KEEP PRACTICING</span>
+        <span className="eyebrow">
+          {pathFinished ? "THREE CALLS MADE" : "KEEP PRACTICING"}
+        </span>
+        {pathFinished && (
+          <>
+            <h2>You’ve tried three ways to think.</h2>
+            <p>
+              Where does the profit come from? What happens beyond the first
+              sale? What makes a strategic bet worth taking?
+            </p>
+          </>
+        )}
         {nextCase && (
           <>
             <h2>
               {nextCase.company}: {nextCase.title}
             </h2>
-            <p>{nextCase.skill} · 5–10 min</p>
+            <p>{nextCase.subtitle} · About 5 min</p>
           </>
         )}
         <button
@@ -344,7 +372,7 @@ export function DebriefView({
           disabled={busy || !online}
           onClick={onNext}
         >
-          Next case
+          {pathFinished ? "Explore more decisions" : "Next case"}
           <ArrowRight size={18} />
         </button>
         <div className="debrief-actions">

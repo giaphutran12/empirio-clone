@@ -1,3 +1,4 @@
+import { spotlightCases } from "./cases/spotlight";
 import { puzzleCases32 } from "./cases/puzzles-32";
 import { puzzleCases38 } from "./cases/puzzles-38";
 import { puzzleCases44 } from "./cases/puzzles-44";
@@ -25,7 +26,7 @@ const originalCases: CaseDefinition[] = [
   ...puzzleCases44,
 ];
 // Keep version 1 available so saved research ledgers retain their original costs.
-export const cases: CaseDefinition[] = originalCases.map((definition) => ({
+const versionTwoCases: CaseDefinition[] = originalCases.map((definition) => ({
   ...definition,
   version: 2,
   teaching: lessons[definition.id],
@@ -35,10 +36,26 @@ export const cases: CaseDefinition[] = originalCases.map((definition) => ({
     helpsWith: lessons[definition.id]?.researchNotes[task.id],
   })),
 }));
-export function getCase(id: string = cases[0].id, version = 2): CaseDefinition {
+export const cases: CaseDefinition[] = versionTwoCases.map((previous) => {
+  const definition = spotlightCases.find((item) => item.id === previous.id);
+  if (!definition) return previous;
+  return {
+    ...definition,
+    research: definition.research.map((task) => ({
+      ...task,
+      hours: hasResearchFindings(definition, task) ? task.hours : 0,
+      helpsWith: definition.teaching?.researchNotes[task.id],
+    })),
+  };
+});
+export function getCase(
+  id: string = cases[0].id,
+  version?: number,
+): CaseDefinition {
   const current = cases.find((item) => item.id === id);
   if (!current) throw new InputError("Unknown case.");
-  if (version === 2) return current;
+  if (version === undefined || version === current.version) return current;
+  if (version === 2) return versionTwoCases.find((item) => item.id === id)!;
   if (version === 1) {
     const original = originalCases.find((item) => item.id === id)!;
     return { ...original, teaching: lessons[id] };
